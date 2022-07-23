@@ -1,0 +1,9 @@
+{
+	"name": "@hs/eslint-config-react",
+	"main": "./index.js",
+	"peerDependencies": {
+		"eslint": ">=7.22.0",
+		"eslint-plugin-react": ">=7.22.0",
+		"eslint-plugin-react-hooks": ">=4.2.0"
+	}
+}

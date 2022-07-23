@@ -1,0 +1,11 @@
+{
+	"name": "@hs/eslint-config",
+	"main": "./index.js",
+	"dependencies": {
+		"confusing-browser-globals": "^1.0.10"
+	},
+	"peerDependencies": {
+		"eslint": ">=7.22.0",
+		"eslint-plugin-import": ">=2.22.1"
+	}
+}

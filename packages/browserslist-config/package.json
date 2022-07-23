@@ -1,0 +1,4 @@
+{
+	"name": "@hs/browserslist-config",
+	"main": "./index.js"
+}

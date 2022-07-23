@@ -1,0 +1,30 @@
+{
+	"name": "frigg",
+	"description": "HostedShop - Mono Repo with project configs and tools",
+	"author": "HostedShop",
+	"version": "5.1.1",
+	"license": "UNLICENSED",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://gitlab.zitcom.dk/smartweb/frontend/frigg.git"
+	},
+	"engines": {
+		"node": ">=16.0.0",
+		"yarn": ">=3.0.0"
+	},
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+        "repo": "yarn node ./packages/repository-tools/src/cli",
+		"lint": "eslint ./packages --cache --cache-location .yarn/.cache/eslint/.eslintcache --max-warnings 0",
+		"check": "prettier ./packages --check"
+	},
+	"devDependencies": {
+		"eslint": "^7.32.0",
+		"eslint-import-resolver-node": "^0.3.6",
+		"eslint-plugin-import": "^2.24.2",
+		"prettier": "^2.4.1"
+	}
+}
