@@ -2,6 +2,8 @@
 *
 
 # Except these folders
+!.github/
+!.github/**/*
 !.yarn/
 !.yarn/**/*
 !packages/
