@@ -350,6 +350,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@klmjs/eslint-config-typescript@workspace:packages/eslint-config-typescript":
+  version: 0.0.0-use.local
+  resolution: "@klmjs/eslint-config-typescript@workspace:packages/eslint-config-typescript"
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": ">=8.29.0"
+    "@typescript-eslint/parser": ">=8.29.0"
+    eslint: ">=8.29.0"
+    typescript: ">=4.9.4"
+  languageName: unknown
+  linkType: soft
+
 "@klmjs/eslint-config@workspace:packages/eslint-config":
   version: 0.0.0-use.local
   resolution: "@klmjs/eslint-config@workspace:packages/eslint-config"

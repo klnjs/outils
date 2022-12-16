@@ -28,6 +28,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/eslint-config-react"\
       },\
       {\
+        "name": "@klmjs/eslint-config-typescript",\
+        "reference": "workspace:packages/eslint-config-typescript"\
+      },\
+      {\
         "name": "@klmjs/prettier-config",\
         "reference": "workspace:packages/prettier-config"\
       },\
@@ -42,6 +46,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@klmjs/browserslist-config", ["workspace:packages/browserslist-config"]],\
       ["@klmjs/eslint-config", ["workspace:packages/eslint-config"]],\
       ["@klmjs/eslint-config-react", ["workspace:packages/eslint-config-react"]],\
+      ["@klmjs/eslint-config-typescript", ["workspace:packages/eslint-config-typescript"]],\
       ["@klmjs/prettier-config", ["workspace:packages/prettier-config"]],\
       ["@klmjs/repository-tools", ["workspace:packages/repository-tools"]],\
       ["frigg", ["workspace:."]]\
@@ -464,6 +469,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/eslint-config-react/",\
           "packageDependencies": [\
             ["@klmjs/eslint-config-react", "workspace:packages/eslint-config-react"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@klmjs/eslint-config-typescript", [\
+        ["workspace:packages/eslint-config-typescript", {\
+          "packageLocation": "./packages/eslint-config-typescript/",\
+          "packageDependencies": [\
+            ["@klmjs/eslint-config-typescript", "workspace:packages/eslint-config-typescript"]\
           ],\
           "linkType": "SOFT"\
         }]\
