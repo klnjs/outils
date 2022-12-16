@@ -10,7 +10,9 @@ const post = async ({
 } = {}) => {
 	try {
 		const webhook = new slack.IncomingWebhook(webhookArg)
-		const channel = channelArg.startsWith('#') ? channelArg : `#${channelArg}`
+		const channel = channelArg.startsWith('#')
+			? channelArg
+			: `#${channelArg}`
 		const section = content.replaceAll('@', '@\u200B')
 
 		if (dry) {

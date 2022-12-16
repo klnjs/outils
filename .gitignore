@@ -1,10 +1,14 @@
-# Ignore these files
-/*
-/.yarn/install-state.gz
+# Ignore everything
+*
 
 # Except these folders
-!/.yarn/
-!/packages/
+!.yarn/
+!.yarn/**/*
+!packages/
+!packages/**/*
+
+# Ignore these files
+.yarn/install-state.gz
 
 # Except these files
 !.editorconfig
@@ -12,7 +16,9 @@
 !.eslintrc.js
 !.gitignore
 !.gitlab-ci.yml
+!.nvmrc
 !.pnp.cjs
+!.pnp.loader.mjs
 !.prettierignore
 !.prettierrc.js
 !.yarnrc.yml

@@ -6,8 +6,8 @@ const rmfr = require('rmfr')
 const babel = require('@babel/core')
 const ProgressBar = require('progress')
 const pe = require('path-exists')
-const project = require('./project')
 
+const project = require('./project')
 const sleep = require('./internal/sleep-async')
 const readdir = require('./internal/readdir-recursive')
 
@@ -62,12 +62,19 @@ const transpile = async (name, folder, progress) => {
 const packaging = async (nameArg, packages) => {
 	const rootManifest = await project.getRootManifest()
 	const packageManifest = await project.getPackageManifest(nameArg)
-	const packageRepository = { ...rootManifest.repository, directory: `packages/${nameArg}` }
+	const packageRepository = {
+		...rootManifest.repository,
+		directory: `packages/${nameArg}`
+	}
 	const packageDependencies = packageManifest.dependencies
 		? Object.entries(packageManifest.dependencies).reduce((deps, entry) => {
 				const [name, version] = entry
-				const shouldVersion = name.startsWith('@hs') && packages.includes(name.slice(4))
-				const nextVersion = shouldVersion ? rootManifest.version : version
+				const shouldVersion =
+					name.startsWith('@klmjs') &&
+					packages.includes(name.slice(4))
+				const nextVersion = shouldVersion
+					? rootManifest.version
+					: version
 
 				return {
 					...deps,
@@ -103,12 +110,15 @@ const build = async ({ packages: packagesArgs }) => {
 	try {
 		const packages = await project.getPackages()
 		const packagesToBuild = packagesArgs ?? packages
-		const progress = new ProgressBar('Building [:bar] :current/:total (:name)', {
-			total: packagesToBuild.length,
-			width: 40,
-			clear: true,
-			incomplete: ' '
-		})
+		const progress = new ProgressBar(
+			'Building [:bar] :current/:total (:name)',
+			{
+				total: packagesToBuild.length,
+				width: 40,
+				clear: true,
+				incomplete: ' '
+			}
+		)
 
 		for await (const name of packagesToBuild) {
 			await pre(name, progress)

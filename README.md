@@ -1,8 +1,8 @@
 # Frigg
-HostedShop - Shareable configs
+Shareable configs and repo tools
 
 # Packages
-* **@hs/browserslist-config**
-* **@hs/eslint-config**
-* **@hs/eslint-config-react**
-* **@hs/prettier-config**
+* **@klmjs/browserslist-config**
+* **@klmjs/eslint-config**
+* **@klmjs/eslint-config-react**
+* **@klmjs/prettier-config**

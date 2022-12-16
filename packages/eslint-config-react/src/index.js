@@ -1,7 +1,10 @@
 module.exports = {
 	extends: ['./react', './hooks'].map(require.resolve),
 	parserOptions: {
-		ecmaVersion: 2021,
-		sourceType: 'module'
+		sourceType: 'module',
+		ecmaVersion: 2022,
+		ecmaFeatures: {
+			jsx: true
+		}
 	}
 }

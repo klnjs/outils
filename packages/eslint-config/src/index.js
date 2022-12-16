@@ -1,11 +1,12 @@
 module.exports = {
+	extends: ['./common', './errors', './imports', './variables'].map(
+		require.resolve
+	),
 	env: {
 		es6: true
 	},
 	parserOptions: {
-		ecmaVersion: 2021,
-		sourceType: 'module'
-	},
-	plugins: ['import'],
-	extends: ['./common', './errors', './imports', './variables']
+		sourceType: 'module',
+		ecmaVersion: 2022
+	}
 }

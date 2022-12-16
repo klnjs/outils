@@ -14,7 +14,9 @@ const readdir = async (path, options = {}, next = path) => {
 		files.map(async (file) => {
 			const filePath = p.resolve(next, file)
 			const fileStats = await fs.stat(filePath)
-			const filePathReturn = relative ? p.relative(path, filePath) : filePath
+			const filePathReturn = relative
+				? p.relative(path, filePath)
+				: filePath
 
 			if (fileStats.isDirectory()) {
 				result.push(...(await readdir(path, options, filePath)))

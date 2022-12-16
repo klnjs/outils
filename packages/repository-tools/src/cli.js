@@ -64,7 +64,14 @@ yargs
 				.option('fields', {
 					alias: 'f',
 					type: 'array',
-					default: ['author', 'comitter', 'date', 'hash', 'version', 'repository'],
+					default: [
+						'author',
+						'comitter',
+						'date',
+						'hash',
+						'version',
+						'repository'
+					],
 					description: 'Fields to publish',
 					requiresArg: true,
 					demandOption: true

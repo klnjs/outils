@@ -15,7 +15,10 @@ const unpublish = async ({
 		const dry = dryArg ? '--dry-run' : ''
 
 		const registry = registryArg ?? config.npmRegistryServer
-		const registryWithAuth = `${registry.replace('https:', '')}:_authToken ${tokenArg}`
+		const registryWithAuth = `${registry.replace(
+			'https:',
+			''
+		)}:_authToken ${tokenArg}`
 
 		for await (const name of packagesToPublish) {
 			const man = await project.getPackageManifest(name)

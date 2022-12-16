@@ -3,7 +3,8 @@ const git = require('simple-git')()
 const project = require('./project')
 const { post } = require('./slack')
 
-const fetchPublished = (name) => JSON.parse(cp.execSync(`yarn npm info ${name} --json`))
+const fetchPublished = (name) =>
+	JSON.parse(cp.execSync(`yarn npm info ${name} --json`))
 
 const publish = async ({
 	dry: dryArg,
@@ -20,11 +21,16 @@ const publish = async ({
 		const dry = dryArg ? '--dry-run' : ''
 
 		const registry = registryArg ?? config.npmRegistryServer
-		const registryWithAuth = `${registry.replace('https:', '')}:_authToken ${tokenArg}`
+		const registryWithAuth = `${registry.replace(
+			'https:',
+			''
+		)}:_authToken ${tokenArg}`
 		const versionIsInChangelog = changelog.includes(manifest.version)
 
 		if (!versionIsInChangelog) {
-			throw new Error(`Could not find CHANGELOG entry for version ${manifest.version}`)
+			throw new Error(
+				`Could not find CHANGELOG entry for version ${manifest.version}`
+			)
 		}
 
 		for await (const name of packagesToPublish) {
@@ -89,13 +95,27 @@ const publishToSlack = async ({ type, fields: fieldsArg, ...args }) => {
 			? await fetchGit({ '--pretty': '%cn <%ce>' })
 			: null
 
-		const date = fieldsArg.includes('date') ? await fetchGit({ '--pretty': '%ci' }) : null
-		const hash = fieldsArg.includes('hash') ? await fetchGit({ '--pretty': '%h' }) : null
+		const date = fieldsArg.includes('date')
+			? await fetchGit({ '--pretty': '%ci' })
+			: null
+		const hash = fieldsArg.includes('hash')
+			? await fetchGit({ '--pretty': '%h' })
+			: null
 		const version = fieldsArg.includes('version') ? manifest.version : null
-		const repository = fieldsArg.includes('repository') ? manifest.repository.url : null
-		const information = { author, comitter, date, hash, version, repository }
+		const repository = fieldsArg.includes('repository')
+			? manifest.repository.url
+			: null
+		const information = {
+			author,
+			comitter,
+			date,
+			hash,
+			version,
+			repository
+		}
 
-		const header = manifest.name.charAt(0).toUpperCase() + manifest.name.slice(1)
+		const header =
+			manifest.name.charAt(0).toUpperCase() + manifest.name.slice(1)
 		const content = await fetchContent({ type })
 		const context = Object.keys(information)
 			.filter((key) => key)

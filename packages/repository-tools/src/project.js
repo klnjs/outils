@@ -47,7 +47,8 @@ const getPackages = async () => {
 	return packages
 }
 
-const getPackagePath = async (pid, ...paths) => getRootPath('packages', pid, ...paths)
+const getPackagePath = async (pid, ...paths) =>
+	getRootPath('packages', pid, ...paths)
 
 const getPackageManifest = async (pid) => {
 	const manifest = await getPackagePath(pid, 'package.json')
@@ -57,7 +58,8 @@ const getPackageManifest = async (pid) => {
 	return parsed
 }
 
-const getPackageBuildPath = async (pid, ...paths) => getRootPath('build', pid, ...paths)
+const getPackageBuildPath = async (pid, ...paths) =>
+	getRootPath('build', pid, ...paths)
 
 module.exports = {
 	getRootPath,

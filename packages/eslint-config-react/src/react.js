@@ -1,16 +1,5 @@
 module.exports = {
 	plugins: ['react'],
-	parserOptions: {
-		ecmaFeatures: {
-			jsx: true
-		}
-	},
-	settings: {
-		react: {
-			pragma: 'React',
-			version: 'detect'
-		}
-	},
 	rules: {
 		'react/boolean-prop-naming': 'off',
 		'react/button-has-type': 'off',

@@ -1,4 +1,10 @@
-/.vscode
-/.yarn
-/build
-/node_modules
+# Ignore everything
+*
+
+# Except these folders
+!packages/
+!packages/**/*
+
+# Except these files
+!.eslintrc.js
+!.prettierrc.js

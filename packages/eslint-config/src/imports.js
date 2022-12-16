@@ -1,4 +1,5 @@
 module.exports = {
+	plugins: ['import'],
 	rules: {
 		'import/default': 'off',
 		'import/dynamic-import-chunkname': 'off',
@@ -51,7 +52,14 @@ module.exports = {
 		'import/order': [
 			'error',
 			{
-				groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index']
+				groups: [
+					'builtin',
+					'external',
+					'internal',
+					'parent',
+					'sibling',
+					'index'
+				]
 			}
 		],
 		'import/prefer-default-export': 'off',

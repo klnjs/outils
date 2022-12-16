@@ -1,5 +1,5 @@
 .base:
-  image: node:16
+  image: node:18
   rules:
     - if: '$CI_COMMIT_REF_NAME == "master"'
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_JOB_STAGE == "publish"'
@@ -44,7 +44,6 @@ validate:
     - build
   script:
     - yarn repo publish -t $PUBLISH_NPM_TOKEN --dry
-    - yarn repo publish-to-slack -w $PUBLISH_SLACK_WEBHOOK -c dk-hostedshop-frontend-packages -t changelog --dry
 
 publish:
   extends: .base
@@ -54,12 +53,3 @@ publish:
     - validate
   script:
     - yarn repo publish -t $PUBLISH_NPM_TOKEN
-
-announce:
-  extends: .base
-  stage: publish
-  needs:
-    - build
-    - validate
-  script:
-    - yarn repo publish-to-slack -w $PUBLISH_SLACK_WEBHOOK -c dk-hostedshop-frontend-packages -t changelog
