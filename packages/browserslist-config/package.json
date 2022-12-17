@@ -1,4 +1,4 @@
 {
-	"name": "@klmjs/browserslist-config",
+	"name": "@klnjs/browserslist-config",
 	"main": "./index.js"
 }
