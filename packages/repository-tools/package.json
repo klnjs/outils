@@ -1,5 +1,5 @@
 {
-	"name": "@klmjs/repository-tools",
+	"name": "@klnjs/repository-tools",
 	"main": "./index.js",
 	"bin": {
 		"frigg": "./cli.js"
