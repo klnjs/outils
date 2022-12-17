@@ -334,22 +334,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@klmjs/browserslist-config@workspace:packages/browserslist-config":
-  version: 0.0.0-use.local
-  resolution: "@klmjs/browserslist-config@workspace:packages/browserslist-config"
-  languageName: unknown
-  linkType: soft
-
-"@klmjs/eslint-config-react@workspace:packages/eslint-config-react":
-  version: 0.0.0-use.local
-  resolution: "@klmjs/eslint-config-react@workspace:packages/eslint-config-react"
-  peerDependencies:
-    eslint: ">=8.29.0"
-    eslint-plugin-react: ">=7.31.11"
-    eslint-plugin-react-hooks: ">=4.6.0"
-  languageName: unknown
-  linkType: soft
-
 "@klmjs/eslint-config-typescript@workspace:packages/eslint-config-typescript":
   version: 0.0.0-use.local
   resolution: "@klmjs/eslint-config-typescript@workspace:packages/eslint-config-typescript"
@@ -361,9 +345,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@klmjs/eslint-config@workspace:packages/eslint-config":
+"@klnjs/browserslist-config@workspace:packages/browserslist-config":
   version: 0.0.0-use.local
-  resolution: "@klmjs/eslint-config@workspace:packages/eslint-config"
+  resolution: "@klnjs/browserslist-config@workspace:packages/browserslist-config"
+  languageName: unknown
+  linkType: soft
+
+"@klnjs/eslint-config-react@workspace:packages/eslint-config-react":
+  version: 0.0.0-use.local
+  resolution: "@klnjs/eslint-config-react@workspace:packages/eslint-config-react"
+  peerDependencies:
+    eslint: ">=8.29.0"
+    eslint-plugin-react: ">=7.31.11"
+    eslint-plugin-react-hooks: ">=4.6.0"
+  languageName: unknown
+  linkType: soft
+
+"@klnjs/eslint-config@workspace:packages/eslint-config":
+  version: 0.0.0-use.local
+  resolution: "@klnjs/eslint-config@workspace:packages/eslint-config"
   dependencies:
     confusing-browser-globals: ^1.0.11
   peerDependencies:
@@ -372,17 +372,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@klmjs/prettier-config@workspace:packages/prettier-config":
+"@klnjs/prettier-config@workspace:packages/prettier-config":
   version: 0.0.0-use.local
-  resolution: "@klmjs/prettier-config@workspace:packages/prettier-config"
+  resolution: "@klnjs/prettier-config@workspace:packages/prettier-config"
   peerDependencies:
     prettier: ">=2.8.1"
   languageName: unknown
   linkType: soft
 
-"@klmjs/repository-tools@workspace:packages/repository-tools":
+"@klnjs/repository-tools@workspace:packages/repository-tools":
   version: 0.0.0-use.local
-  resolution: "@klmjs/repository-tools@workspace:packages/repository-tools"
+  resolution: "@klnjs/repository-tools@workspace:packages/repository-tools"
   dependencies:
     "@babel/core": ^7.20.5
     "@slack/webhook": ^6.1.0

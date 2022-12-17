@@ -16,15 +16,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:."\
       },\
       {\
-        "name": "@klmjs/browserslist-config",\
+        "name": "@klnjs/browserslist-config",\
         "reference": "workspace:packages/browserslist-config"\
       },\
       {\
-        "name": "@klmjs/eslint-config",\
+        "name": "@klnjs/eslint-config",\
         "reference": "workspace:packages/eslint-config"\
       },\
       {\
-        "name": "@klmjs/eslint-config-react",\
+        "name": "@klnjs/eslint-config-react",\
         "reference": "workspace:packages/eslint-config-react"\
       },\
       {\
@@ -32,23 +32,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/eslint-config-typescript"\
       },\
       {\
-        "name": "@klmjs/prettier-config",\
+        "name": "@klnjs/prettier-config",\
         "reference": "workspace:packages/prettier-config"\
       },\
       {\
-        "name": "@klmjs/repository-tools",\
+        "name": "@klnjs/repository-tools",\
         "reference": "workspace:packages/repository-tools"\
       }\
     ],\
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
-      ["@klmjs/browserslist-config", ["workspace:packages/browserslist-config"]],\
-      ["@klmjs/eslint-config", ["workspace:packages/eslint-config"]],\
-      ["@klmjs/eslint-config-react", ["workspace:packages/eslint-config-react"]],\
       ["@klmjs/eslint-config-typescript", ["workspace:packages/eslint-config-typescript"]],\
-      ["@klmjs/prettier-config", ["workspace:packages/prettier-config"]],\
-      ["@klmjs/repository-tools", ["workspace:packages/repository-tools"]],\
+      ["@klnjs/browserslist-config", ["workspace:packages/browserslist-config"]],\
+      ["@klnjs/eslint-config", ["workspace:packages/eslint-config"]],\
+      ["@klnjs/eslint-config-react", ["workspace:packages/eslint-config-react"]],\
+      ["@klnjs/prettier-config", ["workspace:packages/prettier-config"]],\
+      ["@klnjs/repository-tools", ["workspace:packages/repository-tools"]],\
       ["frigg", ["workspace:."]]\
     ],\
     "fallbackPool": [\
@@ -445,34 +445,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["@klmjs/browserslist-config", [\
-        ["workspace:packages/browserslist-config", {\
-          "packageLocation": "./packages/browserslist-config/",\
-          "packageDependencies": [\
-            ["@klmjs/browserslist-config", "workspace:packages/browserslist-config"]\
-          ],\
-          "linkType": "SOFT"\
-        }]\
-      ]],\
-      ["@klmjs/eslint-config", [\
-        ["workspace:packages/eslint-config", {\
-          "packageLocation": "./packages/eslint-config/",\
-          "packageDependencies": [\
-            ["@klmjs/eslint-config", "workspace:packages/eslint-config"],\
-            ["confusing-browser-globals", "npm:1.0.11"]\
-          ],\
-          "linkType": "SOFT"\
-        }]\
-      ]],\
-      ["@klmjs/eslint-config-react", [\
-        ["workspace:packages/eslint-config-react", {\
-          "packageLocation": "./packages/eslint-config-react/",\
-          "packageDependencies": [\
-            ["@klmjs/eslint-config-react", "workspace:packages/eslint-config-react"]\
-          ],\
-          "linkType": "SOFT"\
-        }]\
-      ]],\
       ["@klmjs/eslint-config-typescript", [\
         ["workspace:packages/eslint-config-typescript", {\
           "packageLocation": "./packages/eslint-config-typescript/",\
@@ -482,20 +454,48 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT"\
         }]\
       ]],\
-      ["@klmjs/prettier-config", [\
-        ["workspace:packages/prettier-config", {\
-          "packageLocation": "./packages/prettier-config/",\
+      ["@klnjs/browserslist-config", [\
+        ["workspace:packages/browserslist-config", {\
+          "packageLocation": "./packages/browserslist-config/",\
           "packageDependencies": [\
-            ["@klmjs/prettier-config", "workspace:packages/prettier-config"]\
+            ["@klnjs/browserslist-config", "workspace:packages/browserslist-config"]\
           ],\
           "linkType": "SOFT"\
         }]\
       ]],\
-      ["@klmjs/repository-tools", [\
+      ["@klnjs/eslint-config", [\
+        ["workspace:packages/eslint-config", {\
+          "packageLocation": "./packages/eslint-config/",\
+          "packageDependencies": [\
+            ["@klnjs/eslint-config", "workspace:packages/eslint-config"],\
+            ["confusing-browser-globals", "npm:1.0.11"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@klnjs/eslint-config-react", [\
+        ["workspace:packages/eslint-config-react", {\
+          "packageLocation": "./packages/eslint-config-react/",\
+          "packageDependencies": [\
+            ["@klnjs/eslint-config-react", "workspace:packages/eslint-config-react"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@klnjs/prettier-config", [\
+        ["workspace:packages/prettier-config", {\
+          "packageLocation": "./packages/prettier-config/",\
+          "packageDependencies": [\
+            ["@klnjs/prettier-config", "workspace:packages/prettier-config"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@klnjs/repository-tools", [\
         ["workspace:packages/repository-tools", {\
           "packageLocation": "./packages/repository-tools/",\
           "packageDependencies": [\
-            ["@klmjs/repository-tools", "workspace:packages/repository-tools"],\
+            ["@klnjs/repository-tools", "workspace:packages/repository-tools"],\
             ["@babel/core", "npm:7.20.5"],\
             ["@slack/webhook", "npm:6.1.0"],\
             ["find-up", "npm:6.3.0"],\
