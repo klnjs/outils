@@ -1,5 +1,5 @@
 {
-	"name": "@klmjs/eslint-config",
+	"name": "@klnjs/eslint-config",
 	"main": "./index.js",
 	"dependencies": {
 		"confusing-browser-globals": "^1.0.11"

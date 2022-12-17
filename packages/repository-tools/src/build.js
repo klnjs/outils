@@ -70,7 +70,7 @@ const packaging = async (nameArg, packages) => {
 		? Object.entries(packageManifest.dependencies).reduce((deps, entry) => {
 				const [name, version] = entry
 				const shouldVersion =
-					name.startsWith('@klmjs') &&
+					name.startsWith('@klnjs') &&
 					packages.includes(name.slice(4))
 				const nextVersion = shouldVersion
 					? rootManifest.version

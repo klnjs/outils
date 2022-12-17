@@ -2,7 +2,7 @@
 Shareable configs and repo tools
 
 # Packages
-* **@klmjs/browserslist-config**
-* **@klmjs/eslint-config**
-* **@klmjs/eslint-config-react**
-* **@klmjs/prettier-config**
+* **@klnjs/browserslist-config**
+* **@klnjs/eslint-config**
+* **@klnjs/eslint-config-react**
+* **@klnjs/prettier-config**

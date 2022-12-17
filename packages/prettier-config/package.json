@@ -1,5 +1,5 @@
 {
-	"name": "@klmjs/prettier-config",
+	"name": "@klnjs/prettier-config",
 	"main": "./index.js",
 	"peerDependencies": {
 		"prettier": ">=2.8.1"
