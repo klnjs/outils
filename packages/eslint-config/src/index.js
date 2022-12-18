@@ -1,7 +1,5 @@
 module.exports = {
-	extends: ['./common', './errors', './imports', './variables'].map(
-		require.resolve
-	),
+	extends: ['./common', './imports'].map(require.resolve),
 	env: {
 		es6: true
 	},

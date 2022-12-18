@@ -365,7 +365,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@klnjs/eslint-config@workspace:packages/eslint-config"
   dependencies:
-    confusing-browser-globals: ^1.0.11
+    eslint: ^8.29.0
+    eslint-plugin-import: ^2.26.0
   peerDependencies:
     eslint: ">=8.29.0"
     eslint-plugin-import: ">=2.26.0"
@@ -717,13 +718,6 @@ __metadata:
   version: 0.0.1
   resolution: "concat-map@npm:0.0.1"
   checksum: 902a9f5d8967a3e2faf138d5cb784b9979bad2e6db5357c5b21c568df4ebe62bcb15108af1b2253744844eb964fc023fbd9afbbbb6ddd0bcc204c6fb5b7bf3af
-  languageName: node
-  linkType: hard
-
-"confusing-browser-globals@npm:^1.0.11":
-  version: 1.0.11
-  resolution: "confusing-browser-globals@npm:1.0.11"
-  checksum: 3afc635abd37e566477f610e7978b15753f0e84025c25d49236f1f14d480117185516bdd40d2a2167e6bed8048641a9854964b9c067e3dcdfa6b5d0ad3c3a5ef
   languageName: node
   linkType: hard
 
