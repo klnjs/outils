@@ -468,7 +468,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/eslint-config/",\
           "packageDependencies": [\
             ["@klnjs/eslint-config", "workspace:packages/eslint-config"],\
-            ["confusing-browser-globals", "npm:1.0.11"]\
+            ["eslint", "npm:8.29.0"],\
+            ["eslint-plugin-import", "virtual:2651f351acafb86897c5fd8136669b7a3ca9c97ce75777611c5cb3cf67d334f9da9141b3341b27eaa3238652665c41126f57ee0bafcbe8398b4ec29cdeafbf15#npm:2.26.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -877,15 +878,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/concat-map-npm-0.0.1-85a921b7ee-902a9f5d89.zip/node_modules/concat-map/",\
           "packageDependencies": [\
             ["concat-map", "npm:0.0.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["confusing-browser-globals", [\
-        ["npm:1.0.11", {\
-          "packageLocation": "./.yarn/cache/confusing-browser-globals-npm-1.0.11-b3ff8e9483-3afc635abd.zip/node_modules/confusing-browser-globals/",\
-          "packageDependencies": [\
-            ["confusing-browser-globals", "npm:1.0.11"]\
           ],\
           "linkType": "HARD"\
         }]\
