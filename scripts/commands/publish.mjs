@@ -1,12 +1,41 @@
-const cp = require('child_process')
-const git = require('simple-git')()
-const project = require('./project')
-const { post } = require('./slack')
+import cp from 'child_process'
+import { simpleGit } from 'simple-git'
+import { post } from '../internal/slack.cjs'
+import * as project from '../internal/project.mjs'
+
+const git = simpleGit()
 
 const fetchPublished = (name) =>
 	JSON.parse(cp.execSync(`yarn npm info ${name} --json`))
 
-const publish = async ({
+const fetchGit = async (options) => {
+	const message = await git.show({ '-s': null, ...options })
+	return message.trim()
+}
+
+const fetchChangelog = async () => {
+	const log = await project.getRootChangelog()
+	const manifest = await project.getRootManifest()
+	const lookup = `### ${manifest.version}`
+	const start = log.indexOf(lookup) + lookup.length
+	const ending = log.indexOf(`###`, start)
+	const content = log.slice(start, ending)
+
+	return content.trim()
+}
+
+const fetchContent = ({ type }) => {
+	switch (type) {
+		case 'commit':
+			return fetchGit({ '--pretty': '%B' })
+		case 'changelog':
+			return fetchChangelog()
+		default:
+			throw new Error(`Type ${type} is not supported`)
+	}
+}
+
+export const publish = async ({
 	dry: dryArg,
 	token: tokenArg,
 	registry: registryArg,
@@ -56,34 +85,7 @@ const publish = async ({
 	}
 }
 
-const fetchGit = async (options) => {
-	const message = await git.show({ '-s': null, ...options })
-	return message.trim()
-}
-
-const fetchChangelog = async () => {
-	const log = await project.getRootChangelog()
-	const manifest = await project.getRootManifest()
-	const lookup = `### ${manifest.version}`
-	const start = log.indexOf(lookup) + lookup.length
-	const ending = log.indexOf(`###`, start)
-	const content = log.slice(start, ending)
-
-	return content.trim()
-}
-
-const fetchContent = ({ type }) => {
-	switch (type) {
-		case 'commit':
-			return fetchGit({ '--pretty': '%B' })
-		case 'changelog':
-			return fetchChangelog()
-		default:
-			throw new Error(`Type ${type} is not supported`)
-	}
-}
-
-const publishToSlack = async ({ type, fields: fieldsArg, ...args }) => {
+export const publishToSlack = async ({ type, fields: fieldsArg, ...args }) => {
 	try {
 		const manifest = await project.getRootManifest()
 
@@ -127,9 +129,4 @@ const publishToSlack = async ({ type, fields: fieldsArg, ...args }) => {
 		console.log(err)
 		process.exit(1)
 	}
-}
-
-module.exports = {
-	publish,
-	publishToSlack
 }

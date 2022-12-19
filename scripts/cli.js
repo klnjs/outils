@@ -1,10 +1,10 @@
-const yargs = require('yargs')
-const { build } = require('./build')
-const { publish, publishToSlack } = require('./publish')
-const { unpublish } = require('./unpublish')
+import yargs from 'yargs'
+import { hideBin } from 'yargs/helpers'
+import { build } from './commands/build.mjs'
+import { publish, publishToSlack } from './commands/publish.mjs'
+import { unpublish } from './commands/unpublish.mjs'
 
-// eslint-disable-next-line no-unused-expressions
-yargs
+yargs(hideBin(process.argv))
 	.command(
 		'build',
 		'Build packages',
@@ -133,4 +133,5 @@ yargs
 	.wrap(null)
 	.version(false)
 	.scriptName('')
-	.demandCommand().argv
+	.demandCommand()
+	.parse()

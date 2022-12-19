@@ -6,6 +6,8 @@
 !.github/**/*
 !.yarn/
 !.yarn/**/*
+!scripts/
+!scripts/**/*
 !packages/
 !packages/**/*
 
@@ -15,14 +17,14 @@
 # Except these files
 !.editorconfig
 !.eslintignore
-!.eslintrc.js
+!.eslintrc.cjs
 !.gitignore
 !.gitlab-ci.yml
 !.nvmrc
 !.pnp.cjs
 !.pnp.loader.mjs
 !.prettierignore
-!.prettierrc.js
+!.prettierrc.cjs
 !.yarnrc.yml
 !CHANGELOG.md
 !package.json
