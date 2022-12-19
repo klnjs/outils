@@ -1,7 +1,7 @@
-const cp = require('child_process')
-const project = require('./project')
+import cp from 'child_process'
+import * as project from '../internal/project.mjs'
 
-const unpublish = async ({
+export const unpublish = async ({
 	dry: dryArg,
 	token: tokenArg,
 	version: versionArg,
@@ -30,8 +30,4 @@ const unpublish = async ({
 		console.log(err)
 		process.exit(1)
 	}
-}
-
-module.exports = {
-	unpublish
 }

@@ -1,7 +1,7 @@
-const p = require('path')
-const fs = require('fs').promises
+import p from 'path'
+import fs from 'fs/promises'
 
-const readdir = async (path, options = {}, next = path) => {
+export const readdir = async (path, options = {}, next = path) => {
 	const { recursive, exclude, relative, ...otherOptions } = options
 	const files = await fs.readdir(next, otherOptions)
 	const result = []
@@ -28,5 +28,3 @@ const readdir = async (path, options = {}, next = path) => {
 
 	return result
 }
-
-module.exports = readdir

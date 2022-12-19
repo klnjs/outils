@@ -1,19 +1,17 @@
-const p = require('path')
-const fs = require('fs').promises
-const cp = require('child_process')
-const fu = require('find-up')
-const rmfr = require('rmfr')
-const babel = require('@babel/core')
-const ProgressBar = require('progress')
-const pe = require('path-exists')
+import p from 'path'
+import fs from 'fs/promises'
+import cp from 'child_process'
+import rmfr from 'rmfr'
+import prog from 'progress'
+import { pathExists } from 'find-up'
 
-const project = require('./project')
-const sleep = require('./internal/sleep-async')
-const readdir = require('./internal/readdir-recursive')
+import { sleep } from '../internal/sleep.mjs'
+import { readdir } from '../internal/readdir.mjs'
+import * as project from '../internal/project.mjs'
 
 const pre = async (name, progress) => {
 	const script = await project.getPackagePath(name, 'scripts', 'prebuild.js')
-	const exists = await pe(script)
+	const exists = await pathExists(script)
 
 	if (exists) {
 		progress.tick(0, { name: `${name} - prebuild` })
@@ -31,7 +29,6 @@ const clean = async (name) => {
 const transpile = async (name, folder, progress) => {
 	const out = await project.getPackageBuildPath(name)
 	const path = await project.getPackagePath(name, folder)
-	const config = await fu('babel.config.js')
 	const files = await readdir(path, {
 		exclude: (file) => file.match(/(spec|stories)\.js$/),
 		relative: true,
@@ -46,16 +43,8 @@ const transpile = async (name, folder, progress) => {
 
 		progress.tick(0, { name: `${name} - ${des}` })
 
-		const content = await fs.readFile(og)
-		const transpiled = config
-			? await babel.transform(content, {
-					filename: og,
-					configFile: config
-			  })
-			: { code: content }
-
 		await fs.mkdir(dir, { recursive: true })
-		await fs.writeFile(des, transpiled.code, 'utf8')
+		await fs.copyFile(og, des)
 	}
 }
 
@@ -87,6 +76,7 @@ const packaging = async (nameArg, packages) => {
 	const manifest = JSON.stringify(
 		{
 			name: packageManifest.name,
+			type: packageManifest.type,
 			description: packageManifest.description,
 			author: rootManifest.author,
 			version: rootManifest.version,
@@ -106,20 +96,18 @@ const packaging = async (nameArg, packages) => {
 	await fs.writeFile(out, manifest, 'utf8')
 }
 
-const build = async ({ packages: packagesArgs }) => {
-	try {
-		const packages = await project.getPackages()
-		const packagesToBuild = packagesArgs ?? packages
-		const progress = new ProgressBar(
-			'Building [:bar] :current/:total (:name)',
-			{
-				total: packagesToBuild.length,
-				width: 40,
-				clear: true,
-				incomplete: ' '
-			}
-		)
+export const build = async ({ packages: packagesArgs }) => {
+	const packages = await project.getPackages()
+	const packagesToBuild = packagesArgs ?? packages
+	const progress = new prog('Building [:bar] :current/:total (:name)', {
+		curr: 1,
+		total: packagesToBuild.length,
+		width: 40,
+		clear: true,
+		incomplete: ' '
+	})
 
+	try {
 		for await (const name of packagesToBuild) {
 			await pre(name, progress)
 			await sleep(1000)
@@ -130,11 +118,8 @@ const build = async ({ packages: packagesArgs }) => {
 			progress.tick()
 		}
 	} catch (err) {
+		progress.terminate()
 		console.log(err)
 		process.exit(1)
 	}
-}
-
-module.exports = {
-	build
 }

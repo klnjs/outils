@@ -6,6 +6,8 @@
 !.github/**/*
 !.yarn/
 !.yarn/**/*
+!scripts/
+!scripts/**/*
 !packages/
 !packages/**/*
 
