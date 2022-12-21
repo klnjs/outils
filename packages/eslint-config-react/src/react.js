@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	plugins: ['react'],
 	rules: {
 		'react/boolean-prop-naming': 'off',

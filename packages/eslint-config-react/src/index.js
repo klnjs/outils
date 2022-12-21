@@ -1,5 +1,5 @@
-module.exports = {
-	extends: ['./react', './hooks'].map(require.resolve),
+export default {
+	extends: ['./react', './hooks'],
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2022,

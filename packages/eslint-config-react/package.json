@@ -1,5 +1,6 @@
 {
 	"name": "@klnjs/eslint-config-react",
+	"type": "module",
 	"main": "./index.js",
 	"peerDependencies": {
 		"eslint": ">=8.29.0",

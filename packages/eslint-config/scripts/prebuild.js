@@ -1,8 +1,8 @@
-const eslint = require('eslint/use-at-your-own-risk')
-const eslintImport = require('eslint-plugin-import')
-const eslintCommonConfig = require('../src/common')
-const eslintImportsConfig = require('../src/imports')
-const eslintPrettierRules = require('../src/internal/prettier')
+import eslint from 'eslint/use-at-your-own-risk'
+import eslintImport from 'eslint-plugin-import'
+import eslintCommonConfig from '../src/common.js'
+import eslintImportsConfig from '../src/imports.js'
+import eslintPrettierRules from '../src/internal/prettier.js'
 
 const rulesBuiltin = Array.from(eslint.builtinRules.entries())
 const rulesBuiltinImport = Object.entries(eslintImport.rules).map(

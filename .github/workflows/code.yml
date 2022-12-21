@@ -27,7 +27,7 @@ jobs:
       - name: Run Linter
         run: yarn run lint
 
-  prettier:
+  linting:
     name: Prettier
     runs-on: ubuntu-latest
     steps:
@@ -36,3 +36,14 @@ jobs:
 
       - name: Run Prettier
         run: yarn run code
+
+  build:
+    name: Build
+    needs: ['linting', 'linting']
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run Prettier
+        run: yarn run build

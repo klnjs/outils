@@ -1,5 +1,5 @@
-module.exports = {
-	extends: ['./common', './imports'].map(require.resolve),
+export default {
+	extends: ['./common', './imports'],
 	env: {
 		es6: true
 	},

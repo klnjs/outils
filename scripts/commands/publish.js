@@ -1,7 +1,7 @@
 import cp from 'child_process'
 import { simpleGit } from 'simple-git'
 import { post } from '../internal/slack.cjs'
-import * as project from '../internal/project.mjs'
+import * as project from '../internal/project.js'
 
 const git = simpleGit()
 

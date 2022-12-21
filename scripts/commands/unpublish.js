@@ -1,5 +1,5 @@
 import cp from 'child_process'
-import * as project from '../internal/project.mjs'
+import * as project from '../internal/project.js'
 
 export const unpublish = async ({
 	dry: dryArg,

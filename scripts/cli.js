@@ -1,8 +1,8 @@
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import { build } from './commands/build.mjs'
-import { publish, publishToSlack } from './commands/publish.mjs'
-import { unpublish } from './commands/unpublish.mjs'
+import { build } from './commands/build.js'
+import { publish, publishToSlack } from './commands/publish.js'
+import { unpublish } from './commands/unpublish.js'
 
 yargs(hideBin(process.argv))
 	.command(

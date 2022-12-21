@@ -1,5 +1,6 @@
 {
 	"name": "@klnjs/eslint-config",
+	"type": "module",
 	"main": "./index.js",
 	"devDependencies": {
 		"eslint": "^8.29.0",

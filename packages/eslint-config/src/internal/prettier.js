@@ -1,4 +1,4 @@
-module.exports = [
+export default [
 	'array-bracket-newline',
 	'array-bracket-spacing',
 	'array-element-newline',

@@ -1,5 +1,6 @@
 {
 	"name": "@klmjs/eslint-config-typescript",
+	"type": "module",
 	"main": "./index.js",
 	"peerDependencies": {
 		"@typescript-eslint/eslint-plugin": ">=8.29.0",

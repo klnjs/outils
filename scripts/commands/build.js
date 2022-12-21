@@ -5,9 +5,9 @@ import rmfr from 'rmfr'
 import prog from 'progress'
 import { pathExists } from 'find-up'
 
-import { sleep } from '../internal/sleep.mjs'
-import { readdir } from '../internal/readdir.mjs'
-import * as project from '../internal/project.mjs'
+import { sleep } from '../internal/sleep.js'
+import { readdir } from '../internal/readdir.js'
+import * as project from '../internal/project.js'
 
 const pre = async (name, progress) => {
 	const script = await project.getPackagePath(name, 'scripts', 'prebuild.js')
@@ -48,31 +48,15 @@ const transpile = async (name, folder, progress) => {
 	}
 }
 
-const packaging = async (nameArg, packages) => {
+const packaging = async (name) => {
 	const rootManifest = await project.getRootManifest()
-	const packageManifest = await project.getPackageManifest(nameArg)
+	const packageManifest = await project.getPackageManifest(name)
 	const packageRepository = {
 		...rootManifest.repository,
-		directory: `packages/${nameArg}`
+		directory: `packages/${name}`
 	}
-	const packageDependencies = packageManifest.dependencies
-		? Object.entries(packageManifest.dependencies).reduce((deps, entry) => {
-				const [name, version] = entry
-				const shouldVersion =
-					name.startsWith('@klnjs') &&
-					packages.includes(name.slice(4))
-				const nextVersion = shouldVersion
-					? rootManifest.version
-					: version
 
-				return {
-					...deps,
-					[name]: nextVersion
-				}
-		  }, {})
-		: undefined
-
-	const out = await project.getPackageBuildPath(nameArg, 'package.json')
+	const out = await project.getPackageBuildPath(name, 'package.json')
 	const manifest = JSON.stringify(
 		{
 			name: packageManifest.name,
@@ -86,8 +70,7 @@ const packaging = async (nameArg, packages) => {
 			// exports: './index.js',
 			repository: packageRepository,
 			peerDependencies: packageManifest.peerDependencies,
-			dependencies: packageDependencies,
-			sideEffects: false
+			dependencies: packageManifest.dependencies
 		},
 		null,
 		'\t'
@@ -110,16 +93,15 @@ export const build = async ({ packages: packagesArgs }) => {
 	try {
 		for await (const name of packagesToBuild) {
 			await pre(name, progress)
-			await sleep(1000)
+			await sleep(100)
 			await clean(name)
 			await transpile(name, 'src', progress)
-			await packaging(name, packages)
+			await packaging(name)
 
 			progress.tick()
 		}
 	} catch (err) {
 		progress.terminate()
-		console.log(err)
 		process.exit(1)
 	}
 }

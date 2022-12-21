@@ -1,4 +1,5 @@
 {
 	"name": "@klnjs/browserslist-config",
+	"type": "module",
 	"main": "./index.js"
 }
