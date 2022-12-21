@@ -2,14 +2,14 @@ import p from 'path'
 import fs from 'fs/promises'
 import cp from 'child_process'
 import rmfr from 'rmfr'
-import prog from 'progress'
+import Prog from 'progress'
 import { pathExists } from 'find-up'
 
 import { sleep } from '../internal/sleep.js'
 import { readdir } from '../internal/readdir.js'
 import * as project from '../internal/project.js'
 
-const pre = async (name, progress) => {
+const runPrebuild = async (name, progress) => {
 	const script = await project.getPackagePath(name, 'scripts', 'prebuild.mjs')
 	const exists = await pathExists(script)
 
@@ -19,18 +19,17 @@ const pre = async (name, progress) => {
 	}
 }
 
-const clean = async (name) => {
+const runCleanup = async (name) => {
 	const out = await project.getPackageBuildPath(name)
 
 	await rmfr(out)
 	await fs.mkdir(out, { recursive: true })
 }
 
-const transpile = async (name, folder, progress) => {
+const createDistribution = async (name, folder, progress) => {
 	const out = await project.getPackageBuildPath(name)
 	const path = await project.getPackagePath(name, folder)
 	const files = await readdir(path, {
-		exclude: (file) => file.match(/(spec|stories)\.js$/),
 		relative: true,
 		recursive: true,
 		encoding: 'utf8'
@@ -48,7 +47,7 @@ const transpile = async (name, folder, progress) => {
 	}
 }
 
-const packaging = async (name) => {
+const createManifest = async (name) => {
 	const rootManifest = await project.getRootManifest()
 	const packageManifest = await project.getPackageManifest(name)
 	const packageRepository = {
@@ -61,16 +60,16 @@ const packaging = async (name) => {
 		{
 			name: packageManifest.name,
 			type: packageManifest.type,
-			description: packageManifest.description,
 			author: rootManifest.author,
+			description: packageManifest.description,
 			version: rootManifest.version,
 			license: rootManifest.license,
-			main: './index.js',
+			main: packageManifest.main,
 			bin: packageManifest.bin,
-			// exports: './index.js',
+			exports: packageManifest.exports,
 			repository: packageRepository,
-			peerDependencies: packageManifest.peerDependencies,
-			dependencies: packageManifest.dependencies
+			dependencies: packageManifest.dependencies,
+			peerDependencies: packageManifest.peerDependencies
 		},
 		null,
 		'\t'
@@ -82,7 +81,7 @@ const packaging = async (name) => {
 export const build = async ({ packages: packagesArgs }) => {
 	const packages = await project.getPackages()
 	const packagesToBuild = packagesArgs ?? packages
-	const progress = new prog('Building [:bar] :current/:total (:name)', {
+	const progress = new Prog('Building [:bar] :current/:total (:name)', {
 		curr: 1,
 		total: packagesToBuild.length,
 		width: 40,
@@ -92,11 +91,11 @@ export const build = async ({ packages: packagesArgs }) => {
 
 	try {
 		for await (const name of packagesToBuild) {
-			await pre(name, progress)
+			await runPrebuild(name, progress)
+			await runCleanup(name)
 			await sleep(100)
-			await clean(name)
-			await transpile(name, 'src', progress)
-			await packaging(name)
+			await createDistribution(name, 'src', progress)
+			await createManifest(name)
 
 			progress.tick()
 		}

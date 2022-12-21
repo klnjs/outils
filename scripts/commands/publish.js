@@ -5,13 +5,13 @@ import * as project from '../internal/project.js'
 
 const git = simpleGit()
 
-const fetchPublished = (name) =>
-	JSON.parse(cp.execSync(`yarn npm info ${name} --json`))
-
 const fetchGit = async (options) => {
 	const message = await git.show({ '-s': null, ...options })
 	return message.trim()
 }
+
+const fetchPublished = (name) =>
+	JSON.parse(cp.execSync(`yarn npm info ${name} --json`))
 
 const fetchChangelog = async () => {
 	const log = await project.getRootChangelog()
