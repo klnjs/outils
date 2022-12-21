@@ -10,7 +10,7 @@ import { readdir } from '../internal/readdir.js'
 import * as project from '../internal/project.js'
 
 const pre = async (name, progress) => {
-	const script = await project.getPackagePath(name, 'scripts', 'prebuild.js')
+	const script = await project.getPackagePath(name, 'scripts', 'prebuild.mjs')
 	const exists = await pathExists(script)
 
 	if (exists) {

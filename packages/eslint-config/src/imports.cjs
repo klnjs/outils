@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	plugins: ['import'],
 	rules: {
 		'import/default': 'off',

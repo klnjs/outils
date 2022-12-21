@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	rules: {
 		'accessor-pairs': 'off',
 		'array-callback-return': [

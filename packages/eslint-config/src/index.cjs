@@ -1,5 +1,5 @@
-export default {
-	extends: ['./common', './imports'],
+module.exports = {
+	extends: ['./common.cjs', './imports.cjs'],
 	env: {
 		es6: true
 	},

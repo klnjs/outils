@@ -1,4 +1,4 @@
-export default [
+module.exports = [
 	'addEventListener',
 	'blur',
 	'close',
