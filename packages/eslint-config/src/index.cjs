@@ -1,5 +1,5 @@
 module.exports = {
-	extends: ['./common.cjs', './imports.cjs'],
+	extends: ['./common.cjs', './import.cjs'],
 	env: {
 		es6: true
 	},

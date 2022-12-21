@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	plugins: ['react'],
 	rules: {
 		'react/boolean-prop-naming': 'off',
@@ -12,6 +12,8 @@ export default {
 		'react/forbid-foreign-prop-types': 'error',
 		'react/forbid-prop-types': 'off',
 		'react/function-component-definition': 'off',
+		'react/hook-use-state': 'error',
+		'react/iframe-missing-sandbox': 'off',
 		'react/jsx-boolean-value': 'off',
 		'react/jsx-curly-brace-presence': [
 			'error',
@@ -36,14 +38,16 @@ export default {
 			}
 		],
 		'react/jsx-no-comment-textnodes': 'error',
+		'react/jsx-no-constructed-context-values': 'error',
 		'react/jsx-no-duplicate-props': [
 			'error',
 			{
 				ignoreCase: true
 			}
 		],
+		'react/jsx-no-leaked-render': 'error',
 		'react/jsx-no-literals': 'off',
-		'react/jsx-no-script-url': 'off',
+		'react/jsx-no-script-url': 'error',
 		'react/jsx-no-target-blank': [
 			'error',
 			{
@@ -66,17 +70,20 @@ export default {
 		'react/jsx-uses-vars': 'error',
 		'react/no-access-state-in-setstate': 'error',
 		'react/no-adjacent-inline-elements': 'off',
-		'react/no-array-index-key': 'off',
+		'react/no-array-index-key': 'error',
+		'react/no-arrow-function-lifecycle': 'error',
 		'react/no-children-prop': 'off',
-		'react/no-danger': 'warn',
 		'react/no-danger-with-children': 'error',
+		'react/no-danger': 'warn',
 		'react/no-deprecated': 'error',
 		'react/no-did-mount-set-state': 'off',
 		'react/no-did-update-set-state': 'error',
 		'react/no-direct-mutation-state': 'off',
 		'react/no-find-dom-node': 'error',
+		'react/no-invalid-html-attribute': 'error',
 		'react/no-is-mounted': 'error',
 		'react/no-multi-comp': 'off',
+		'react/no-namespace': 'error',
 		'react/no-redundant-should-component-update': 'error',
 		'react/no-render-return-value': 'error',
 		'react/no-set-state': 'off',
@@ -86,10 +93,13 @@ export default {
 		'react/no-unescaped-entities': 'error',
 		'react/no-unknown-property': 'error',
 		'react/no-unsafe': 'off',
+		'react/no-unstable-nested-components': 'error',
+		'react/no-unused-class-component-methods': 'error',
 		'react/no-unused-prop-types': 'error',
 		'react/no-unused-state': 'error',
 		'react/no-will-update-set-state': 'error',
-		'react/prefer-es6-class': 'off',
+		'react/prefer-es6-class': 'error',
+		'react/prefer-exact-props': 'error',
 		'react/prefer-read-only-props': 'off',
 		'react/prefer-stateless-function': 'off',
 		'react/prop-types': 'warn',

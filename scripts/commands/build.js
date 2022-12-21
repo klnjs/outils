@@ -5,21 +5,21 @@ import rmfr from 'rmfr'
 import Prog from 'progress'
 import { pathExists } from 'find-up'
 
-import { sleep } from '../internal/sleep.js'
 import { readdir } from '../internal/readdir.js'
 import * as project from '../internal/project.js'
 
 const runPrebuild = async (name, progress) => {
-	const script = await project.getPackagePath(name, 'scripts', 'prebuild.mjs')
+	progress.tick(0, { name: `${name} - prebuild` })
+	const script = await project.getPackagePath(name, 'scripts', 'prebuild.js')
 	const exists = await pathExists(script)
 
 	if (exists) {
-		progress.tick(0, { name: `${name} - prebuild` })
 		cp.execSync(`node ${script}`, { stdio: 'inherit' })
 	}
 }
 
-const runCleanup = async (name) => {
+const runCleanup = async (name, progress) => {
+	progress.tick(0, { name: `${name} - cleanup` })
 	const out = await project.getPackageBuildPath(name)
 
 	await rmfr(out)
@@ -27,6 +27,7 @@ const runCleanup = async (name) => {
 }
 
 const createDistribution = async (name, folder, progress) => {
+	progress.tick(0, { name: `${name} - build` })
 	const out = await project.getPackageBuildPath(name)
 	const path = await project.getPackagePath(name, folder)
 	const files = await readdir(path, {
@@ -40,14 +41,15 @@ const createDistribution = async (name, folder, progress) => {
 		const des = p.resolve(out, file)
 		const dir = p.dirname(des)
 
-		progress.tick(0, { name: `${name} - ${des}` })
+		progress.tick(0, { name: `${name} - build (${des})` })
 
 		await fs.mkdir(dir, { recursive: true })
 		await fs.copyFile(og, des)
 	}
 }
 
-const createManifest = async (name) => {
+const createManifest = async (name, progress) => {
+	progress.tick(0, { name: `${name} - manifest` })
 	const rootManifest = await project.getRootManifest()
 	const packageManifest = await project.getPackageManifest(name)
 	const packageRepository = {
@@ -82,7 +84,7 @@ export const build = async ({ packages: packagesArgs }) => {
 	const packages = await project.getPackages()
 	const packagesToBuild = packagesArgs ?? packages
 	const progress = new Prog('Building [:bar] :current/:total (:name)', {
-		curr: 1,
+		curr: 0,
 		total: packagesToBuild.length,
 		width: 40,
 		clear: true,
@@ -92,15 +94,15 @@ export const build = async ({ packages: packagesArgs }) => {
 	try {
 		for await (const name of packagesToBuild) {
 			await runPrebuild(name, progress)
-			await runCleanup(name)
-			await sleep(100)
+			await runCleanup(name, progress)
 			await createDistribution(name, 'src', progress)
-			await createManifest(name)
+			await createManifest(name, progress)
 
 			progress.tick()
 		}
 	} catch (err) {
 		progress.terminate()
+		console.log(err)
 		process.exit(1)
 	}
 }

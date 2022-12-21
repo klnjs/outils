@@ -1,5 +1,5 @@
-export default {
-	extends: ['./react', './react-hooks'],
+module.exports = {
+	extends: ['./react.cjs', './react-hooks.cjs'],
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2022,
