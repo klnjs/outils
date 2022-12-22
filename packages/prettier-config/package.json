@@ -1,6 +1,7 @@
 {
 	"name": "@klnjs/prettier-config",
-	"main": "./index.js",
+	"type": "module",
+	"main": "./index.cjs",
 	"peerDependencies": {
 		"prettier": ">=2.8.1"
 	}

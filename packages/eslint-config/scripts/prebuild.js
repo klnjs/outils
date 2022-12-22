@@ -1,25 +1,25 @@
-const eslint = require('eslint/use-at-your-own-risk')
-const eslintImport = require('eslint-plugin-import')
-const eslintCommonConfig = require('../src/common')
-const eslintImportsConfig = require('../src/imports')
-const eslintPrettierRules = require('../src/internal/prettier')
+import eslint from 'eslint/use-at-your-own-risk'
+import eslintImport from 'eslint-plugin-import'
+import eslintCommonConfig from '../src/common.cjs'
+import eslintImportConfig from '../src/import.cjs'
+import eslintPrettierRules from '../src/prettier.cjs'
 
-const rulesBuiltin = Array.from(eslint.builtinRules.entries())
-const rulesBuiltinImport = Object.entries(eslintImport.rules).map(
+const rulesFromESLint = Array.from(eslint.builtinRules.entries())
+const rulesFromESLintImport = Object.entries(eslintImport.rules).map(
 	([key, value]) => [`import/${key}`, value]
 )
 
-const rulesToExclude = eslintPrettierRules
-const rulesToImplement = [...rulesBuiltin, ...rulesBuiltinImport]
+const rulesToImplement = [...rulesFromESLint, ...rulesFromESLintImport]
 	.filter(
-		([key, rule]) => !rulesToExclude.includes(key) && !rule.meta.deprecated
+		([key, rule]) =>
+			!eslintPrettierRules.includes(key) && !rule.meta.deprecated
 	)
 	.map(([key]) => key)
 
 const rulesInConfig = Array.from(
 	Object.keys({
 		...eslintCommonConfig.rules,
-		...eslintImportsConfig.rules
+		...eslintImportConfig.rules
 	})
 )
 

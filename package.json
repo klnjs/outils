@@ -15,9 +15,9 @@
 		"packages/*"
 	],
 	"scripts": {
-		"repo": "yarn node ./scripts/cli",
 		"lint": "eslint ./packages --cache --max-warnings 0",
-		"code": "prettier ./packages --check"
+		"code": "prettier ./packages --check",
+		"build": "yarn node ./scripts/cli build"
 	},
 	"devDependencies": {
 		"@slack/webhook": "^6.1.0",
