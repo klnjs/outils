@@ -1,7 +1,7 @@
 {
 	"name": "frigg",
 	"type": "module",
-	"author": "klmjs",
+	"author": "rnkln",
 	"description": "Mono repo containing project configs",
 	"version": "1.0.0",
 	"license": "UNLICENSED",

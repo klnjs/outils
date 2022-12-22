@@ -22,7 +22,10 @@ module.exports = {
 				children: 'never'
 			}
 		],
-		'react/jsx-filename-extension': 'off',
+		'react/jsx-filename-extension': [
+			'error',
+			{ extensions: ['.jsx', '.tsx'] }
+		],
 		'react/jsx-fragments': ['error', 'syntax'],
 		'react/jsx-handler-names': 'off',
 		'react/jsx-key': 'off',

@@ -3,6 +3,6 @@
 	"type": "module",
 	"main": "./index.cjs",
 	"peerDependencies": {
-		"prettier": ">=2.8.1"
+		"prettier": "^2.8.1"
 	}
 }
