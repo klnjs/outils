@@ -29,4 +29,5 @@
 !CHANGELOG.md
 !package.json
 !README.md
+!renovate.json
 !yarn.lock
