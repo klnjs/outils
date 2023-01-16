@@ -20,7 +20,7 @@
 !.eslintrc.cjs
 !.gitignore
 !.gitlab-ci.yml
-!.nvmrc
+!.node-version
 !.pnp.cjs
 !.pnp.loader.mjs
 !.prettierignore
