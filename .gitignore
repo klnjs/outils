@@ -20,7 +20,7 @@
 !.eslintrc.cjs
 !.gitignore
 !.gitlab-ci.yml
-!.nvmrc
+!.node-version
 !.pnp.cjs
 !.pnp.loader.mjs
 !.prettierignore
@@ -29,4 +29,5 @@
 !CHANGELOG.md
 !package.json
 !README.md
+!renovate.json
 !yarn.lock
