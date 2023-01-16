@@ -10,8 +10,6 @@
 	  ":pinAllExceptPeerDependencies",
 	  "npm:unpublishSafe",
 	  "group:all",
-	  "group:monorepos",
-	  "group:recommended",
 	  "schedule:weekly",
 	  "workarounds:all"
 	],
@@ -19,14 +17,6 @@
 	"binarySource": "docker",
 	"commitMessagePrefix": "⬆️ Renovate - ",
 	"packageRules": [
-	  {
-		"description": "react-spectrum monorepo",
-		"matchSourceUrls": ["https://github.com/adobe/react-spectrum"]
-	  },
-	  {
-		"description": "visx monorepo",
-		"matchSourceUrls": ["https://github.com/airbnb/visx"]
-	  },
 	  {
 		"matchUpdateTypes": ["major"],
 		"enabled": false
