@@ -1,6 +1,35 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": [
-		"config:base"
+	  ":dependencyDashboard",
+	  ":semanticPrefixFixDepsChoreOthers",
+	  ":ignoreModulesAndTests",
+	  ":autodetectPinVersions",
+	  ":prHourlyLimit2",
+	  ":prConcurrentLimit10",
+	  ":pinAllExceptPeerDependencies",
+	  "npm:unpublishSafe",
+	  "group:all",
+	  "group:monorepos",
+	  "group:recommended",
+	  "schedule:weekly",
+	  "workarounds:all"
+	],
+	"description": "Renovate config base",
+	"binarySource": "docker",
+	"commitMessagePrefix": "⬆️ Renovate - ",
+	"packageRules": [
+	  {
+		"description": "react-spectrum monorepo",
+		"matchSourceUrls": ["https://github.com/adobe/react-spectrum"]
+	  },
+	  {
+		"description": "visx monorepo",
+		"matchSourceUrls": ["https://github.com/airbnb/visx"]
+	  },
+	  {
+		"matchUpdateTypes": ["major"],
+		"enabled": false
+	  }
 	]
-}
+  }

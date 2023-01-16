@@ -11,3 +11,4 @@
 !.eslintrc.js
 !.prettierrc.js
 !package.json
+!renovate.json
