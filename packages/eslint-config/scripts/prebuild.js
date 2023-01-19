@@ -1,44 +1,25 @@
 import eslint from 'eslint/use-at-your-own-risk'
 import eslintImport from 'eslint-plugin-import'
-import eslintCommonConfig from '../src/common.cjs'
-import eslintImportConfig from '../src/import.cjs'
-import eslintPrettierRules from '../src/prettier.cjs'
+import eslintConfig from '../src/index.cjs'
+import {
+	getRulesFromPlugin,
+	getNonIntersection,
+	logError
+} from '../../../scripts/internal/eslint.js'
 
-const rulesFromESLint = Array.from(eslint.builtinRules.entries())
-const rulesFromESLintImport = Object.entries(eslintImport.rules).map(
-	([key, value]) => [`import/${key}`, value]
-)
+const rulesFromConfig = Object.keys(eslintConfig.rules)
+const rulesFromEslint = getRulesFromPlugin({ rules: eslint.builtinRules })
+const rulesFromImport = getRulesFromPlugin(eslintImport, { prefix: 'import' })
+const rulesThatMustExists = [
+	...rulesFromEslint.map((rule) => rule.name),
+	...rulesFromImport.map((rule) => rule.name)
+]
 
-const rulesToImplement = [...rulesFromESLint, ...rulesFromESLintImport]
-	.filter(
-		([key, rule]) =>
-			!eslintPrettierRules.includes(key) && !rule.meta.deprecated
-	)
-	.map(([key]) => key)
+const rulesMissing = getNonIntersection(rulesThatMustExists, rulesFromConfig)
+const rulesUnknown = getNonIntersection(rulesFromConfig, rulesThatMustExists)
 
-const rulesInConfig = Array.from(
-	Object.keys({
-		...eslintCommonConfig.rules,
-		...eslintImportConfig.rules
-	})
-)
-
-const rulesMissing = rulesToImplement.filter(
-	(key) => !rulesInConfig.includes(key)
-)
-
-const rulesRedundant = rulesInConfig.filter(
-	(key) => !rulesToImplement.includes(key)
-)
-
-if (rulesMissing.length || rulesRedundant.length) {
-	console.group()
-	console.log('Missing Rules', rulesMissing)
-	console.groupEnd()
-
-	console.group()
-	console.log('Redundant Rules', rulesRedundant)
-	console.groupEnd()
-
+if (rulesMissing.length || rulesUnknown.length) {
+	logError('Missing', rulesMissing)
+	logError('Unknown', rulesUnknown)
 	process.exit(1)
 }

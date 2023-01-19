@@ -1,46 +1,27 @@
 import eslintReact from 'eslint-plugin-react'
 import eslintReactHooks from 'eslint-plugin-react-hooks'
-import eslintReactConfig from '../src/react.cjs'
-import eslintReactHooksConfig from '../src/react-hooks.cjs'
-import eslintReactPrettierRules from '../src/react-prettier.cjs'
+import eslintConfig from '../src/index.cjs'
+import {
+	getRulesFromPlugin,
+	getNonIntersection,
+	logError
+} from '../../../scripts/internal/eslint.js'
 
-const rulesFromESLintReact = Object.entries(eslintReact.rules).map(
-	([key, value]) => [`react/${key}`, value]
-)
-const rulesFromESLintReactHooks = Object.entries(eslintReactHooks.rules).map(
-	([key, value]) => [`react-hooks/${key}`, value]
-)
+const rulesFromConfig = Object.keys(eslintConfig.rules)
+const rulesFromReact = getRulesFromPlugin(eslintReact, { prefix: 'react' })
+const rulesFromReactHooks = getRulesFromPlugin(eslintReactHooks, {
+	prefix: 'react-hooks'
+})
+const rulesThatMustExists = [
+	...rulesFromReact.map((rule) => rule.name),
+	...rulesFromReactHooks.map((rule) => rule.name)
+]
 
-const rulesToImplement = [...rulesFromESLintReact, ...rulesFromESLintReactHooks]
-	.filter(
-		([key, rule]) =>
-			!eslintReactPrettierRules.includes(key) && !rule.meta.deprecated
-	)
-	.map(([key]) => key)
+const rulesMissing = getNonIntersection(rulesThatMustExists, rulesFromConfig)
+const rulesUnknown = getNonIntersection(rulesFromConfig, rulesThatMustExists)
 
-const rulesInConfig = Array.from(
-	Object.keys({
-		...eslintReactConfig.rules,
-		...eslintReactHooksConfig.rules
-	})
-)
-
-const rulesMissing = rulesToImplement.filter(
-	(key) => !rulesInConfig.includes(key)
-)
-
-const rulesRedundant = rulesInConfig.filter(
-	(key) => !rulesToImplement.includes(key)
-)
-
-if (rulesMissing.length || rulesRedundant.length) {
-	console.group()
-	console.log('Missing Rules', rulesMissing)
-	console.groupEnd()
-
-	console.group()
-	console.log('Redundant Rules', rulesRedundant)
-	console.groupEnd()
-
+if (rulesMissing.length || rulesUnknown.length) {
+	logError('Missing', rulesMissing)
+	logError('Unknown', rulesUnknown)
 	process.exit(1)
 }
