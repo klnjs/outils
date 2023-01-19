@@ -4,7 +4,6 @@ module.exports = {
 		node: true
 	},
 	rules: {
-		'no-console': 'off',
-		'import/no-unresolved': 'off'
+		'no-console': 'off'
 	}
 }
