@@ -31,6 +31,7 @@ export const sync = async ({ packages: packagesArgs }) => {
 					exports: packageManifest.exports,
 					files: packageManifest.files,
 					dependencies: packageManifest.dependencies,
+					devDependencies: packageManifest.devDependencies,
 					peerDependencies: packageManifest.peerDependencies
 				},
 				null,
