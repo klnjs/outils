@@ -1,5 +1,6 @@
+// eslint-disable-next-line import/no-unresolved
+const eslintConfig = require('@klnjs/eslint-config')
 const eslintTypescript = require('@typescript-eslint/eslint-plugin')
-const eslintCommon = require('../../eslint-config/src/index.cjs')
 const eslintShared = Object.entries(eslintTypescript.rules).reduce(
 	(acc, [key, rule]) => {
 		const base = rule.meta.docs.extendsBaseRule
@@ -13,7 +14,7 @@ const eslintShared = Object.entries(eslintTypescript.rules).reduce(
 			return {
 				...acc,
 				[name]: 'off',
-				[`@typescript-eslint/${key}`]: eslintCommon.rules[name]
+				[`@typescript-eslint/${key}`]: eslintConfig.rules[name]
 			}
 		}
 
@@ -25,6 +26,21 @@ const eslintShared = Object.entries(eslintTypescript.rules).reduce(
 module.exports = {
 	plugins: ['@typescript-eslint'],
 	parser: '@typescript-eslint/parser',
+	settings: {
+		'import/parsers': {
+			'@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts']
+		},
+		'import/resolver': {
+			node: {
+				extensions: ['.mjs', '.js', '.json', '.ts', '.d.ts']
+			}
+		},
+		'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts'],
+		'import/external-module-folders': [
+			'node_modules',
+			'node_modules/@types'
+		]
+	},
 	rules: {
 		...eslintShared,
 		'@typescript-eslint/adjacent-overload-signatures': 'error',
@@ -39,7 +55,12 @@ module.exports = {
 		'@typescript-eslint/consistent-type-assertions': 'error',
 		'@typescript-eslint/consistent-type-definitions': ['error', 'type'],
 		'@typescript-eslint/consistent-type-exports': 'error',
-		'@typescript-eslint/consistent-type-imports': 'error',
+		'@typescript-eslint/consistent-type-imports': [
+			'error',
+			{
+				fixStyle: 'inline-type-imports'
+			}
+		],
 		'@typescript-eslint/explicit-function-return-type': 'off',
 		'@typescript-eslint/explicit-member-accessibility': 'off',
 		'@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -132,30 +153,33 @@ module.exports = {
 		{
 			files: ['*.ts', '*.tsx'],
 			rules: {
-				// The following rules are enabled in the base config, but are already checked (more thoroughly) by the TypeScript compiler
+				// The following builtin rules, are already checked (more thoroughly) by the TypeScript compiler
 				// Some of the rules also fail in TypeScript files, for example: https://github.com/typescript-eslint/typescript-eslint/issues/662#issuecomment-507081586
 				// Rules are inspired by: https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/eslint-recommended.ts
-				'constructor-super': 'off',
-				'getter-return': 'off',
-				'no-const-assign': 'off',
-				'no-dupe-args': 'off',
-				'no-dupe-class-members': 'off',
-				'no-dupe-keys': 'off',
-				'no-func-assign': 'off',
-				'no-import-assign': 'off',
-				'no-new-symbol': 'off',
-				'no-obj-calls': 'off',
-				'no-redeclare': 'off',
-				'no-setter-return': 'off',
-				'no-this-before-super': 'off',
-				'no-undef': 'off',
-				'no-unreachable': 'off',
-				'no-unsafe-negation': 'off',
-				'valid-typeof': 'off',
+				'constructor-super': 'off', // ts(2335) & ts(2377)
+				'getter-return': 'off', // ts(2378)
+				'no-const-assign': 'off', // ts(2588)
+				'no-dupe-args': 'off', // ts(2300)
+				'no-dupe-class-members': 'off', // ts(2393) & ts(2300)
+				'no-dupe-keys': 'off', // ts(1117)
+				'no-func-assign': 'off', // ts(2539)
+				'no-import-assign': 'off', // ts(2539) & ts(2540)
+				'no-new-symbol': 'off', // ts(7009)
+				'no-obj-calls': 'off', // ts(2349)
+				'no-redeclare': 'off', // ts(2451)
+				'no-setter-return': 'off', // ts(2408)
+				'no-this-before-super': 'off', // ts(2376)
+				'no-undef': 'off', // ts(2304)
+				'no-unreachable': 'off', // ts(7027)
+				'no-unsafe-negation': 'off', // ts(2365) & ts(2360) & ts(2358)
+				'valid-typeof': 'off', // ts(2367)
 
-				// The following rules are enabled in the base config, but are recommended to be disabled within TypeScript projects
+				// The following import rules are recommended to be disabled within TypeScript projects
 				// See: https://github.com/typescript-eslint/typescript-eslint/blob/13583e65f5973da2a7ae8384493c5e00014db51b/docs/linting/TROUBLESHOOTING.md#eslint-plugin-import
+				'import/consistent-type-specifier-style': 'off',
+				'import/default': 'off',
 				'import/named': 'off',
+				'import/namespace': 'off',
 				'import/no-named-as-default-member': 'off',
 				'import/no-unresolved': 'off'
 			}

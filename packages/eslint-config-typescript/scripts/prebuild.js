@@ -1,5 +1,5 @@
 import eslintTypescript from '@typescript-eslint/eslint-plugin'
-import eslintConfig from '../src/index.cjs'
+import eslintConfig from '../index.cjs'
 import {
 	getRulesFromPlugin,
 	getNonIntersection,

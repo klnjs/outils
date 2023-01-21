@@ -1,6 +1,6 @@
 import eslintReact from 'eslint-plugin-react'
 import eslintReactHooks from 'eslint-plugin-react-hooks'
-import eslintConfig from '../src/index.cjs'
+import eslintConfig from '../index.cjs'
 import {
 	getRulesFromPlugin,
 	getNonIntersection,

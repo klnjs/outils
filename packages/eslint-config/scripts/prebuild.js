@@ -1,6 +1,8 @@
+// https://github.com/browserify/resolve/pull/224
+// eslint-disable-next-line import/no-unresolved
 import eslint from 'eslint/use-at-your-own-risk'
 import eslintImport from 'eslint-plugin-import'
-import eslintConfig from '../src/index.cjs'
+import eslintConfig from '../index.cjs'
 import {
 	getRulesFromPlugin,
 	getNonIntersection,

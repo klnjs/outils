@@ -8,6 +8,7 @@ module.exports = {
 		}
 	},
 	rules: {
+		// react rules
 		'react/boolean-prop-naming': 'off',
 		'react/button-has-type': 'off',
 		'react/default-props-match-prop-types': 'off',
@@ -70,7 +71,6 @@ module.exports = {
 		'react/jsx-pascal-case': ['error', { allowAllCaps: true, ignore: [] }],
 		'react/jsx-props-no-multi-spaces': 'off',
 		'react/jsx-props-no-spreading': 'off',
-		'react/jsx-sort-default-props': 'off',
 		'react/jsx-sort-props': 'off',
 		'react/jsx-tag-spacing': 'off',
 		'react/jsx-uses-react': 'off',
@@ -92,6 +92,7 @@ module.exports = {
 		'react/no-is-mounted': 'error',
 		'react/no-multi-comp': 'off',
 		'react/no-namespace': 'error',
+		'react/no-object-type-as-default-prop': 'error',
 		'react/no-redundant-should-component-update': 'error',
 		'react/no-render-return-value': 'error',
 		'react/no-set-state': 'off',
@@ -110,19 +111,21 @@ module.exports = {
 		'react/prefer-exact-props': 'error',
 		'react/prefer-read-only-props': 'off',
 		'react/prefer-stateless-function': 'off',
-		'react/prop-types': 'warn',
+		'react/prop-types': 'error',
 		'react/react-in-jsx-scope': 'off',
 		'react/require-default-props': 'off',
 		'react/require-optimization': 'off',
 		'react/require-render-return': 'error',
 		'react/self-closing-comp': 'error',
 		'react/sort-comp': 'off',
+		'react/sort-default-props': 'off',
 		'react/sort-prop-types': 'off',
 		'react/state-in-constructor': 'off',
 		'react/static-property-placement': 'off',
 		'react/style-prop-object': 'error',
 		'react/void-dom-elements-no-children': 'error',
 
+		// react-hooks rules
 		'react-hooks/exhaustive-deps': 'error',
 		'react-hooks/rules-of-hooks': 'error'
 	}

@@ -1,5 +1,5 @@
 module.exports = {
-	extends: ['import'],
+	plugins: ['import'],
 	env: {
 		es6: true
 	},
@@ -8,6 +8,7 @@ module.exports = {
 		ecmaVersion: 2022
 	},
 	rules: {
+		// builtin rules
 		'accessor-pairs': 'off',
 		'array-callback-return': [
 			'error',
@@ -307,6 +308,8 @@ module.exports = {
 		'vars-on-top': 'error',
 		yoda: 'error',
 
+		// import rules
+		'import/consistent-type-specifier-style': 'error',
 		'import/default': 'off',
 		'import/dynamic-import-chunkname': 'off',
 		'import/export': 'error',
@@ -327,12 +330,13 @@ module.exports = {
 		'import/no-deprecated': 'off',
 		'import/no-duplicates': 'error',
 		'import/no-dynamic-require': 'error',
+		'import/no-empty-named-blocks': 'error',
 		'import/no-extraneous-dependencies': 'off',
 		'import/no-import-module-exports': 'off',
 		'import/no-internal-modules': 'off',
 		'import/no-mutable-exports': 'error',
-		'import/no-named-as-default': 'error',
 		'import/no-named-as-default-member': 'error',
+		'import/no-named-as-default': 'error',
 		'import/no-named-default': 'error',
 		'import/no-named-export': 'off',
 		'import/no-namespace': 'off',

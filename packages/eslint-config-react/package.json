@@ -1,10 +1,18 @@
 {
 	"name": "@klnjs/eslint-config-react",
 	"type": "module",
+	"author": "Rune Klein (@rnkln)",
+	"version": "1.0.0",
+	"license": "MIT",
 	"main": "./index.cjs",
-	"devDependencies": {
-		"eslint-plugin-react": "^7.31.11",
-		"eslint-plugin-react-hooks": "^4.6.0"
+	"exports": {
+		".": "./index.cjs",
+		"./package.json": "./package.json"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:klnjs/frigg.git",
+		"directory": "packages/eslint-config-react"
 	},
 	"peerDependencies": {
 		"eslint": "^8.29.0",

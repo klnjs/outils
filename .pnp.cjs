@@ -40,7 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
       ["@klnjs/browserslist-config", ["workspace:packages/browserslist-config"]],\
-      ["@klnjs/eslint-config", ["workspace:packages/eslint-config"]],\
+      ["@klnjs/eslint-config", ["virtual:ffb31c068152305ed8c0da2e7187dad4c17c2e3985286e1a5358e428c7c44ffefa873e300000b1b98e3d4dc80f385b61116508d831fe2ce617d92abe3b3c431c#workspace:packages/eslint-config", "workspace:packages/eslint-config"]],\
       ["@klnjs/eslint-config-react", ["workspace:packages/eslint-config-react"]],\
       ["@klnjs/eslint-config-typescript", ["workspace:packages/eslint-config-typescript"]],\
       ["@klnjs/prettier-config", ["workspace:packages/prettier-config"]],\
@@ -124,6 +124,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@klnjs/eslint-config", [\
+        ["virtual:ffb31c068152305ed8c0da2e7187dad4c17c2e3985286e1a5358e428c7c44ffefa873e300000b1b98e3d4dc80f385b61116508d831fe2ce617d92abe3b3c431c#workspace:packages/eslint-config", {\
+          "packageLocation": "./.yarn/__virtual__/@klnjs-eslint-config-virtual-e4a551119a/1/packages/eslint-config/",\
+          "packageDependencies": [\
+            ["@klnjs/eslint-config", "virtual:ffb31c068152305ed8c0da2e7187dad4c17c2e3985286e1a5358e428c7c44ffefa873e300000b1b98e3d4dc80f385b61116508d831fe2ce617d92abe3b3c431c#workspace:packages/eslint-config"],\
+            ["@types/eslint", null],\
+            ["@types/eslint-plugin-import", null],\
+            ["eslint", "npm:8.32.0"],\
+            ["eslint-plugin-import", "virtual:2651f351acafb86897c5fd8136669b7a3ca9c97ce75777611c5cb3cf67d334f9da9141b3341b27eaa3238652665c41126f57ee0bafcbe8398b4ec29cdeafbf15#npm:2.27.5"]\
+          ],\
+          "packagePeers": [\
+            "@types/eslint-plugin-import",\
+            "@types/eslint"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["workspace:packages/eslint-config", {\
           "packageLocation": "./packages/eslint-config/",\
           "packageDependencies": [\
@@ -150,6 +165,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/eslint-config-typescript/",\
           "packageDependencies": [\
             ["@klnjs/eslint-config-typescript", "workspace:packages/eslint-config-typescript"],\
+            ["@klnjs/eslint-config", "virtual:ffb31c068152305ed8c0da2e7187dad4c17c2e3985286e1a5358e428c7c44ffefa873e300000b1b98e3d4dc80f385b61116508d831fe2ce617d92abe3b3c431c#workspace:packages/eslint-config"],\
             ["@typescript-eslint/eslint-plugin", "virtual:ffb31c068152305ed8c0da2e7187dad4c17c2e3985286e1a5358e428c7c44ffefa873e300000b1b98e3d4dc80f385b61116508d831fe2ce617d92abe3b3c431c#npm:5.48.2"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=d73830"]\
           ],\
