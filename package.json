@@ -17,7 +17,8 @@
 	"scripts": {
 		"sync": "yarn node ./scripts/cli sync",
 		"bump": "yarn node ./scripts/cli bump",
-		"veri": "yarn node ./scripts/cli veri",
+		"verify": "yarn node ./scripts/cli verify",
+		"publish": "yarn node ./scripts/cli publish",
 		"lint": "eslint ./packages --cache --max-warnings 0",
 		"code": "prettier ./packages --write --cache --cache-location=./.prettiercache"
 	},
