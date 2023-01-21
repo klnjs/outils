@@ -1,4 +1,4 @@
-export const logError = (category, rules = []) => {
+export const logRules = (category, rules = []) => {
 	if (rules.length > 0) {
 		console.group()
 		console.log(category, rules)
