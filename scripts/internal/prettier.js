@@ -2,6 +2,7 @@ export const getOptions = (
 	prettier,
 	{
 		exclude,
+		excludeOptions = ['parser', 'plugins', 'pluginSearchDirs'],
 		excludeDeprecated = true,
 		excludeCategories = ['Special', 'HTML']
 	} = {}
@@ -12,6 +13,7 @@ export const getOptions = (
 		// Filter out deprecated and categories rules
 		if (
 			(exclude && exclude(opt)) ||
+			(excludeOptions && excludeOptions.includes(opt.name)) ||
 			(excludeCategories && excludeCategories.includes(opt.category)) ||
 			(excludeDeprecated && opt.deprecated)
 		) {
