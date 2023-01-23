@@ -51,7 +51,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@klnjs/browserslist-config@workspace:packages/browserslist-config"
   dependencies:
-    browserslist: ^4.21.4
+    browserslist: 4.21.4
   languageName: unknown
   linkType: soft
 
@@ -59,8 +59,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@klnjs/eslint-config-react@workspace:packages/eslint-config-react"
   dependencies:
-    eslint-plugin-react: ^7.31.11
-    eslint-plugin-react-hooks: ^4.6.0
+    eslint-plugin-react: 7.32.1
+    eslint-plugin-react-hooks: 4.6.0
   peerDependencies:
     eslint: ^8.29.0
     eslint-plugin-react: ^7.31.11
@@ -73,8 +73,8 @@ __metadata:
   resolution: "@klnjs/eslint-config-typescript@workspace:packages/eslint-config-typescript"
   dependencies:
     "@klnjs/eslint-config": "workspace:^"
-    "@typescript-eslint/eslint-plugin": ^5.47.0
-    typescript: ^4.9.4
+    "@typescript-eslint/eslint-plugin": 5.48.2
+    typescript: 4.9.4
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ^5.47.0
     "@typescript-eslint/parser": ^5.47.0
@@ -87,8 +87,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@klnjs/eslint-config@workspace:packages/eslint-config"
   dependencies:
-    eslint: ^8.29.0
-    eslint-plugin-import: ^2.26.0
+    eslint: 8.32.0
+    eslint-plugin-import: 2.27.5
   peerDependencies:
     eslint: ^8.29.0
     eslint-plugin-import: ^2.26.0
@@ -99,7 +99,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@klnjs/prettier-config@workspace:packages/prettier-config"
   dependencies:
-    prettier: ^2.8.1
+    prettier: 2.8.3
   peerDependencies:
     prettier: ^2.8.1
   languageName: unknown
@@ -153,7 +153,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.47.0":
+"@typescript-eslint/eslint-plugin@npm:5.48.2":
   version: 5.48.2
   resolution: "@typescript-eslint/eslint-plugin@npm:5.48.2"
   dependencies:
@@ -440,7 +440,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist@npm:^4.21.4":
+"browserslist@npm:4.21.4":
   version: 4.21.4
   resolution: "browserslist@npm:4.21.4"
   dependencies:
@@ -805,7 +805,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:^2.26.0":
+"eslint-plugin-import@npm:2.27.5":
   version: 2.27.5
   resolution: "eslint-plugin-import@npm:2.27.5"
   dependencies:
@@ -830,7 +830,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:^4.6.0":
+"eslint-plugin-react-hooks@npm:4.6.0":
   version: 4.6.0
   resolution: "eslint-plugin-react-hooks@npm:4.6.0"
   peerDependencies:
@@ -839,7 +839,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react@npm:^7.31.11":
+"eslint-plugin-react@npm:7.32.1":
   version: 7.32.1
   resolution: "eslint-plugin-react@npm:7.32.1"
   dependencies:
@@ -909,7 +909,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.29.0":
+"eslint@npm:8.32.0":
   version: 8.32.0
   resolution: "eslint@npm:8.32.0"
   dependencies:
@@ -1090,6 +1090,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"find-up@npm:6.3.0":
+  version: 6.3.0
+  resolution: "find-up@npm:6.3.0"
+  dependencies:
+    locate-path: ^7.1.0
+    path-exists: ^5.0.0
+  checksum: 9a21b7f9244a420e54c6df95b4f6fc3941efd3c3e5476f8274eb452f6a85706e7a6a90de71353ee4f091fcb4593271a6f92810a324ec542650398f928783c280
+  languageName: node
+  linkType: hard
+
 "find-up@npm:^5.0.0":
   version: 5.0.0
   resolution: "find-up@npm:5.0.0"
@@ -1097,16 +1107,6 @@ __metadata:
     locate-path: ^6.0.0
     path-exists: ^4.0.0
   checksum: 07955e357348f34660bde7920783204ff5a26ac2cafcaa28bace494027158a97b9f56faaf2d89a6106211a8174db650dd9f503f9c0d526b1202d5554a00b9095
-  languageName: node
-  linkType: hard
-
-"find-up@npm:^6.3.0":
-  version: 6.3.0
-  resolution: "find-up@npm:6.3.0"
-  dependencies:
-    locate-path: ^7.1.0
-    path-exists: ^5.0.0
-  checksum: 9a21b7f9244a420e54c6df95b4f6fc3941efd3c3e5476f8274eb452f6a85706e7a6a90de71353ee4f091fcb4593271a6f92810a324ec542650398f928783c280
   languageName: node
   linkType: hard
 
@@ -1140,12 +1140,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "frigg@workspace:."
   dependencies:
-    eslint: ^8.29.0
-    eslint-plugin-import: ^2.26.0
-    find-up: ^6.3.0
-    inquirer: ^9.1.4
-    prettier: ^2.8.1
-    yargs: ^17.6.2
+    eslint: 8.32.0
+    eslint-plugin-import: 2.27.5
+    find-up: 6.3.0
+    inquirer: 9.1.4
+    prettier: 2.8.3
+    yargs: 17.6.2
   languageName: unknown
   linkType: soft
 
@@ -1402,7 +1402,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inquirer@npm:^9.1.4":
+"inquirer@npm:9.1.4":
   version: 9.1.4
   resolution: "inquirer@npm:9.1.4"
   dependencies:
@@ -2078,7 +2078,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.8.1":
+"prettier@npm:2.8.3":
   version: 2.8.3
   resolution: "prettier@npm:2.8.3"
   bin:
@@ -2573,7 +2573,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.9.4":
+"typescript@npm:4.9.4":
   version: 4.9.4
   resolution: "typescript@npm:4.9.4"
   bin:
@@ -2583,13 +2583,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.9.4#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.9.4#~builtin<compat/typescript>":
   version: 4.9.4
-  resolution: "typescript@patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=d73830"
+  resolution: "typescript@patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 37f6e2c3c5e2aa5934b85b0fddbf32eeac8b1bacf3a5b51d01946936d03f5377fe86255d4e5a4ae628fd0cd553386355ad362c57f13b4635064400f3e8e05b9d
+  checksum: 1caaea6cb7f813e64345190fddc4e6c924d0b698ab81189b503763c4a18f7f5501c69362979d36e19c042d89d936443e768a78b0675690b35eb663d19e0eae71
   languageName: node
   linkType: hard
 
@@ -2739,7 +2739,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:^17.6.2":
+"yargs@npm:17.6.2":
   version: 17.6.2
   resolution: "yargs@npm:17.6.2"
   dependencies:
