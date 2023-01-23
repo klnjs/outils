@@ -8,7 +8,7 @@
 !packages/**/*
 
 # Except these files
-!.eslintrc.js
-!.prettierrc.js
+!.eslintrc.cjs
+!.prettierrc.cjs
 !package.json
 !renovate.json

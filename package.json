@@ -1,10 +1,10 @@
 {
 	"name": "frigg",
 	"type": "module",
-	"author": "klmjs",
+	"author": "Rune Klein (@rnkln)",
 	"description": "Mono repo containing project configs",
-	"version": "1.0.0",
-	"license": "UNLICENSED",
+	"version": "0.0.2",
+	"license": "MIT",
 	"private": true,
 	"packageManager": "yarn@3.3.1",
 	"repository": {
@@ -15,19 +15,19 @@
 		"packages/*"
 	],
 	"scripts": {
-		"lint": "eslint ./packages --cache --max-warnings 0",
-		"code": "prettier ./packages --check",
-		"build": "yarn node ./scripts/cli build"
+		"sync": "yarn node ./scripts/cli sync",
+		"bump": "yarn node ./scripts/cli bump",
+		"verify": "yarn node ./scripts/cli verify",
+		"publish": "yarn node ./scripts/cli publish",
+		"lint": "eslint ./packages --max-warnings 0 --cache --cache-location=./.eslintcache",
+		"code": "prettier ./packages --check --cache --cache-location=./.prettiercache"
 	},
 	"devDependencies": {
-		"@slack/webhook": "6.1.0",
-		"eslint": "8.30.0",
-		"eslint-plugin-import": "2.26.0",
-		"find-up": "6.3.0",
-		"prettier": "2.8.1",
-		"progress": "2.0.3",
-		"rmfr": "2.0.0",
-		"simple-git": "3.15.1",
-		"yargs": "17.6.2"
+		"eslint": "^8.29.0",
+		"eslint-plugin-import": "^2.26.0",
+		"find-up": "^6.3.0",
+		"inquirer": "^9.1.4",
+		"prettier": "^2.8.1",
+		"yargs": "^17.6.2"
 	}
 }

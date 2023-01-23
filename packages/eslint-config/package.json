@@ -1,13 +1,28 @@
 {
 	"name": "@klnjs/eslint-config",
 	"type": "module",
+	"author": "Rune Klein (@rnkln)",
+	"version": "0.0.2",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:klnjs/frigg.git",
+		"directory": "packages/eslint-config"
+	},
 	"main": "./index.cjs",
+	"exports": {
+		".": "./index.cjs",
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"index.cjs"
+	],
 	"devDependencies": {
 		"eslint": "8.30.0",
 		"eslint-plugin-import": "2.26.0"
 	},
 	"peerDependencies": {
-		"eslint": ">=8.29.0",
-		"eslint-plugin-import": ">=2.26.0"
+		"eslint": "^8.29.0",
+		"eslint-plugin-import": "^2.26.0"
 	}
 }

@@ -1,5 +1,23 @@
 {
 	"name": "@klnjs/browserslist-config",
 	"type": "module",
-	"main": "./index.js"
+	"author": "Rune Klein (@rnkln)",
+	"version": "0.0.2",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:klnjs/frigg.git",
+		"directory": "packages/browserslist-config"
+	},
+	"main": "./index.cjs",
+	"exports": {
+		".": "./index.cjs",
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"index.cjs"
+	],
+	"devDependencies": {
+		"browserslist": "^4.21.4"
+	}
 }

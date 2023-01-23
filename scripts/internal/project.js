@@ -13,17 +13,9 @@ export const getRootPath = async (...paths) => {
 }
 
 export const getRootManifest = async () => {
-	const manifest = await getRootPath('package.json')
+	const manifest = await findUp('package.json')
 	const contents = await fs.readFile(manifest, 'utf8')
 	const parsed = JSON.parse(contents)
-
-	return parsed
-}
-
-export const getRootChangelog = async () => {
-	const changelog = await getRootPath('CHANGELOG.md')
-	const contents = await fs.readFile(changelog, 'utf8')
-	const parsed = contents.toString()
 
 	return parsed
 }
@@ -58,6 +50,3 @@ export const getPackageManifest = async (pid) => {
 
 	return parsed
 }
-
-export const getPackageBuildPath = async (pid, ...paths) =>
-	getRootPath('build', pid, ...paths)

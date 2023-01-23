@@ -1,10 +1,9 @@
 module.exports = {
-	extends: './packages/eslint-config/src/index.cjs',
+	extends: './packages/eslint-config/index.cjs',
 	env: {
 		node: true
 	},
 	rules: {
-		'no-console': 'off',
-		'import/no-unresolved': 'off'
+		'no-console': 'off'
 	}
 }

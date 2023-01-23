@@ -1,11 +1,33 @@
 {
-	"name": "@klmjs/eslint-config-typescript",
+	"name": "@klnjs/eslint-config-typescript",
 	"type": "module",
-	"main": "./index.js",
+	"author": "Rune Klein (@rnkln)",
+	"version": "0.0.2",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:klnjs/frigg.git",
+		"directory": "packages/eslint-config-typescript"
+	},
+	"main": "./index.cjs",
+	"exports": {
+		".": "./index.cjs",
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"index.cjs"
+	],
+	"dependencies": {
+		"@klnjs/eslint-config": "workspace:^"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^5.47.0",
+		"typescript": "^4.9.4"
+	},
 	"peerDependencies": {
-		"@typescript-eslint/eslint-plugin": ">=8.29.0",
-		"@typescript-eslint/parser": ">=8.29.0",
-		"eslint": ">=8.29.0",
-		"typescript": ">=4.9.4"
+		"@typescript-eslint/eslint-plugin": "^5.47.0",
+		"@typescript-eslint/parser": "^5.47.0",
+		"eslint": "^8.29.0",
+		"typescript": "^4.9.4"
 	}
 }
