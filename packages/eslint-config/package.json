@@ -3,8 +3,8 @@
 	"type": "module",
 	"main": "./index.cjs",
 	"devDependencies": {
-		"eslint": "^8.29.0",
-		"eslint-plugin-import": "^2.26.0"
+		"eslint": "8.30.0",
+		"eslint-plugin-import": "2.26.0"
 	},
 	"peerDependencies": {
 		"eslint": ">=8.29.0",
