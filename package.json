@@ -23,11 +23,11 @@
 		"code": "prettier ./packages --check --cache --cache-location=./.prettiercache"
 	},
 	"devDependencies": {
-		"eslint": "^8.29.0",
-		"eslint-plugin-import": "^2.26.0",
-		"find-up": "^6.3.0",
-		"inquirer": "^9.1.4",
-		"prettier": "^2.8.1",
-		"yargs": "^17.6.2"
+		"eslint": "8.32.0",
+		"eslint-plugin-import": "2.27.5",
+		"find-up": "6.3.0",
+		"inquirer": "9.1.4",
+		"prettier": "2.8.3",
+		"yargs": "17.6.2"
 	}
 }
