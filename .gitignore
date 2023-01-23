@@ -26,6 +26,7 @@
 !.prettierignore
 !.prettierrc.cjs
 !.yarnrc.yml
+!LICENSE
 !CHANGELOG.md
 !package.json
 !README.md
