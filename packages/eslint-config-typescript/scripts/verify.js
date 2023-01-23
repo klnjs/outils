@@ -1,10 +1,7 @@
 import eslintTypescript from '@typescript-eslint/eslint-plugin'
 import eslintConfig from '../index.cjs'
-import {
-	getRulesFromPlugin,
-	getNonIntersection,
-	logRules
-} from '../../../scripts/internal/eslint.js'
+import { xor, log } from '../../../scripts/internal/helpers.js'
+import { getRulesFromPlugin } from '../../../scripts/internal/eslint.js'
 
 const rulesFromConfig = Object.keys(eslintConfig.rules)
 const rulesFromTypescript = getRulesFromPlugin(eslintTypescript, {
@@ -23,15 +20,15 @@ const rulesThatMustExists = [
 	...rulesFromTypescript.map((rule) => rule.name)
 ]
 
-const rulesMissing = getNonIntersection(rulesThatMustExists, rulesFromConfig)
-const rulesUnknown = getNonIntersection(rulesFromConfig, rulesThatMustExists)
+const rulesMissing = xor(rulesThatMustExists, rulesFromConfig)
+const rulesUnknown = xor(rulesFromConfig, rulesThatMustExists)
 const rulesInvalid = rulesThatMustBeOff.filter(
 	(name) => eslintConfig.rules[name] !== 'off'
 )
 
 if (rulesMissing.length || rulesUnknown.length || rulesInvalid.length) {
-	logRules('Missing', rulesMissing)
-	logRules('Unknown', rulesUnknown)
-	logRules('Invalid', rulesInvalid)
+	log('Missing', rulesMissing)
+	log('Unknown', rulesUnknown)
+	log('Invalid', rulesInvalid)
 	process.exit(1)
 }

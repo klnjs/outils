@@ -16,5 +16,8 @@
 	},
 	"files": [
 		"index.cjs"
-	]
+	],
+	"devDependencies": {
+		"browserslist": "^4.21.4"
+	}
 }

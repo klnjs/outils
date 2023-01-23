@@ -3,11 +3,8 @@
 import eslint from 'eslint/use-at-your-own-risk'
 import eslintImport from 'eslint-plugin-import'
 import eslintConfig from '../index.cjs'
-import {
-	getRulesFromPlugin,
-	getNonIntersection,
-	logRules
-} from '../../../scripts/internal/eslint.js'
+import { xor, log } from '../../../scripts/internal/helpers.js'
+import { getRulesFromPlugin } from '../../../scripts/internal/eslint.js'
 
 const rulesFromConfig = Object.keys(eslintConfig.rules)
 const rulesFromEslint = getRulesFromPlugin({ rules: eslint.builtinRules })
@@ -17,11 +14,11 @@ const rulesThatMustExists = [
 	...rulesFromImport.map((rule) => rule.name)
 ]
 
-const rulesMissing = getNonIntersection(rulesThatMustExists, rulesFromConfig)
-const rulesUnknown = getNonIntersection(rulesFromConfig, rulesThatMustExists)
+const rulesMissing = xor(rulesThatMustExists, rulesFromConfig)
+const rulesUnknown = xor(rulesFromConfig, rulesThatMustExists)
 
 if (rulesMissing.length || rulesUnknown.length) {
-	logRules('Missing', rulesMissing)
-	logRules('Unknown', rulesUnknown)
+	log('Missing', rulesMissing)
+	log('Unknown', rulesUnknown)
 	process.exit(1)
 }

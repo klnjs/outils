@@ -1,1 +1,1 @@
-module.exports = ['last 2 years and last 2 versions and > 0%']
+module.exports = ['> 0.5%', 'not last 1 version']

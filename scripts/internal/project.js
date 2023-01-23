@@ -20,14 +20,6 @@ export const getRootManifest = async () => {
 	return parsed
 }
 
-export const getRootChangelog = async () => {
-	const changelog = await getRootPath('CHANGELOG.md')
-	const contents = await fs.readFile(changelog, 'utf8')
-	const parsed = contents.toString()
-
-	return parsed
-}
-
 export const getConfig = async () => {
 	const exec = u.promisify(cp.exec)
 	const raw = await exec(`yarn config --json`)

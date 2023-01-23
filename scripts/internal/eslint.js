@@ -1,13 +1,3 @@
-export const logRules = (category, rules = []) => {
-	if (rules.length > 0) {
-		console.group()
-		console.log(category, rules)
-		console.groupEnd()
-	}
-}
-
-export const getNonIntersection = (a, b) => a.filter((v) => !b.includes(v))
-
 export const getRulesFromPlugin = (
 	plugin,
 	{
