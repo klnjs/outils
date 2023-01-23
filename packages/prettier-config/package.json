@@ -1,8 +1,26 @@
 {
 	"name": "@klnjs/prettier-config",
 	"type": "module",
+	"author": "Rune Klein (@rnkln)",
+	"version": "0.0.2",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:klnjs/frigg.git",
+		"directory": "packages/prettier-config"
+	},
 	"main": "./index.cjs",
+	"exports": {
+		".": "./index.cjs",
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"index.cjs"
+	],
+	"devDependencies": {
+		"prettier": "^2.8.1"
+	},
 	"peerDependencies": {
-		"prettier": ">=2.8.1"
+		"prettier": "^2.8.1"
 	}
 }
