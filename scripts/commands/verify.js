@@ -3,10 +3,10 @@ import { pathExists } from 'find-up'
 import * as project from '../internal/project.js'
 
 export const validate = async ({ packages: packagesArgs }) => {
-	const packages = await project.getPackages()
-	const packagesToBuild = packagesArgs ?? packages
-
 	try {
+		const packages = await project.getPackages()
+		const packagesToBuild = packagesArgs ?? packages
+
 		for await (const name of packagesToBuild) {
 			const script = await project.getPackagePath(
 				name,
