@@ -1,6 +1,6 @@
 name: publish
 
-on: workflow_run
+on: workflow_call
 
 jobs:
   publish:
