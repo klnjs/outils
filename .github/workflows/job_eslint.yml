@@ -3,7 +3,7 @@ name: eslint
 on: workflow_call
 
 jobs:
-  eslint:
+  run:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

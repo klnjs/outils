@@ -3,7 +3,7 @@ name: prettier
 on: workflow_call
 
 jobs:
-  prettier:
+  run:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
