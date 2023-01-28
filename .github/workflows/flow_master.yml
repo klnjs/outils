@@ -1,0 +1,19 @@
+name: master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  eslint:
+    uses: ./.github/workflows/run_eslint.yml
+
+  prettier:
+    uses: ./.github/workflows/run_prettier.yml
+
+  verify:
+    uses: ./.github/workflows/run_verify.yml
+
+  publish:
+    uses: ./.github/workflows/run_publish.yml
