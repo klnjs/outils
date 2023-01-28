@@ -49,15 +49,13 @@ const incVersion = (version, type) => {
 		.join('.')
 }
 
-const getTypeFromArgs = async (type, version) => {
-	console.log(version)
-	console.log(versionRegex.test(version))
-	if (versionRegex.test(version)) {
+const getTypeFromArgs = async (typeArg, versionArg) => {
+	if (versionRegex.test(versionArg)) {
 		return 'specific'
 	}
 
-	if (typeRegex.test(type)) {
-		return type
+	if (typeRegex.test(typeArg)) {
+		return typeArg
 	}
 
 	const prompt = await inquirer.prompt({

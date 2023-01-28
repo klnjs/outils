@@ -4,26 +4,25 @@ import * as project from '../internal/project.js'
 
 export const sync = async ({ packages: packagesArgs }) => {
 	try {
-		const packages = await project.getPackages()
-		const packagesToSync = packagesArgs ?? packages
+		const manifest = await project.getRootManifest()
+		const packages = await getPackagesFromArg(packagesArgs)
 
-		for await (const name of packagesToSync) {
-			const rootManifest = await project.getRootManifest()
-			const packagePath = await project.getPackagePath(
+		for await (const name of packages) {
+			const packageManifestPath = await project.getPackagePath(
 				name,
 				'package.json'
 			)
 			const packageManifest = await project.getPackageManifest(name)
-			const manifest = JSON.stringify(
+			const packageManifestUpdated = JSON.stringify(
 				{
 					name: packageManifest.name,
 					type: packageManifest.type,
-					author: rootManifest.author,
+					author: manifest.author,
 					description: packageManifest.description,
-					version: rootManifest.version,
-					license: rootManifest.license,
+					version: manifest.version,
+					license: manifest.license,
 					repository: {
-						...rootManifest.repository,
+						...manifest.repository,
 						directory: `packages/${name}`
 					},
 					bin: packageManifest.bin,
@@ -38,10 +37,22 @@ export const sync = async ({ packages: packagesArgs }) => {
 				'\t'
 			)
 
-			await fs.writeFile(packagePath, manifest, 'utf8')
+			await fs.writeFile(
+				packageManifestPath,
+				packageManifestUpdated,
+				'utf8'
+			)
 		}
 	} catch (err) {
 		console.log(err)
 		process.exit(1)
 	}
+}
+
+const getPackagesFromArg = async (packagesArg) => {
+	if (packagesArg) {
+		return packagesArg
+	}
+
+	return project.getPackages()
 }
