@@ -2,7 +2,7 @@
 	"name": "@klnjs/eslint-config-react",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "0.0.2",
+	"version": "0.0.1-rc.1",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -17,6 +17,9 @@
 	"files": [
 		"index.cjs"
 	],
+	"scripts": {
+		"verify": "yarn node ./scripts/verify.js"
+	},
 	"devDependencies": {
 		"eslint-plugin-react": "7.32.1",
 		"eslint-plugin-react-hooks": "4.6.0"

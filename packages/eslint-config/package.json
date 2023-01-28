@@ -2,7 +2,7 @@
 	"name": "@klnjs/eslint-config",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "0.0.2",
+	"version": "0.0.1-rc.1",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -17,6 +17,9 @@
 	"files": [
 		"index.cjs"
 	],
+	"scripts": {
+		"verify": "yarn node ./scripts/verify.js"
+	},
 	"devDependencies": {
 		"eslint": "8.32.0",
 		"eslint-plugin-import": "2.27.5"

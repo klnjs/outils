@@ -3,18 +3,23 @@ import { hideBin } from 'yargs/helpers'
 import { bump } from './commands/bump.js'
 import { sync } from './commands/sync.js'
 import { publish } from './commands/publish.js'
-import { validate } from './commands/verify.js'
 
 yargs(hideBin(process.argv))
 	.command(
 		'bump',
 		'Bump package',
 		(yargs2) =>
-			yargs2.option('type', {
-				alias: 't',
-				choices: ['major', 'minor', 'patch'],
-				description: 'Bump type'
-			}),
+			yargs2
+				.option('type', {
+					alias: 't',
+					choices: ['major', 'minor', 'patch'],
+					description: 'Semver type to increment'
+				})
+				.option('version', {
+					alias: 'v',
+					description: 'Version to set',
+					optional: true
+				}),
 		bump
 	)
 	.command(
@@ -27,17 +32,6 @@ yargs(hideBin(process.argv))
 				description: 'Packages to sync'
 			}),
 		sync
-	)
-	.command(
-		'verify',
-		'Verify packages',
-		(yargs2) =>
-			yargs2.option('packages', {
-				alias: 'p',
-				type: 'array',
-				description: 'Packages to build'
-			}),
-		validate
 	)
 	.command(
 		'publish',
