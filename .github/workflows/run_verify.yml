@@ -4,7 +4,6 @@ on: workflow_call
 
 jobs:
   verify:
-    name: Verify
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
