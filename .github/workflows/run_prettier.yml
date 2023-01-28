@@ -1,6 +1,6 @@
 name: prettier
 
-on: workflow_run
+on: workflow_call
 
 jobs:
   prettier:

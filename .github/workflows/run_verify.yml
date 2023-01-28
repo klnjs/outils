@@ -1,6 +1,6 @@
 name: verify
 
-on: workflow_run
+on: workflow_call
 
 jobs:
   verify:
