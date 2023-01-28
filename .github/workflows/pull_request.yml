@@ -7,10 +7,10 @@ on:
 
 jobs:
   eslint:
-    uses: ./.github/workflows/eslint.yml
+    uses: ./.github/workflows/runs/eslint.yml
 
   prettier:
-    uses: ./.github/workflows/prettier.yml
+    uses: ./.github/workflows/runs/prettier.yml
 
   verify:
-    uses: ./.github/workflows/verify.yml
+    uses: ./.github/workflows/runs/verify.yml

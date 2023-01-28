@@ -1,8 +1,9 @@
-name: pull request
+name: master
 
 on:
-  branches:
-    - master
+  push:
+    branches:
+      - master
 
 jobs:
   eslint:
