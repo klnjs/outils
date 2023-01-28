@@ -3,7 +3,7 @@
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
 	"description": "Mono repo containing project configs",
-	"version": "0.2.0",
+	"version": "0.0.1-rc.1",
 	"license": "MIT",
 	"private": true,
 	"packageManager": "yarn@3.3.1",
@@ -15,11 +15,11 @@
 		"packages/*"
 	],
 	"scripts": {
-		"bump": "yarn workspaces foreach version",
 		"verify": "yarn workspaces foreach -p run verify",
+		"version": "yarn workspaces foreach version",
 		"publish": "yarn workspaces foreach -p npm publish --tolerate-republish",
-		"lint": "eslint ./packages --max-warnings 0 --cache --cache-location=./.eslintcache",
-		"code": "prettier ./packages --check --cache --cache-location=./.prettiercache"
+		"eslint": "eslint ./packages --max-warnings 0 --cache --cache-location=./.eslintcache",
+		"prettier": "prettier ./packages --check --cache --cache-location=./.prettiercache"
 	},
 	"devDependencies": {
 		"eslint": "8.32.0",
@@ -28,5 +28,6 @@
 		"inquirer": "9.1.4",
 		"prettier": "2.8.3",
 		"yargs": "17.6.2"
-	}
+	},
+	"stableVersion": "1.1.0"
 }

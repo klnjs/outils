@@ -1,0 +1,12 @@
+name: verify
+
+on:  
+  verify:
+    name: Verify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run verify
+        run: yarn run verify

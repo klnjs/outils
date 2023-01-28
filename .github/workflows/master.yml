@@ -1,0 +1,18 @@
+name: pull request
+
+on:
+  branches:
+    - master
+
+jobs:
+  eslint:
+    uses: ./.github/workflows/runs/eslint.yml
+
+  prettier:
+    uses: ./.github/workflows/runs/prettier.yml
+
+  verify:
+    uses: ./.github/workflows/runs/verify.yml
+
+  publish:
+    uses: ./.github/workflows/runs/publish.yml
