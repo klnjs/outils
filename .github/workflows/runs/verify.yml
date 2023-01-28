@@ -1,6 +1,8 @@
 name: verify
 
-on:  
+on: [workflow_run]
+
+jobs:
   verify:
     name: Verify
     runs-on: ubuntu-latest
