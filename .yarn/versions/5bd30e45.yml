@@ -1,0 +1,6 @@
+undecided:
+  - frigg
+  - "@klnjs/browserslist-config"
+  - "@klnjs/eslint-config"
+  - "@klnjs/eslint-config-react"
+  - "@klnjs/eslint-config-typescript"

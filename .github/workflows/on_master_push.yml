@@ -1,0 +1,20 @@
+name: on master push
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  eslint:
+    uses: ./.github/workflows/job_eslint.yml
+
+  prettier:
+    uses: ./.github/workflows/job_prettier.yml
+
+  verify:
+    uses: ./.github/workflows/job_verify.yml
+
+  publish:
+    needs: [eslint, prettier, verify]
+    uses: ./.github/workflows/job_publish.yml
