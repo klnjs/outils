@@ -10,11 +10,17 @@ yargs(hideBin(process.argv))
 		'bump',
 		'Bump package',
 		(yargs2) =>
-			yargs2.option('type', {
-				alias: 't',
-				choices: ['major', 'minor', 'patch'],
-				description: 'Bump type'
-			}),
+			yargs2
+				.option('type', {
+					alias: 't',
+					choices: ['major', 'minor', 'patch'],
+					description: 'Semver type to increment'
+				})
+				.option('version', {
+					alias: 'v',
+					description: 'Version to set',
+					optional: true
+				}),
 		bump
 	)
 	.command(
