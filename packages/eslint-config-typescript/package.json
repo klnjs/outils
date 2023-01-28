@@ -17,6 +17,9 @@
 	"files": [
 		"index.cjs"
 	],
+	"scripts": {
+		"verify": "yarn node ./scripts/verify.js"
+	},
 	"dependencies": {
 		"@klnjs/eslint-config": "workspace:^"
 	},
