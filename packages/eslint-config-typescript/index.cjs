@@ -92,6 +92,7 @@ module.exports = {
 		'@typescript-eslint/no-extraneous-class': 'error',
 		'@typescript-eslint/no-floating-promises': 'error',
 		'@typescript-eslint/no-for-in-array': 'error',
+		'@typescript-eslint/no-import-type-side-effects': 'off',
 		'@typescript-eslint/no-inferrable-types': 'error',
 		'@typescript-eslint/no-invalid-void-type': 'error',
 		'@typescript-eslint/no-meaningless-void-operator': 'error',

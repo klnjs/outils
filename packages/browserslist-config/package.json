@@ -21,6 +21,6 @@
 		"verify": "yarn node ./scripts/verify.js"
 	},
 	"devDependencies": {
-		"browserslist": "4.21.4"
+		"browserslist": "4.21.5"
 	}
 }
