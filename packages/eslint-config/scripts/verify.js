@@ -3,8 +3,8 @@
 import eslint from 'eslint/use-at-your-own-risk'
 import eslintImport from 'eslint-plugin-import'
 import eslintConfig from '../index.cjs'
-import { xor, log } from '../../../scripts/internal/helpers.js'
-import { getRulesFromPlugin } from '../../../scripts/internal/eslint.js'
+import { xor, log } from '../../../scripts/helpers.js'
+import { getRulesFromPlugin } from '../../../scripts/eslint.js'
 
 try {
 	const rulesFromConfig = Object.keys(eslintConfig.rules)
