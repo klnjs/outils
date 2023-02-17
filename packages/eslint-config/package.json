@@ -21,7 +21,7 @@
 		"verify": "yarn node ./scripts/verify.js"
 	},
 	"devDependencies": {
-		"eslint": "8.32.0",
+		"eslint": "8.34.0",
 		"eslint-plugin-import": "2.27.5"
 	},
 	"peerDependencies": {

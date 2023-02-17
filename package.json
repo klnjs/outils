@@ -6,7 +6,7 @@
 	"version": "0.0.1-rc.1",
 	"license": "MIT",
 	"private": true,
-	"packageManager": "yarn@3.3.1",
+	"packageManager": "yarn@3.4.1",
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:klnjs/frigg.git"
@@ -22,11 +22,11 @@
 		"prettier": "prettier ./packages --check --cache --cache-location=./.prettiercache"
 	},
 	"devDependencies": {
-		"eslint": "8.32.0",
+		"eslint": "8.34.0",
 		"eslint-plugin-import": "2.27.5",
 		"find-up": "6.3.0",
 		"inquirer": "9.1.4",
-		"prettier": "2.8.3",
+		"prettier": "2.8.4",
 		"yargs": "17.6.2"
 	}
 }
