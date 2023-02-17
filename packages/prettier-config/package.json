@@ -25,5 +25,9 @@
 	},
 	"peerDependencies": {
 		"prettier": "^2.8.3"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://npm.pkg.github.com"
 	}
 }

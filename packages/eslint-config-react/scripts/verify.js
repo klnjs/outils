@@ -1,8 +1,8 @@
 import eslintReact from 'eslint-plugin-react'
 import eslintReactHooks from 'eslint-plugin-react-hooks'
 import eslintConfig from '../index.cjs'
-import { xor, log } from '../../../scripts/internal/helpers.js'
-import { getRulesFromPlugin } from '../../../scripts/internal/eslint.js'
+import { xor, log } from '../../../scripts/helpers.js'
+import { getRulesFromPlugin } from '../../../scripts/eslint.js'
 
 try {
 	const rulesFromConfig = Object.keys(eslintConfig.rules)

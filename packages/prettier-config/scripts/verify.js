@@ -1,7 +1,7 @@
 import prettier from 'prettier'
 import prettierConfig from '../index.cjs'
-import { xor, log } from '../../../scripts/internal/helpers.js'
-import { getOptions } from '../../../scripts/internal/prettier.js'
+import { xor, log } from '../../../scripts/helpers.js'
+import { getOptions } from '../../../scripts/prettier.js'
 
 try {
 	const optionsFromConfig = Object.keys(prettierConfig)

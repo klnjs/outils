@@ -483,9 +483,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001449":
-  version: 1.0.30001451
-  resolution: "caniuse-lite@npm:1.0.30001451"
-  checksum: 48a06a7881093bb4d8a08ed5428f24a1cbdaa544b0a6f0c3614287d4f34b6c853e79a0f608a5bd901c27995f5e951825606fba11e7930251cc422bd61de9d849
+  version: 1.0.30001456
+  resolution: "caniuse-lite@npm:1.0.30001456"
+  checksum: c2cc479962149abd09a25b64699ee7484d9c433db2bad0a489f7b51b09a463c991f6efd7b8e201bc1a1ccf3294263f88503a3adf0a57db9046939ee7e58b76a6
   languageName: node
   linkType: hard
 
@@ -626,12 +626,12 @@ __metadata:
   linkType: hard
 
 "define-properties@npm:^1.1.3, define-properties@npm:^1.1.4":
-  version: 1.1.4
-  resolution: "define-properties@npm:1.1.4"
+  version: 1.2.0
+  resolution: "define-properties@npm:1.2.0"
   dependencies:
     has-property-descriptors: ^1.0.0
     object-keys: ^1.1.1
-  checksum: ce0aef3f9eb193562b5cfb79b2d2c86b6a109dfc9fdcb5f45d680631a1a908c06824ddcdb72b7573b54e26ace07f0a23420aaba0d5c627b34d2c1de8ef527e2b
+  checksum: e60aee6a19b102df4e2b1f301816804e81ab48bb91f00d0d935f269bf4b3f79c88b39e4f89eaa132890d23267335fd1140dfcd8d5ccd61031a0a2c41a54e33a6
   languageName: node
   linkType: hard
 
@@ -670,9 +670,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.284":
-  version: 1.4.295
-  resolution: "electron-to-chromium@npm:1.4.295"
-  checksum: 66fff1341d3c94c2ccd1f2a39cffdb92118304f4b949d3194427e7022d6a6bd8c482b5c4afd9dce210117ba20cac01c1a1466089f5a862fe9c563113b86ff829
+  version: 1.4.302
+  resolution: "electron-to-chromium@npm:1.4.302"
+  checksum: aa764494f9a5b6916ba9f311c0204b2c73449addba18cc55d43e84e8c4465732af9cd6560a8efeb32f3c5a928299030e41352e5b3a081e9e56b086d5be618f45
   languageName: node
   linkType: hard
 
@@ -971,11 +971,11 @@ __metadata:
   linkType: hard
 
 "esquery@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "esquery@npm:1.4.0"
+  version: 1.4.2
+  resolution: "esquery@npm:1.4.2"
   dependencies:
     estraverse: ^5.1.0
-  checksum: a0807e17abd7fbe5fbd4fab673038d6d8a50675cdae6b04fbaa520c34581be0c5fa24582990e8acd8854f671dd291c78bb2efb9e0ed5b62f33bac4f9cf820210
+  checksum: 2f4ad89c5aafaca61cc2c15e256190f0d6deb4791cae6552d3cb4b1eb8867958cdf27a56aaa3272ff17435e3eaa19ee0d4129fac336ca6373d7354d7b5da7966
   languageName: node
   linkType: hard
 
@@ -1190,7 +1190,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"get-intrinsic@npm:^1.0.2, get-intrinsic@npm:^1.1.1, get-intrinsic@npm:^1.1.3":
+"get-intrinsic@npm:^1.0.2, get-intrinsic@npm:^1.1.1, get-intrinsic@npm:^1.1.3, get-intrinsic@npm:^1.2.0":
   version: 1.2.0
   resolution: "get-intrinsic@npm:1.2.0"
   dependencies:
@@ -1244,11 +1244,11 @@ __metadata:
   linkType: hard
 
 "globals@npm:^13.19.0":
-  version: 13.19.0
-  resolution: "globals@npm:13.19.0"
+  version: 13.20.0
+  resolution: "globals@npm:13.20.0"
   dependencies:
     type-fest: ^0.20.2
-  checksum: a000dbd00bcf28f0941d8a29c3522b1c3b8e4bfe4e60e262c477a550c3cbbe8dbe2925a6905f037acd40f9a93c039242e1f7079c76b0fd184bc41dcc3b5c8e2e
+  checksum: ad1ecf914bd051325faad281d02ea2c0b1df5d01bd94d368dcc5513340eac41d14b3c61af325768e3c7f8d44576e72780ec0b6f2d366121f8eec6e03c3a3b97a
   languageName: node
   linkType: hard
 
@@ -1427,13 +1427,13 @@ __metadata:
   linkType: hard
 
 "internal-slot@npm:^1.0.3, internal-slot@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "internal-slot@npm:1.0.4"
+  version: 1.0.5
+  resolution: "internal-slot@npm:1.0.5"
   dependencies:
-    get-intrinsic: ^1.1.3
+    get-intrinsic: ^1.2.0
     has: ^1.0.3
     side-channel: ^1.0.4
-  checksum: 8974588d06bab4f675573a3b52975370facf6486df51bc0567a982c7024fa29495f10b76c0d4dc742dd951d1b72024fdc1e31bb0bedf1678dc7aacacaf5a4f73
+  checksum: 97e84046bf9e7574d0956bd98d7162313ce7057883b6db6c5c7b5e5f05688864b0978ba07610c726d15d66544ffe4b1050107d93f8a39ebc59b15d8b429b497a
   languageName: node
   linkType: hard
 
@@ -1705,11 +1705,11 @@ __metadata:
   linkType: hard
 
 "locate-path@npm:^7.1.0":
-  version: 7.1.1
-  resolution: "locate-path@npm:7.1.1"
+  version: 7.2.0
+  resolution: "locate-path@npm:7.2.0"
   dependencies:
     p-locate: ^6.0.0
-  checksum: 1d88af5b512d6e6398026252e17382907126683ab09ae5d6b8918d0bc72ca2642e1ad6e2fe635c5920840e369618e5d748c08deb57ba537fdd3f78e87ca993e0
+  checksum: c1b653bdf29beaecb3d307dfb7c44d98a2a98a02ebe353c9ad055d1ac45d6ed4e1142563d222df9b9efebc2bcb7d4c792b507fad9e7150a04c29530b7db570f8
   languageName: node
   linkType: hard
 
@@ -1791,9 +1791,9 @@ __metadata:
   linkType: hard
 
 "minimist@npm:^1.2.0, minimist@npm:^1.2.6":
-  version: 1.2.7
-  resolution: "minimist@npm:1.2.7"
-  checksum: 7346574a1038ca23c32e02252f603801f09384dd1d78b69a943a4e8c2c28730b80e96193882d3d3b22a063445f460e48316b29b8a25addca2d7e5e8f75478bec
+  version: 1.2.8
+  resolution: "minimist@npm:1.2.8"
+  checksum: 75a6d645fb122dad29c06a7597bddea977258957ed88d7a6df59b5cd3fe4a527e253e9bbf2e783e4b73657f9098b96a5fe96ab8a113655d4109108577ecf85b0
   languageName: node
   linkType: hard
 
@@ -2523,9 +2523,9 @@ __metadata:
   linkType: hard
 
 "tslib@npm:^2.1.0":
-  version: 2.4.1
-  resolution: "tslib@npm:2.4.1"
-  checksum: 19480d6e0313292bd6505d4efe096a6b31c70e21cf08b5febf4da62e95c265c8f571f7b36fcc3d1a17e068032f59c269fab3459d6cd3ed6949eafecf64315fca
+  version: 2.5.0
+  resolution: "tslib@npm:2.5.0"
+  checksum: ae3ed5f9ce29932d049908ebfdf21b3a003a85653a9a140d614da6b767a93ef94f460e52c3d787f0e4f383546981713f165037dc2274df212ea9f8a4541004e1
   languageName: node
   linkType: hard
 
@@ -2557,9 +2557,9 @@ __metadata:
   linkType: hard
 
 "type-fest@npm:^3.0.0":
-  version: 3.5.3
-  resolution: "type-fest@npm:3.5.3"
-  checksum: ac52b1a1c695cbbc5e18edf9b15b27d9135611b4be7a50a41ac07bed9687f79a8cad759aa4e17ef74f2ef5a72c503012de6f1a960a132040798ebc588f574f5c
+  version: 3.6.0
+  resolution: "type-fest@npm:3.6.0"
+  checksum: 3cb3b27fc1dc69e0a7524041d9d32cfd3786b16591952e0b2b87ca44b53acaed1bf86ee62a7cc3033a55154d44542e8b488d500d1b363d828f62a9fae9d2a043
   languageName: node
   linkType: hard
 

@@ -17,7 +17,7 @@
 	"scripts": {
 		"verify": "yarn workspaces foreach -p run verify",
 		"version": "yarn workspaces foreach version",
-		"publish": "yarn workspaces foreach -p npm publish --tolerate-republish",
+		"publish": "yarn workspaces foreach -p --no-private npm publish --tolerate-republish",
 		"eslint": "eslint ./packages --max-warnings 0 --cache --cache-location=./.eslintcache",
 		"prettier": "prettier ./packages --check --cache --cache-location=./.prettiercache"
 	},
@@ -28,6 +28,5 @@
 		"inquirer": "9.1.4",
 		"prettier": "2.8.4",
 		"yargs": "17.6.2"
-	},
-	"stableVersion": "1.1.0"
+	}
 }
