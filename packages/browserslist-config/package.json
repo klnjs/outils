@@ -21,6 +21,10 @@
 		"verify": "yarn node ./scripts/verify.js"
 	},
 	"devDependencies": {
-		"browserslist": "4.21.4"
+		"browserslist": "4.21.5"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://npm.pkg.github.com"
 	}
 }
