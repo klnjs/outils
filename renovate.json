@@ -10,7 +10,7 @@
 		":pinAllExceptPeerDependencies",
 		"npm:unpublishSafe",
 		"group:all",
-		"schedule:weekly",
+		"schedule:monthly",
 		"workarounds:all"
 	],
 	"description": "Renovate config base",
