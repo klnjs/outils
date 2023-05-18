@@ -20,12 +20,13 @@
 	"scripts": {
 		"verify": "yarn node ./scripts/verify.js"
 	},
-	"devDependencies": {
-		"eslint": "8.40.0",
+	"dependencies": {
 		"eslint-plugin-import": "2.27.5"
 	},
+	"devDependencies": {
+		"eslint": "8.40.0"
+	},
 	"peerDependencies": {
-		"eslint": "^8.32.0",
-		"eslint-plugin-import": "^2.27.5"
+		"eslint": "^8.40.0"
 	}
 }
