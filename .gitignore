@@ -19,7 +19,6 @@
 !.eslintignore
 !.eslintrc.cjs
 !.gitignore
-!.gitlab-ci.yml
 !.node-version
 !.pnp.cjs
 !.pnp.loader.mjs
