@@ -1,10 +1,5 @@
 name: publish
 
-on: workflow_call
-
-env:
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
 jobs:
   run:
     runs-on: ubuntu-latest

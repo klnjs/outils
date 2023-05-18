@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 jobs:
   eslint:
     uses: ./.github/workflows/job_eslint.yml
