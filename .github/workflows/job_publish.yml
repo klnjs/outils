@@ -2,12 +2,15 @@ name: publish
 
 on: workflow_call
 
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v3
 
-      - name: Run Publish
-        run: echo "wat the fak"
+      - name: publish
+        run: yarn run publish
