@@ -20,7 +20,6 @@ jobs:
     steps:
       - name: checkout repository
         uses: actions/checkout@v3
-      
       - name: ${{ matrix.script }}
         run: yarn run ${{ matrix.script }}
   publish: 
@@ -28,5 +27,7 @@ jobs:
     if: contains(github.ref, 'master')
     needs: [code]
     steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
       - name: publish 
         run: yarn run publish
