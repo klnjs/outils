@@ -1,0 +1,32 @@
+name: pipeline
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: 
+        script: ["verify", "eslint", "prettier"]
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
+      
+      - name: ${{ matrix.script }}
+        run: yarn run ${{ matrix.script }}
+  publish: 
+    runs-on: ubuntu-latest
+    if: contains(github.ref, 'master')
+    needs: [code]
+    steps:
+      - name: publish 
+        run: yarn run publish
