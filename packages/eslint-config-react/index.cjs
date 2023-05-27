@@ -7,6 +7,11 @@ module.exports = {
 			jsx: true
 		}
 	},
+	settings: {
+		react: {
+			version: 'detect'
+		}
+	},
 	rules: {
 		// react rules
 		'react/boolean-prop-naming': 'off',
