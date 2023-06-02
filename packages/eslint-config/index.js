@@ -1,11 +1,25 @@
-module.exports = {
-	plugins: ['import'],
-	env: {
-		es6: true
+import imports from 'eslint-plugin-import'
+
+export default {
+	files: ['**/*.js', '**/*.jsx'],
+	plugins: {
+		import: imports
 	},
-	parserOptions: {
-		sourceType: 'module',
-		ecmaVersion: 2022
+	settings: {
+		"import/parsers": {
+			espree: [".js", ".cjs", ".mjs", ".jsx"],
+		},
+	},
+	languageOptions: {
+		parserOptions: {
+			// Eslint doesn't supply ecmaVersion in `parser.js` `context.parserOptions`
+			// This is required to avoid ecmaVersion < 2015 error or 'import' / 'export' error
+			ecmaVersion: "latest",
+		},
+	},
+	linterOptions: {
+		noInlineConfig: true,
+		reportUnusedDisableDirectives: true
 	},
 	rules: {
 		// builtin rules

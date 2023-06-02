@@ -1,12 +1,12 @@
-import eslintTypescript from '@typescript-eslint/eslint-plugin'
-import eslintConfig from '../index.cjs'
+import ts from '@typescript-eslint/eslint-plugin'
+import tsConfig from '../index.js'
 import { xor, log } from '../../../scripts/helpers.js'
 import { getRulesFromPlugin } from '../../../scripts/eslint.js'
 
 try {
-	const rulesFromConfig = Object.keys(eslintConfig.rules)
-	const rulesFromTypescript = getRulesFromPlugin(eslintTypescript, {
-		prefix: '@typescript-eslint'
+	const rulesFromConfig = Object.keys(tsConfig.rules)
+	const rulesFromTypescript = getRulesFromPlugin(ts, {
+		prefix: 'ts'
 	})
 
 	const rulesThatMustBeOff = rulesFromTypescript.reduce((acc, rule) => {

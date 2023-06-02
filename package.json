@@ -11,7 +11,7 @@
 		"url": "git@github.com:klnjs/frigg.git"
 	},
 	"scripts": {
-		"verify": "pnpm -r run --parallel verify",
+		"verify": "pnpm -r run verify",
 		"publish": "pnpm -r publish",
 		"eslint": "eslint ./packages --max-warnings 0 --cache --cache-location=./.eslintcache",
 		"prettier": "prettier ./packages --check --cache --cache-location=./.prettiercache"
@@ -19,6 +19,7 @@
 	"devDependencies": {
 		"eslint": "8.40.0",
 		"eslint-plugin-import": "2.27.5",
+		"globals": "13.20.0",
 		"prettier": "2.8.8"
 	}
 }

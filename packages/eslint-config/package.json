@@ -9,13 +9,13 @@
 		"url": "git@github.com:klnjs/frigg.git",
 		"directory": "packages/eslint-config"
 	},
-	"main": "./index.cjs",
+	"main": "./index.js",
 	"exports": {
-		".": "./index.cjs",
+		".": "./index.js",
 		"./package.json": "./package.json"
 	},
 	"files": [
-		"index.cjs"
+		"index.js"
 	],
 	"scripts": {
 		"verify": "node ./scripts/verify.js"

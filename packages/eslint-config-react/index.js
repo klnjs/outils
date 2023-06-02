@@ -1,16 +1,15 @@
-module.exports = {
-	plugins: ['react', 'react-hooks'],
-	parserOptions: {
-		sourceType: 'module',
-		ecmaVersion: 2022,
-		ecmaFeatures: {
-			jsx: true
-		}
+import react from 'eslint-plugin-react'
+import reactHooks from 'eslint-plugin-react-hooks'
+
+export default {
+	files: ['**/*.jsx', '**/*.tsx'],
+	plugins: {
+		react,
+		reactHooks
 	},
-	settings: {
-		react: {
-			version: 'detect'
-		}
+	linterOptions: {
+		noInlineConfig: true,
+		reportUnusedDisableDirectives: true
 	},
 	rules: {
 		// react rules
@@ -130,8 +129,8 @@ module.exports = {
 		'react/style-prop-object': 'error',
 		'react/void-dom-elements-no-children': 'error',
 
-		// react-hooks rules
-		'react-hooks/exhaustive-deps': 'error',
-		'react-hooks/rules-of-hooks': 'error'
+		// reactHooks rules
+		'reactHooks/exhaustive-deps': 'error',
+		'reactHooks/rules-of-hooks': 'error'
 	}
 }

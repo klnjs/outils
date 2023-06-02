@@ -1,8 +1,6 @@
-// https://github.com/browserify/resolve/pull/224
-// eslint-disable-next-line import/no-unresolved
 import eslint from 'eslint/use-at-your-own-risk'
 import eslintImport from 'eslint-plugin-import'
-import eslintConfig from '../index.cjs'
+import eslintConfig from '../index.js'
 import { xor, log } from '../../../scripts/helpers.js'
 import { getRulesFromPlugin } from '../../../scripts/eslint.js'
 
@@ -10,7 +8,7 @@ try {
 	const rulesFromConfig = Object.keys(eslintConfig.rules)
 	const rulesFromEslint = getRulesFromPlugin({ rules: eslint.builtinRules })
 	const rulesFromImport = getRulesFromPlugin(eslintImport, {
-		prefix: 'import'
+		prefix: 'imports'
 	})
 	const rulesThatMustExists = [
 		...rulesFromEslint.map((rule) => rule.name),

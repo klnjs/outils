@@ -12,12 +12,12 @@
 # Except these files
 !.editorconfig
 !.eslintignore
-!.eslintrc.cjs
 !.gitignore
 !.node-version
 !.npmrc
 !.prettierignore
 !.prettierrc.cjs
+!eslint.config.js
 !LICENSE
 !CHANGELOG.md
 !package.json
