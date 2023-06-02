@@ -10,3 +10,6 @@
 # Except these files
 !.eslintrc.js
 !.prettierrc.js
+
+# Reignore these folders
+node_modules/

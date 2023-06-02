@@ -9,9 +9,6 @@
 !packages/
 !packages/**/*
 
-# Reignore these folders
-node_modules/
-
 # Except these files
 !.editorconfig
 !.eslintignore
@@ -28,4 +25,5 @@ node_modules/
 !README.md
 !renovate.json
 
-
+# Reignore these folders
+node_modules/
