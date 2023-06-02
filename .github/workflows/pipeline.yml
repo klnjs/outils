@@ -51,5 +51,14 @@ jobs:
         with:
           version: 8
 
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
       - name: Publish 
         run: pnpm run publish
