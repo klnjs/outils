@@ -2,7 +2,7 @@
 	"name": "@klnjs/eslint-config-typescript",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "0.0.1-rc.3",
+	"version": "0.0.1-rc.4",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
