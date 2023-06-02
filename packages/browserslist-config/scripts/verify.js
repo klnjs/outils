@@ -1,5 +1,5 @@
 import browserslist from 'browserslist'
-import browserslistConfig from '../index.cjs'
+import browserslistConfig from '../index.js'
 
 try {
 	browserslist(browserslistConfig)
