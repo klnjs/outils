@@ -2,7 +2,7 @@
 	"name": "@klnjs/browserslist-config",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "0.0.1-rc.4",
+	"version": "0.0.1-rc.5",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -21,6 +21,6 @@
 		"verify": "node ./scripts/verify.js"
 	},
 	"devDependencies": {
-		"browserslist": "4.21.5"
+		"browserslist": "4.21.7"
 	}
 }
