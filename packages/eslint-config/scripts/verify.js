@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import es from 'eslint/use-at-your-own-risk'
 import esImport from 'eslint-plugin-import'
 import esConfig from '../index.cjs'

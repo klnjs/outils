@@ -318,7 +318,7 @@ module.exports = {
 		'vars-on-top': 'error',
 		yoda: 'error',
 
-		'import/consistent-type-specifier-style': 'error',
+		'import/consistent-type-specifier-style': 'off',
 		'import/default': 'off',
 		'import/dynamic-import-chunkname': 'off',
 		'import/export': 'error',

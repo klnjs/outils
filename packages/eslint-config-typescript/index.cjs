@@ -180,7 +180,7 @@ module.exports = {
 		'ts-import/no-internal-modules': 'off',
 		'ts-import/no-mutable-exports': 'error',
 		'ts-import/no-named-as-default-member': 'off',
-		'ts-import/no-named-as-default': 'error',
+		'ts-import/no-named-as-default': 'off',
 		'ts-import/no-named-default': 'error',
 		'ts-import/no-named-export': 'off',
 		'ts-import/no-namespace': 'off',
