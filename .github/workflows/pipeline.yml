@@ -46,5 +46,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Publish 
         run: pnpm run publish
