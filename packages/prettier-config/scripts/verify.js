@@ -1,5 +1,5 @@
 import prettier from 'prettier'
-import prettierConfig from '../index.js'
+import prettierConfig from '../index.cjs'
 import { xor, log } from '../../../scripts/helpers.js'
 import { getOptions } from '../../../scripts/prettier.js'
 

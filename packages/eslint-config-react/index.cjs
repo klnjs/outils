@@ -1,18 +1,16 @@
-import react from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
+const react = require('eslint-plugin-react')
+const reactHooks = require('eslint-plugin-react-hooks')
 
-export default {
+module.exports = {
 	files: ['**/*.jsx', '**/*.tsx'],
 	plugins: {
 		react,
 		reactHooks
 	},
 	linterOptions: {
-		noInlineConfig: true,
 		reportUnusedDisableDirectives: true
 	},
 	rules: {
-		// react rules
 		'react/boolean-prop-naming': 'off',
 		'react/button-has-type': 'off',
 		'react/default-props-match-prop-types': 'off',
@@ -129,7 +127,6 @@ export default {
 		'react/style-prop-object': 'error',
 		'react/void-dom-elements-no-children': 'error',
 
-		// reactHooks rules
 		'reactHooks/exhaustive-deps': 'error',
 		'reactHooks/rules-of-hooks': 'error'
 	}

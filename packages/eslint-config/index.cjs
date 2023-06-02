@@ -1,28 +1,24 @@
-import imports from 'eslint-plugin-import'
+const imports = require('eslint-plugin-import')
 
-export default {
+module.exports = {
 	files: ['**/*.js', '**/*.jsx'],
 	plugins: {
 		import: imports
 	},
 	settings: {
-		"import/parsers": {
-			espree: [".js", ".cjs", ".mjs", ".jsx"],
-		},
+		'import/parsers': {
+			espree: ['.js', '.jsx', '.cjs', '.mjs']
+		}
+	},
+	linterOptions: {
+		reportUnusedDisableDirectives: true
 	},
 	languageOptions: {
 		parserOptions: {
-			// Eslint doesn't supply ecmaVersion in `parser.js` `context.parserOptions`
-			// This is required to avoid ecmaVersion < 2015 error or 'import' / 'export' error
-			ecmaVersion: "latest",
-		},
-	},
-	linterOptions: {
-		noInlineConfig: true,
-		reportUnusedDisableDirectives: true
+			ecmaVersion: 'latest'
+		}
 	},
 	rules: {
-		// builtin rules
 		'accessor-pairs': 'off',
 		'array-callback-return': [
 			'error',
@@ -322,7 +318,6 @@ export default {
 		'vars-on-top': 'error',
 		yoda: 'error',
 
-		// import rules
 		'import/consistent-type-specifier-style': 'error',
 		'import/default': 'off',
 		'import/dynamic-import-chunkname': 'off',
