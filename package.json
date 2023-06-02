@@ -6,16 +6,12 @@
 	"version": "0.0.1-rc.3",
 	"license": "MIT",
 	"private": true,
-	"packageManager": "yarn@3.5.0",
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:klnjs/frigg.git"
 	},
-	"workspaces": [
-		"packages/*"
-	],
 	"scripts": {
-		"verify": "yarn workspaces foreach -p run verify",
+		"verify": "pnpm -r run verify --parallel",
 		"version": "yarn workspaces foreach version --deferred",
 		"publish": "yarn workspaces foreach -p --no-private npm publish --tolerate-republish",
 		"eslint": "eslint ./packages --max-warnings 0 --cache --cache-location=./.eslintcache",
