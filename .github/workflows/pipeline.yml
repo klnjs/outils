@@ -20,8 +20,24 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
       - name: Execute ${{ matrix.script }}
-        run: yarn run ${{ matrix.script }}
+        run: pnpm run ${{ matrix.script }}
+        
   publish: 
     runs-on: ubuntu-latest
     if: contains(github.ref, 'master') && !contains(github.event.head_commit.message, '🤖')
@@ -29,5 +45,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
       - name: Publish 
-        run: yarn run publish
+        run: pnpm run publish

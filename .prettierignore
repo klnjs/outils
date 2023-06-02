@@ -12,3 +12,6 @@
 !.prettierrc.cjs
 !package.json
 !renovate.json
+
+# Reignore these folders
+node_modules/
