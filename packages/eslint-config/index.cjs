@@ -5,6 +5,11 @@ module.exports = {
 	plugins: {
 		import: eslintPluginImport
 	},
+	settings: {
+		'import/parsers': {
+			espree: ['.js', '.jsx', '.cjs', '.mjs']
+		}
+	},
 	linterOptions: {
 		reportUnusedDisableDirectives: true
 	},
