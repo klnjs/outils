@@ -1,14 +1,24 @@
+const imports = require('eslint-plugin-import')
+
 module.exports = {
-	plugins: ['import'],
-	env: {
-		es6: true
+	files: ['**/*.js', '**/*.jsx'],
+	plugins: {
+		import: imports
 	},
-	parserOptions: {
-		sourceType: 'module',
-		ecmaVersion: 2022
+	settings: {
+		'import/parsers': {
+			espree: ['.js', '.jsx', '.cjs', '.mjs']
+		}
+	},
+	linterOptions: {
+		reportUnusedDisableDirectives: true
+	},
+	languageOptions: {
+		parserOptions: {
+			ecmaVersion: 'latest'
+		}
 	},
 	rules: {
-		// builtin rules
 		'accessor-pairs': 'off',
 		'array-callback-return': [
 			'error',
@@ -308,8 +318,7 @@ module.exports = {
 		'vars-on-top': 'error',
 		yoda: 'error',
 
-		// import rules
-		'import/consistent-type-specifier-style': 'error',
+		'import/consistent-type-specifier-style': 'off',
 		'import/default': 'off',
 		'import/dynamic-import-chunkname': 'off',
 		'import/export': 'error',

@@ -8,7 +8,7 @@ try {
 	const rulesFromConfig = Object.keys(eslintConfig.rules)
 	const rulesFromReact = getRulesFromPlugin(eslintReact, { prefix: 'react' })
 	const rulesFromReactHooks = getRulesFromPlugin(eslintReactHooks, {
-		prefix: 'react-hooks'
+		prefix: 'reactHooks'
 	})
 	const rulesThatMustExists = [
 		...rulesFromReact.map((rule) => rule.name),

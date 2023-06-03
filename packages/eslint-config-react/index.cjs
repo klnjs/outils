@@ -1,19 +1,16 @@
+const react = require('eslint-plugin-react')
+const reactHooks = require('eslint-plugin-react-hooks')
+
 module.exports = {
-	plugins: ['react', 'react-hooks'],
-	parserOptions: {
-		sourceType: 'module',
-		ecmaVersion: 2022,
-		ecmaFeatures: {
-			jsx: true
-		}
+	files: ['**/*.jsx', '**/*.tsx'],
+	plugins: {
+		react,
+		reactHooks
 	},
-	settings: {
-		react: {
-			version: 'detect'
-		}
+	linterOptions: {
+		reportUnusedDisableDirectives: true
 	},
 	rules: {
-		// react rules
 		'react/boolean-prop-naming': 'off',
 		'react/button-has-type': 'off',
 		'react/default-props-match-prop-types': 'off',
@@ -130,8 +127,7 @@ module.exports = {
 		'react/style-prop-object': 'error',
 		'react/void-dom-elements-no-children': 'error',
 
-		// react-hooks rules
-		'react-hooks/exhaustive-deps': 'error',
-		'react-hooks/rules-of-hooks': 'error'
+		'reactHooks/exhaustive-deps': 'error',
+		'reactHooks/rules-of-hooks': 'error'
 	}
 }

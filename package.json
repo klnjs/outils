@@ -3,7 +3,7 @@
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
 	"description": "Mono repo containing project configs",
-	"version": "0.0.1-rc.5",
+	"version": "0.0.1-rc.6",
 	"license": "MIT",
 	"private": true,
 	"repository": {
@@ -11,14 +11,14 @@
 		"url": "git@github.com:klnjs/frigg.git"
 	},
 	"scripts": {
-		"verify": "pnpm -r run --parallel verify",
+		"verify": "pnpm -r run verify",
 		"publish": "pnpm -r publish",
 		"eslint": "eslint ./packages --max-warnings 0 --cache --cache-location=./.eslintcache",
 		"prettier": "prettier ./packages --check --cache --cache-location=./.prettiercache"
 	},
 	"devDependencies": {
 		"eslint": "8.41.0",
-		"eslint-plugin-import": "2.27.5",
+		"globals": "13.20.0",
 		"prettier": "2.8.8"
 	}
 }
