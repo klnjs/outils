@@ -3,7 +3,7 @@
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
 	"description": "Mono repo containing project configs",
-	"version": "0.0.1-rc.6",
+	"version": "0.0.1-rc.7",
 	"license": "MIT",
 	"private": true,
 	"repository": {
