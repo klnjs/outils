@@ -1,11 +1,16 @@
-const react = require('eslint-plugin-react')
-const reactHooks = require('eslint-plugin-react-hooks')
+const eslintPluginReact = require('eslint-plugin-react')
+const eslintPluginReactHooks = require('eslint-plugin-react-hooks')
 
 module.exports = {
-	files: ['**/*.jsx', '**/*.tsx'],
+	files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
 	plugins: {
-		react,
-		reactHooks
+		react: eslintPluginReact,
+		'react-hooks': eslintPluginReactHooks
+	},
+	settings: {
+		react: {
+			version: 'detect'
+		}
 	},
 	linterOptions: {
 		reportUnusedDisableDirectives: true
@@ -127,7 +132,7 @@ module.exports = {
 		'react/style-prop-object': 'error',
 		'react/void-dom-elements-no-children': 'error',
 
-		'reactHooks/exhaustive-deps': 'error',
-		'reactHooks/rules-of-hooks': 'error'
+		'react-hooks/exhaustive-deps': 'error',
+		'react-hooks/rules-of-hooks': 'error'
 	}
 }

@@ -1,14 +1,9 @@
-const imports = require('eslint-plugin-import')
+const eslintPluginImport = require('eslint-plugin-import')
 
 module.exports = {
-	files: ['**/*.js', '**/*.jsx'],
+	files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
 	plugins: {
-		import: imports
-	},
-	settings: {
-		'import/parsers': {
-			espree: ['.js', '.jsx', '.cjs', '.mjs']
-		}
+		import: eslintPluginImport
 	},
 	linterOptions: {
 		reportUnusedDisableDirectives: true
