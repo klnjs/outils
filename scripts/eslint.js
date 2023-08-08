@@ -12,7 +12,7 @@ export const getRulesFromPlugin = (
 		: Object.fromEntries(plugin.rules)
 
 	return Object.entries(rules).reduce((acc, [name, rule]) => {
-		// Filter out deprecated and layout rules
+		// Filter out deprecated and layout rule
 		if (
 			(exclude && exclude(rule)) ||
 			(excludeTypes && excludeTypes.includes(rule.meta.type)) ||

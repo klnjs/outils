@@ -28,20 +28,28 @@ try {
 		'no-unreachable',
 		'no-unsafe-negation',
 		'valid-typeof',
-		...rulesFromTypescript
-			.filter((rule) => rule.meta.docs.extendsBaseRule)
-			.map((rule) => {
-				const ebr = rule.meta.docs.extendsBaseRule
-				return ebr === true
-					? rule.name.replace('@typescript-eslint/', '')
-					: ebr
-			}, []),
 		'import/consistent-type-specifier-style',
 		'import/default',
 		'import/named',
 		'import/namespace',
 		'import/no-named-as-default-member',
-		'import/no-unresolved'
+		'import/no-unresolved',
+		...rulesFromTypescript.reduce((acc, rule) => {
+			if (rule.meta.docs.extendsBaseRule) {
+				const ebr = rule.meta.docs.extendsBaseRule
+				const name =
+					ebr === true
+						? rule.name.replace('@typescript-eslint/', '')
+						: ebr
+				const value = config.rules[name]
+
+				if (value !== undefined) {
+					return [...acc, name]
+				}
+			}
+
+			return acc
+		}, [])
 	]
 
 	const rulesThatMustExists = [
