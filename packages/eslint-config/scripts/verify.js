@@ -16,8 +16,6 @@ try {
 		...rulesFromImport.map((rule) => rule.name)
 	]
 
-	console.log(rulesFromEslint)
-
 	const rulesMissing = xor(rulesThatMustExists, rulesFromConfig)
 	const rulesUnknown = xor(rulesFromConfig, rulesThatMustExists)
 

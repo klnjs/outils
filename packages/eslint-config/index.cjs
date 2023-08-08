@@ -6,8 +6,8 @@ module.exports = {
 		import: eslintPluginImport
 	},
 	settings: {
-		'import/parsers': {
-			espree: ['.js', '.jsx', '.cjs', '.mjs']
+		'import/resolver': {
+			node: true
 		}
 	},
 	linterOptions: {
