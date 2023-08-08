@@ -17,8 +17,8 @@
 		"prettier": "prettier ./packages --check --cache --cache-location=./.prettiercache"
 	},
 	"devDependencies": {
-		"eslint": "8.42.0",
+		"eslint": "8.46.0",
 		"globals": "13.20.0",
-		"prettier": "2.8.8"
+		"prettier": "3.0.1"
 	}
 }

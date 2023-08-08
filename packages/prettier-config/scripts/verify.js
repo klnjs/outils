@@ -1,11 +1,33 @@
 import prettier from 'prettier'
 import prettierConfig from '../index.cjs'
 import { xor, log } from '../../../scripts/helpers.js'
-import { getOptions } from '../../../scripts/prettier.js'
+
+const getPrettierOptions = async ({
+	exclude,
+	excludeOptions = ['parser', 'plugins', 'pluginSearchDirs'],
+	excludeDeprecated = true,
+	excludeCategories = ['Special', 'HTML']
+} = {}) => {
+	const { options } = await prettier.getSupportInfo()
+
+	return options.reduce((acc, opt) => {
+		// Filter out deprecated and categories rules
+		if (
+			(exclude && exclude(opt)) ||
+			(excludeOptions && excludeOptions.includes(opt.name)) ||
+			(excludeCategories && excludeCategories.includes(opt.category)) ||
+			(excludeDeprecated && opt.deprecated)
+		) {
+			return acc
+		}
+
+		return [...acc, opt.name]
+	}, [])
+}
 
 try {
 	const optionsFromConfig = Object.keys(prettierConfig)
-	const optionsThatMustExists = getOptions(prettier)
+	const optionsThatMustExists = await getPrettierOptions()
 	const optionsMissing = xor(optionsThatMustExists, optionsFromConfig)
 	const optionsUnknown = xor(optionsFromConfig, optionsThatMustExists)
 
