@@ -46,6 +46,15 @@ module.exports = {
 		'no-unsafe-negation': 'off', // ts(2365) & ts(2360) & ts(2358)
 		'valid-typeof': 'off', // ts(2367)
 
+		// The following import rules are recommended to be disabled within TypeScript projects.
+		// See: https://github.com/typescript-eslint/typescript-eslint/blob/13583e65f5973da2a7ae8384493c5e00014db51b/docs/linting/TROUBLESHOOTING.md#eslint-plugin-import
+		'import/consistent-type-specifier-style': 'off',
+		'import/default': 'off',
+		'import/named': 'off',
+		'import/namespace': 'off',
+		'import/no-named-as-default-member': 'off',
+		'import/no-unresolved': 'off',
+
 		// The following will enable all TypeScript extension rules and disable the builtin equivalent.
 		// See: https://typescript-eslint.io/rules/#extension-rules
 		...Object.entries(eslintPluginTypeScript.rules).reduce(
@@ -57,11 +66,15 @@ module.exports = {
 				) {
 					const ebr = rule.meta.docs.extendsBaseRule
 					const name = ebr === true ? key : ebr
+					const value = eslintConfig.rules[name]
 
-					return {
-						...acc,
-						[name]: 'off',
-						[`@typescript-eslint/${key}`]: eslintConfig.rules[name]
+					if (value !== undefined) {
+						return {
+							...acc,
+							[name]: 'off',
+							[`@typescript-eslint/${key}`]:
+								eslintConfig.rules[name]
+						}
 					}
 				}
 
@@ -165,21 +178,13 @@ module.exports = {
 		'@typescript-eslint/require-array-sort-compare': 'error',
 		'@typescript-eslint/restrict-plus-operands': 'error',
 		'@typescript-eslint/restrict-template-expressions': 'error',
+		'@typescript-eslint/return-await': 'error',
 		'@typescript-eslint/sort-type-constituents': 'off',
 		'@typescript-eslint/strict-boolean-expressions': 'off',
 		'@typescript-eslint/switch-exhaustiveness-check': 'error',
 		'@typescript-eslint/triple-slash-reference': 'error',
 		'@typescript-eslint/typedef': 'off',
 		'@typescript-eslint/unbound-method': 'off',
-		'@typescript-eslint/unified-signatures': 'error',
-
-		// The following import rules are recommended to be disabled within TypeScript projects.
-		// See: https://github.com/typescript-eslint/typescript-eslint/blob/13583e65f5973da2a7ae8384493c5e00014db51b/docs/linting/TROUBLESHOOTING.md#eslint-plugin-import
-		'import/consistent-type-specifier-style': 'off',
-		'import/default': 'off',
-		'import/named': 'off',
-		'import/namespace': 'off',
-		'import/no-named-as-default-member': 'off',
-		'import/no-unresolved': 'off'
+		'@typescript-eslint/unified-signatures': 'error'
 	}
 }
