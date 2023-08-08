@@ -10,19 +10,10 @@ module.exports = {
 		import: eslintPluginImport
 	},
 	settings: {
-		'import/parsers': {
-			'@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts']
-		},
 		'import/resolver': {
-			node: {
-				extensions: ['.mjs', '.js', '.json', '.ts', '.d.ts']
-			}
-		},
-		'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts'],
-		'import/external-module-folders': [
-			'node_modules',
-			'node_modules/@types'
-		]
+			node: true,
+			typescript: true
+		}
 	},
 	linterOptions: {
 		reportUnusedDisableDirectives: true
@@ -30,7 +21,7 @@ module.exports = {
 	languageOptions: {
 		parser: eslintPluginTypeScriptParser,
 		parserOptions: {
-			project: './tsconfig.json',
+			project: true,
 			ecmaVersion: 'latest'
 		}
 	},
@@ -137,7 +128,6 @@ module.exports = {
 		'@typescript-eslint/no-redundant-type-constituents': 'error',
 		'@typescript-eslint/no-require-imports': 'error',
 		'@typescript-eslint/no-this-alias': 'error',
-		'@typescript-eslint/no-type-alias': 'off',
 		'@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
 		'@typescript-eslint/no-unnecessary-condition': 'error',
 		'@typescript-eslint/no-unnecessary-qualifier': 'error',

@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import eslintPluginTypeScript from '@typescript-eslint/eslint-plugin'
 import config from '../index.cjs'
 import { xor, log } from '../../../scripts/helpers.js'
