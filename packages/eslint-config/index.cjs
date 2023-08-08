@@ -229,7 +229,6 @@ module.exports = {
 		],
 		'no-restricted-syntax': 'off',
 		'no-return-assign': 'off',
-		'no-return-await': 'error',
 		'no-script-url': 'error',
 		'no-self-assign': 'error',
 		'no-self-compare': 'error',
