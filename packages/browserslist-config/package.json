@@ -2,7 +2,7 @@
 	"name": "@klnjs/browserslist-config",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "0.0.1-rc.10",
+	"version": "1.0.0-rc.1",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
