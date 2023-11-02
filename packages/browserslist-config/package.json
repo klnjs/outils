@@ -21,6 +21,6 @@
 		"verify": "node ./scripts/verify.js"
 	},
 	"devDependencies": {
-		"browserslist": "4.21.10"
+		"browserslist": "4.22.1"
 	}
 }
