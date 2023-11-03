@@ -2,7 +2,7 @@
 	"name": "@klnjs/prettier-config",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "1.0.0-rc.2",
+	"version": "1.0.0",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -21,7 +21,7 @@
 		"verify": "node ./scripts/verify.js"
 	},
 	"devDependencies": {
-		"prettier": "3.0.1"
+		"prettier": "3.0.3"
 	},
 	"peerDependencies": {
 		"prettier": "^3.0.0"
