@@ -2,8 +2,8 @@
 	"name": "frigg",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"description": "Mono repo containing project configs",
-	"version": "1.0.0-rc.2",
+	"description": "Project containing different configs",
+	"version": "1.0.0",
 	"license": "MIT",
 	"private": true,
 	"repository": {
