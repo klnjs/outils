@@ -1,15 +1,15 @@
-// eslint-disable-next-line import/no-unresolved
-import eslintPluginTypeScript from '@typescript-eslint/eslint-plugin'
-import config from '../index.cjs'
+import plugin from '@typescript-eslint/eslint-plugin'
+import config from '../index.js'
 import { xor, log } from '../../../scripts/helpers.js'
 import { getRulesFromPlugin } from '../../../scripts/eslint.js'
 
 try {
 	const rulesFromConfig = Object.keys(config.rules)
-	const rulesFromTypescript = getRulesFromPlugin(eslintPluginTypeScript, {
+	const rulesFromTypescript = getRulesFromPlugin(plugin, {
 		prefix: '@typescript-eslint'
 	})
 
+	// Curated list
 	const rulesThatMustBeOff = [
 		'constructor-super',
 		'getter-return',
@@ -28,33 +28,35 @@ try {
 		'no-unreachable',
 		'no-unsafe-negation',
 		'valid-typeof',
-		'import/consistent-type-specifier-style',
-		'import/default',
-		'import/named',
-		'import/namespace',
-		'import/no-named-as-default-member',
-		'import/no-unresolved',
-		...rulesFromTypescript.reduce((acc, rule) => {
-			if (rule.meta.docs.extendsBaseRule) {
-				const ebr = rule.meta.docs.extendsBaseRule
-				const name =
-					ebr === true
-						? rule.name.replace('@typescript-eslint/', '')
-						: ebr
-				const value = config.rules[name]
-
-				if (value !== undefined) {
-					return [...acc, name]
-				}
-			}
-
-			return acc
-		}, [])
+		'require-await',
+		'prefer-destructuring',
+		'no-useless-constructor',
+		'no-use-before-define',
+		'no-unused-vars',
+		'no-unused-expressions',
+		'no-throw-literal',
+		'no-shadow',
+		'no-restricted-imports',
+		'no-redeclare',
+		'no-magic-numbers',
+		'no-loss-of-precision',
+		'no-loop-func',
+		'no-invalid-this',
+		'no-implied-eval',
+		'no-extra-semi',
+		'no-empty-function',
+		'no-dupe-class-members',
+		'no-array-constructor',
+		'max-params',
+		'init-declarations',
+		'dot-notation',
+		'default-param-last',
+		'class-methods-use-this'
 	]
 
 	const rulesThatMustExists = [
 		...rulesThatMustBeOff,
-		...rulesFromTypescript.map((rule) => rule.name)
+		...rulesFromTypescript.map((rule) => rule.fqn)
 	]
 
 	const rulesMissing = xor(rulesThatMustExists, rulesFromConfig)

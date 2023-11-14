@@ -9,14 +9,14 @@
 		"url": "git@github.com:klnjs/frigg.git",
 		"directory": "packages/eslint-config-react"
 	},
-	"main": "./index.cjs",
+	"engines": {
+		"node": ">=16"
+	},
 	"exports": {
-		".": "./index.cjs",
+		".": "./index.js",
 		"./package.json": "./package.json"
 	},
-	"files": [
-		"index.cjs"
-	],
+	"files": ["index.js", "src/*"],
 	"scripts": {
 		"verify": "node ./scripts/verify.js"
 	},

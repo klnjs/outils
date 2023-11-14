@@ -9,22 +9,19 @@
 		"url": "git@github.com:klnjs/frigg.git",
 		"directory": "packages/eslint-config"
 	},
-	"main": "./index.cjs",
+	"engines": {
+		"node": ">=16"
+	},
 	"exports": {
-		".": "./index.cjs",
+		".": "./index.js",
 		"./package.json": "./package.json"
 	},
-	"files": [
-		"index.cjs"
-	],
+	"files": ["index.js", "src/*"],
 	"scripts": {
 		"verify": "node ./scripts/verify.js"
 	},
-	"dependencies": {
-		"eslint-plugin-import": "2.29.0"
-	},
 	"devDependencies": {
-		"eslint": "8.52.0"
+		"eslint": "8.53.0"
 	},
 	"peerDependencies": {
 		"eslint": "^8.0.0"

@@ -2,15 +2,15 @@
 *
 
 # Except these folders
-!scripts/
-!scripts/**/*
 !packages/
 !packages/**/*
+!scripts/
+!scripts/**/*
 
 # Except these files
-!.prettierrc.cjs
 !eslint.config.js
 !package.json
+!prettier.config.js
 !renovate.json
 
 # Reignore these folders

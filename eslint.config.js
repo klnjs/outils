@@ -1,5 +1,5 @@
 import globals from 'globals'
-import eslintConfig from './packages/eslint-config/index.cjs'
+import eslintConfig from './packages/eslint-config/index.js'
 
 export default [
 	eslintConfig,

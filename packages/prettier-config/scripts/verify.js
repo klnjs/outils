@@ -1,5 +1,5 @@
 import prettier from 'prettier'
-import prettierConfig from '../index.cjs'
+import config from '../index.js'
 import { xor, log } from '../../../scripts/helpers.js'
 
 const getPrettierOptions = async ({
@@ -26,7 +26,7 @@ const getPrettierOptions = async ({
 }
 
 try {
-	const optionsFromConfig = Object.keys(prettierConfig)
+	const optionsFromConfig = Object.keys(config)
 	const optionsThatMustExists = await getPrettierOptions()
 	const optionsMissing = xor(optionsThatMustExists, optionsFromConfig)
 	const optionsUnknown = xor(optionsFromConfig, optionsThatMustExists)

@@ -1,21 +1,12 @@
-// eslint-disable-next-line import/no-unresolved
-import eslint from 'eslint/use-at-your-own-risk'
-import eslintPluginImport from 'eslint-plugin-import'
-import config from '../index.cjs'
+import { builtinRules } from 'eslint/use-at-your-own-risk'
+import config from '../index.js'
 import { xor, log } from '../../../scripts/helpers.js'
 import { getRulesFromPlugin } from '../../../scripts/eslint.js'
 
 try {
 	const rulesFromConfig = Object.keys(config.rules)
-	const rulesFromEslint = getRulesFromPlugin({ rules: eslint.builtinRules })
-	const rulesFromImport = getRulesFromPlugin(eslintPluginImport, {
-		prefix: 'import'
-	})
-	const rulesThatMustExists = [
-		...rulesFromEslint.map((rule) => rule.name),
-		...rulesFromImport.map((rule) => rule.name)
-	]
-
+	const rulesFromEslint = getRulesFromPlugin({ rules: builtinRules })
+	const rulesThatMustExists = rulesFromEslint.map((rule) => rule.fqn)
 	const rulesMissing = xor(rulesThatMustExists, rulesFromConfig)
 	const rulesUnknown = xor(rulesFromConfig, rulesThatMustExists)
 

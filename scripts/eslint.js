@@ -21,7 +21,14 @@ export const getRulesFromPlugin = (
 			return acc
 		}
 
-		return [...acc, { name: prefix ? `${prefix}/${name}` : name, ...rule }]
+		return [
+			...acc,
+			{
+				fqn: `${prefix}/${name}`,
+				name: name,
+				...rule
+			}
+		]
 	}, [])
 }
 

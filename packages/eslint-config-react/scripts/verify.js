@@ -1,20 +1,21 @@
-import eslintPluginReact from 'eslint-plugin-react'
-import eslintPluginReactHooks from 'eslint-plugin-react-hooks'
+import rePlugin from 'eslint-plugin-react'
+import rhePlugin from 'eslint-plugin-react-hooks'
 import config from '../index.cjs'
 import { xor, log } from '../../../scripts/helpers.js'
 import { getRulesFromPlugin } from '../../../scripts/eslint.js'
 
 try {
 	const rulesFromConfig = Object.keys(config.rules)
-	const rulesFromReact = getRulesFromPlugin(eslintPluginReact, {
+	const rulesFromReact = getRulesFromPlugin(rePlugin, {
 		prefix: 'react'
 	})
-	const rulesFromReactHooks = getRulesFromPlugin(eslintPluginReactHooks, {
+	const rulesFromReactHooks = getRulesFromPlugin(rhePlugin, {
 		prefix: 'react-hooks'
 	})
+
 	const rulesThatMustExists = [
-		...rulesFromReact.map((rule) => rule.name),
-		...rulesFromReactHooks.map((rule) => rule.name)
+		...rulesFromReact.map((rule) => rule.fqn),
+		...rulesFromReactHooks.map((rule) => rule.fqn)
 	]
 
 	const rulesMissing = xor(rulesThatMustExists, rulesFromConfig)
