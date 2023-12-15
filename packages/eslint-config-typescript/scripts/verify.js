@@ -43,7 +43,6 @@ try {
 		'no-loop-func',
 		'no-invalid-this',
 		'no-implied-eval',
-		'no-extra-semi',
 		'no-empty-function',
 		'no-dupe-class-members',
 		'no-array-constructor',
@@ -67,13 +66,7 @@ try {
 			}
 
 			return acc
-		}, []),
-		'import/consistent-type-specifier-style',
-		'import/default',
-		'import/named',
-		'import/namespace',
-		'import/no-named-as-default-member',
-		'import/no-unresolved'
+		}, [])
 	]
 
 	const rulesThatMustExists = [

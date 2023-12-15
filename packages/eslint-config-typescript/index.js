@@ -1,30 +1,23 @@
-import tsePlugin from '@typescript-eslint/eslint-plugin'
-import tseParser from '@typescript-eslint/parser'
-
-import { getBuiltinRules } from './src/builtin'
-import {
-	getTypescriptRules,
-	getTypescriptExtensionRules
-} from './src/typescript'
+import * as typescript from './src/typescript.js'
 
 export default {
 	files: ['**/*.ts', '**/*.tsx'],
 	plugins: {
-		'@typescript-eslint': tsePlugin
+		[typescript.prefix]: typescript.plugin
 	},
 	linterOptions: {
 		reportUnusedDisableDirectives: true
 	},
 	languageOptions: {
-		parser: tseParser,
+		parser: typescript.parser,
 		parserOptions: {
 			project: true,
 			ecmaVersion: 'latest'
 		}
 	},
 	rules: {
-		...getBuiltinRules(),
-		...getTypescriptExtensionRules,
-		...getTypescriptRules()
+		...typescript.getTypescriptBuiltinRules(),
+		...typescript.getTypescriptExtensionRules(),
+		...typescript.getTypescriptRules()
 	}
 }

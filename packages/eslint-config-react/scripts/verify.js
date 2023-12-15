@@ -1,6 +1,6 @@
 import rePlugin from 'eslint-plugin-react'
 import rhePlugin from 'eslint-plugin-react-hooks'
-import config from '../index.cjs'
+import config from '../index.js'
 import { xor, log } from '../../../scripts/helpers.js'
 import { getRulesFromPlugin } from '../../../scripts/eslint.js'
 
