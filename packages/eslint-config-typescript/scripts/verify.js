@@ -28,12 +28,6 @@ try {
 		'no-unreachable',
 		'no-unsafe-negation',
 		'valid-typeof',
-		'import/consistent-type-specifier-style',
-		'import/default',
-		'import/named',
-		'import/namespace',
-		'import/no-named-as-default-member',
-		'import/no-unresolved',
 		...rulesFromTypescript.reduce((acc, rule) => {
 			if (rule.meta.docs.extendsBaseRule) {
 				const ebr = rule.meta.docs.extendsBaseRule
@@ -49,7 +43,13 @@ try {
 			}
 
 			return acc
-		}, [])
+		}, []),
+		'import/consistent-type-specifier-style',
+		'import/default',
+		'import/named',
+		'import/namespace',
+		'import/no-named-as-default-member',
+		'import/no-unresolved'
 	]
 
 	const rulesThatMustExists = [
