@@ -1,16 +1,17 @@
-import rePlugin from 'eslint-plugin-react'
-import rhePlugin from 'eslint-plugin-react-hooks'
-import config from '../index.js'
+import * as react from '../src/react.js'
+import * as reactHooks from '../src/react-hooks.js'
 import { xor, log } from '../../../scripts/helpers.js'
 import { getRulesFromPlugin } from '../../../scripts/eslint.js'
+import config from '../index.js'
 
 try {
 	const rulesFromConfig = Object.keys(config.rules)
-	const rulesFromReact = getRulesFromPlugin(rePlugin, {
-		prefix: 'react'
+	const rulesFromReact = getRulesFromPlugin(react.plugin, {
+		prefix: react.prefix
 	})
-	const rulesFromReactHooks = getRulesFromPlugin(rhePlugin, {
-		prefix: 'react-hooks'
+
+	const rulesFromReactHooks = getRulesFromPlugin(reactHooks.plugin, {
+		prefix: reactHooks.prefix
 	})
 
 	const rulesThatMustExists = [

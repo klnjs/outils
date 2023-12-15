@@ -1,12 +1,12 @@
-import plugin from '@typescript-eslint/eslint-plugin'
-import config from '../index.js'
+import * as typescript from '../src/typescript.js'
 import { xor, log } from '../../../scripts/helpers.js'
 import { getRulesFromPlugin } from '../../../scripts/eslint.js'
+import config from '../index.js'
 
 try {
 	const rulesFromConfig = Object.keys(config.rules)
-	const rulesFromTypescript = getRulesFromPlugin(plugin, {
-		prefix: '@typescript-eslint'
+	const rulesFromTypescript = getRulesFromPlugin(typescript.plugin, {
+		prefix: typescript.prefix
 	})
 
 	// Curated list
@@ -50,8 +50,11 @@ try {
 		'init-declarations',
 		'dot-notation',
 		'default-param-last',
-		'class-methods-use-this',
-		...rulesFromTypescript.reduce((acc, rule) => {
+		'class-methods-use-this'
+	]
+
+	console.log(
+		rulesFromTypescript.reduce((acc, rule) => {
 			if (rule.meta.docs.extendsBaseRule) {
 				const ebr = rule.meta.docs.extendsBaseRule
 				const name =
@@ -67,7 +70,7 @@ try {
 
 			return acc
 		}, [])
-	]
+	)
 
 	const rulesThatMustExists = [
 		...rulesThatMustBeOff,

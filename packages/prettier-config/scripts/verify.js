@@ -1,6 +1,6 @@
 import prettier from 'prettier'
-import config from '../index.js'
 import { xor, log } from '../../../scripts/helpers.js'
+import config from '../index.js'
 
 const getPrettierOptions = async ({
 	exclude,

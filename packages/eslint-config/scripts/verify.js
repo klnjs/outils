@@ -1,7 +1,7 @@
 import { builtinRules } from 'eslint/use-at-your-own-risk'
-import config from '../index.js'
 import { xor, log } from '../../../scripts/helpers.js'
 import { getRulesFromPlugin } from '../../../scripts/eslint.js'
+import config from '../index.js'
 
 try {
 	const rulesFromConfig = Object.keys(config.rules)
