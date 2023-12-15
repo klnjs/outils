@@ -46,15 +46,6 @@ module.exports = {
 		'no-unsafe-negation': 'off', // ts(2365) & ts(2360) & ts(2358)
 		'valid-typeof': 'off', // ts(2367)
 
-		// The following import rules are recommended to be disabled within TypeScript projects.
-		// See: https://github.com/typescript-eslint/typescript-eslint/blob/13583e65f5973da2a7ae8384493c5e00014db51b/docs/linting/TROUBLESHOOTING.md#eslint-plugin-import
-		'import/consistent-type-specifier-style': 'off',
-		'import/default': 'off',
-		'import/named': 'off',
-		'import/namespace': 'off',
-		'import/no-named-as-default-member': 'off',
-		'import/no-unresolved': 'off',
-
 		// The following will enable all TypeScript extension rules and disable the builtin equivalent.
 		// See: https://typescript-eslint.io/rules/#extension-rules
 		...Object.entries(eslintPluginTypeScript.rules).reduce(
@@ -82,6 +73,15 @@ module.exports = {
 			},
 			{}
 		),
+
+		// The following import rules are recommended to be disabled within TypeScript projects.
+		// See: https://github.com/typescript-eslint/typescript-eslint/blob/13583e65f5973da2a7ae8384493c5e00014db51b/docs/linting/TROUBLESHOOTING.md#eslint-plugin-import
+		'import/consistent-type-specifier-style': 'off',
+		'import/default': 'off',
+		'import/named': 'off',
+		'import/namespace': 'off',
+		'import/no-named-as-default-member': 'off',
+		'import/no-unresolved': 'off',
 
 		// The following rules are from the TypeScript plugin.
 		// See: https://typescript-eslint.io/rules/#supported-rules
@@ -124,6 +124,7 @@ module.exports = {
 		'@typescript-eslint/no-empty-interface': 'error',
 		'@typescript-eslint/no-explicit-any': 'error',
 		'@typescript-eslint/no-extra-non-null-assertion': 'error',
+		'@typescript-eslint/no-extra-semi': 'off',
 		'@typescript-eslint/no-extraneous-class': 'error',
 		'@typescript-eslint/no-floating-promises': 'error',
 		'@typescript-eslint/no-for-in-array': 'error',
@@ -154,6 +155,7 @@ module.exports = {
 		'@typescript-eslint/no-unsafe-enum-comparison': 'error',
 		'@typescript-eslint/no-unsafe-member-access': 'error',
 		'@typescript-eslint/no-unsafe-return': 'error',
+		'@typescript-eslint/no-unsafe-unary-minus': 'off',
 		'@typescript-eslint/no-useless-empty-export': 'error',
 		'@typescript-eslint/no-var-requires': 'error',
 		'@typescript-eslint/non-nullable-type-assertion-style': 'error',
