@@ -4,6 +4,7 @@ export default {
 	bracketSpacing: true,
 	embeddedLanguageFormatting: 'auto',
 	endOfLine: 'lf',
+	experimentalTernaries: false,
 	jsxSingleQuote: false,
 	printWidth: 80,
 	proseWrap: 'preserve',

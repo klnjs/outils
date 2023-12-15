@@ -51,7 +51,29 @@ try {
 		'init-declarations',
 		'dot-notation',
 		'default-param-last',
-		'class-methods-use-this'
+		'class-methods-use-this',
+		...rulesFromTypescript.reduce((acc, rule) => {
+			if (rule.meta.docs.extendsBaseRule) {
+				const ebr = rule.meta.docs.extendsBaseRule
+				const name =
+					ebr === true
+						? rule.name.replace('@typescript-eslint/', '')
+						: ebr
+				const value = config.rules[name]
+
+				if (value !== undefined) {
+					return [...acc, name]
+				}
+			}
+
+			return acc
+		}, []),
+		'import/consistent-type-specifier-style',
+		'import/default',
+		'import/named',
+		'import/namespace',
+		'import/no-named-as-default-member',
+		'import/no-unresolved'
 	]
 
 	const rulesThatMustExists = [

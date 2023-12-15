@@ -21,7 +21,7 @@
 		"verify": "node ./scripts/verify.js"
 	},
 	"devDependencies": {
-		"eslint": "8.53.0"
+		"eslint": "8.55.0"
 	},
 	"peerDependencies": {
 		"eslint": "^8.0.0"
