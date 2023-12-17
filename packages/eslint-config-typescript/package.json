@@ -2,20 +2,23 @@
 	"name": "@klnjs/eslint-config-typescript",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "1.0.0",
+	"version": "2.0.0-rc.1",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:klnjs/frigg.git",
 		"directory": "packages/eslint-config-typescript"
 	},
-	"main": "./index.cjs",
+	"engines": {
+		"node": ">=16"
+	},
 	"exports": {
-		".": "./index.cjs",
+		".": "./index.js",
 		"./package.json": "./package.json"
 	},
 	"files": [
-		"index.cjs"
+		"index.js",
+		"src/*"
 	],
 	"scripts": {
 		"verify": "node ./scripts/verify.js"

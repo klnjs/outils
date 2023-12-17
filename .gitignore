@@ -4,10 +4,10 @@
 # Except these folders
 !.github/
 !.github/**/*
-!scripts/
-!scripts/**/*
 !packages/
 !packages/**/*
+!scripts/
+!scripts/**/*
 
 # Except these files
 !.editorconfig
@@ -16,13 +16,13 @@
 !.node-version
 !.npmrc
 !.prettierignore
-!.prettierrc.cjs
+!CHANGELOG.md
 !eslint.config.js
 !LICENSE
-!CHANGELOG.md
 !package.json
 !pnpm-lock.yaml
 !pnpm-workspace.yaml
+!prettier.config.js
 !README.md
 !renovate.json
 

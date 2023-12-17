@@ -1,60 +1,24 @@
-// eslint-disable-next-line import/no-unresolved
-import eslintPluginTypeScript from '@typescript-eslint/eslint-plugin'
-import config from '../index.cjs'
+import * as typescript from '../src/typescript.js'
 import { xor, log } from '../../../scripts/helpers.js'
 import { getRulesFromPlugin } from '../../../scripts/eslint.js'
+import config from '../index.js'
 
 try {
 	const rulesFromConfig = Object.keys(config.rules)
-	const rulesFromTypescript = getRulesFromPlugin(eslintPluginTypeScript, {
-		prefix: '@typescript-eslint'
+	const rulesFromTypescript = getRulesFromPlugin(typescript.plugin, {
+		prefix: typescript.prefix
 	})
 
 	const rulesThatMustBeOff = [
-		'constructor-super',
-		'getter-return',
-		'no-const-assign',
-		'no-dupe-args',
-		'no-dupe-class-members',
-		'no-dupe-keys',
-		'no-func-assign',
-		'no-import-assign',
-		'no-new-symbol',
-		'no-obj-calls',
-		'no-redeclare',
-		'no-setter-return',
-		'no-this-before-super',
-		'no-undef',
-		'no-unreachable',
-		'no-unsafe-negation',
-		'valid-typeof',
-		...rulesFromTypescript.reduce((acc, rule) => {
-			if (rule.meta.docs.extendsBaseRule) {
-				const ebr = rule.meta.docs.extendsBaseRule
-				const name =
-					ebr === true
-						? rule.name.replace('@typescript-eslint/', '')
-						: ebr
-				const value = config.rules[name]
-
-				if (value !== undefined) {
-					return [...acc, name]
-				}
-			}
-
-			return acc
-		}, []),
-		'import/consistent-type-specifier-style',
-		'import/default',
-		'import/named',
-		'import/namespace',
-		'import/no-named-as-default-member',
-		'import/no-unresolved'
+		...Object.keys(typescript.getTypescriptBuiltinRules()),
+		...Object.keys(typescript.getTypescriptExtensionRules()).filter(
+			(key) => !key.startsWith(typescript.prefix)
+		)
 	]
 
 	const rulesThatMustExists = [
 		...rulesThatMustBeOff,
-		...rulesFromTypescript.map((rule) => rule.name)
+		...rulesFromTypescript.map((rule) => rule.fqn)
 	]
 
 	const rulesMissing = xor(rulesThatMustExists, rulesFromConfig)

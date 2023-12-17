@@ -1,8 +1,8 @@
 import browserslist from 'browserslist'
-import browserslistConfig from '../index.cjs'
+import config from '../index.js'
 
 try {
-	browserslist(browserslistConfig)
+	browserslist(config)
 } catch (error) {
 	console.log(error)
 	process.exit(1)
