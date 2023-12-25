@@ -2,7 +2,7 @@
 	"name": "@klnjs/eslint-config",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "2.0.0-rc.1",
+	"version": "2.0.0-rc.2",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -20,8 +20,12 @@
 		"index.js",
 		"src/*"
 	],
-	"scripts": {
-		"verify": "node ./scripts/verify.js"
+	"dependencies": {
+		"@typescript-eslint/eslint-plugin": "6.14.0",
+		"@typescript-eslint/parser": "6.14.0",
+		"eslint-import-resolver-typescript": "3.6.1",
+		"eslint-plugin-react-hooks": "4.6.0",
+		"eslint-plugin-react": "7.33.2"
 	},
 	"devDependencies": {
 		"eslint": "8.55.0"
