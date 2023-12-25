@@ -1,7 +1,7 @@
 import { test, expect } from 'bun:test'
 import { Linter } from 'eslint'
 import { getESLintFromConfig } from './internals/getESLintFromConfig.js'
-import config from './core.js'
+import { core as config } from './core.js'
 
 const rules = new Linter().getRules()
 

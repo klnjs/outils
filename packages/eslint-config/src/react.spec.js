@@ -1,6 +1,6 @@
 import { test, expect } from 'bun:test'
 import { getESLintFromConfig } from './internals/getESLintFromConfig.js'
-import config from './react.js'
+import { react as config } from './react.js'
 
 const rules = new Map(
 	Object.entries(config.plugins).reduce(

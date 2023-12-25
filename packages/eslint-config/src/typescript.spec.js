@@ -1,8 +1,8 @@
 import { test, expect } from 'bun:test'
-import typescript from '@typescript-eslint/eslint-plugin'
+import typescriptPlugin from '@typescript-eslint/eslint-plugin'
 import { getESLintCoreRule } from './internals/getESLintCoreRule'
 import { getESLintFromConfig } from './internals/getESLintFromConfig.js'
-import config from './typescript.js'
+import { typescript as config } from './typescript.js'
 
 const rules = new Map(
 	Object.entries(config.plugins).reduce(
@@ -49,25 +49,28 @@ test('Config should include obsolete core rules and turn them off', () =>
 		'no-unreachable',
 		'no-unsafe-negation',
 		'valid-typeof',
-		...Object.entries(typescript.rules).reduce((acc, [name, rule]) => {
-			if (
-				rule.meta.deprecated ||
-				rule.meta.type === 'layout' ||
-				!rule.meta.docs.extendsBaseRule
-			) {
-				return acc
-			}
+		...Object.entries(typescriptPlugin.rules).reduce(
+			(acc, [name, rule]) => {
+				if (
+					rule.meta.deprecated ||
+					rule.meta.type === 'layout' ||
+					!rule.meta.docs.extendsBaseRule
+				) {
+					return acc
+				}
 
-			const base = rule.meta.docs.extendsBaseRule
-			const baseName = base === true ? name : base
-			const baseRule = getESLintCoreRule(baseName)
+				const base = rule.meta.docs.extendsBaseRule
+				const baseName = base === true ? name : base
+				const baseRule = getESLintCoreRule(baseName)
 
-			if (baseRule.meta.deprecated) {
-				return acc
-			}
+				if (baseRule.meta.deprecated) {
+					return acc
+				}
 
-			return [...acc, baseName]
-		}, [])
+				return [...acc, baseName]
+			},
+			[]
+		)
 	].forEach((name) => {
 		expect(config.rules).toHaveProperty(name, 'off')
 	}))
