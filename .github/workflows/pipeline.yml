@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix: 
-        script: ["verify", "eslint", "prettier"]
+        script: ["test", "eslint", "prettier"]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
