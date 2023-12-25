@@ -4,14 +4,9 @@
 # Except these folders
 !packages/
 !packages/**/*
-!scripts/
-!scripts/**/*
 
 # Except these files
 !eslint.config.js
 !package.json
 !prettier.config.js
 !renovate.json
-
-# Reignore these folders
-node_modules/

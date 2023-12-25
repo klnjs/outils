@@ -20,9 +20,6 @@
 		"index.js",
 		"src/*"
 	],
-	"scripts": {
-		"verify": "node ./scripts/verify.js"
-	},
 	"devDependencies": {
 		"browserslist": "4.22.2"
 	}

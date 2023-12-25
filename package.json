@@ -6,6 +6,9 @@
 	"version": "2.0.0-rc.1",
 	"license": "MIT",
 	"private": true,
+	"workspaces": [
+		"packages/*"
+	],
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:klnjs/frigg.git"
@@ -18,7 +21,6 @@
 	},
 	"devDependencies": {
 		"eslint": "8.55.0",
-		"globals": "13.24.0",
 		"prettier": "3.1.1"
 	}
 }
