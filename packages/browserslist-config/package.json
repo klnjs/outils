@@ -2,15 +2,12 @@
 	"name": "@klnjs/browserslist-config",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "2.0.0-rc.1",
+	"version": "2.0.0-rc.2",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:klnjs/frigg.git",
 		"directory": "packages/browserslist-config"
-	},
-	"engines": {
-		"node": ">=16"
 	},
 	"exports": {
 		".": "./index.js",
@@ -20,9 +17,6 @@
 		"index.js",
 		"src/*"
 	],
-	"scripts": {
-		"verify": "node ./scripts/verify.js"
-	},
 	"devDependencies": {
 		"browserslist": "4.22.2"
 	}

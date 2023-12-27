@@ -3,22 +3,26 @@
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
 	"description": "Project containing different configs",
-	"version": "2.0.0-rc.1",
+	"version": "2.0.0-rc.2",
 	"license": "MIT",
 	"private": true,
+	"workspaces": [
+		"packages/*"
+	],
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:klnjs/frigg.git"
 	},
 	"scripts": {
-		"verify": "pnpm -r run verify",
 		"publish": "pnpm -r publish",
+		"test": "bun test",
 		"eslint": "eslint ./packages --max-warnings 0 --cache --cache-location=./.eslintcache",
 		"prettier": "prettier ./packages --check --cache --cache-location=./.prettiercache"
 	},
 	"devDependencies": {
+		"@types/bun": "1.0.0",
 		"eslint": "8.55.0",
-		"globals": "13.24.0",
-		"prettier": "3.1.1"
+		"prettier": "3.1.1",
+		"typescript": "5.3.3"
 	}
 }

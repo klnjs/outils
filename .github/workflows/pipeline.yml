@@ -16,27 +16,19 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix: 
-        script: ["verify", "eslint", "prettier"]
+        script: ["test", "eslint", "prettier"]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: .node-version
-          cache: pnpm
+      
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
 
       - name: Install dependencies
-        run: pnpm install
+        run: bun install
 
       - name: Execute ${{ matrix.script }}
-        run: pnpm run ${{ matrix.script }}
+        run: bun run ${{ matrix.script }}
         
   publish: 
     runs-on: ubuntu-latest
@@ -56,9 +48,6 @@ jobs:
         with:
           node-version-file: .node-version
           cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install
 
       - name: Publish 
         run: pnpm run publish
