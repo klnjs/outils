@@ -12,6 +12,7 @@
 !.eslintignore
 !.gitignore
 !.node-version
+!.npmrc
 !.prettierignore
 !bun.lockb
 !bunfig.toml
