@@ -38,14 +38,9 @@ jobs:
       - name: Setup
         uses: oven-sh/setup-bun@v1
 
-      - name: Publish Dry
-        if: ${{ !contains(github.ref, 'master') }}
-        run: npm publish --workspaces --access=public --dry-run
-
       - name: Publish
-        if: ${{ contains(github.ref, 'master') && !contains(github.event.head_commit.message, '🤖') }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --workspaces --access=public
+        run: npm publish --workspaces --access=public ${{ !contains(github.ref, 'master') && '--dry-run' }}
 
 
