@@ -9,14 +9,15 @@
 		"url": "git+ssh://git@github.com/klnjs/frigg.git",
 		"directory": "packages/browserslist-config"
 	},
-	"exports": {
-		".": "./index.js",
-		"./package.json": "./package.json"
-	},
 	"files": [
 		"index.js",
 		"src/*"
 	],
+	"exports": {
+		".": "./index.js",
+		"./package.json": "./package.json"
+	},
+	"scripts": {},
 	"devDependencies": {
 		"browserslist": "4.22.2"
 	}

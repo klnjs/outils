@@ -9,14 +9,15 @@
 		"url": "git+ssh://git@github.com/klnjs/frigg.git",
 		"directory": "packages/eslint-config"
 	},
-	"exports": {
-		".": "./index.js",
-		"./package.json": "./package.json"
-	},
 	"files": [
 		"index.js",
 		"src/*"
 	],
+	"exports": {
+		".": "./index.js",
+		"./package.json": "./package.json"
+	},
+	"scripts": {},
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "6.14.0",
 		"@typescript-eslint/parser": "6.14.0",
