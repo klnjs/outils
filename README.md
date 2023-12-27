@@ -5,3 +5,4 @@ Shareable configs for JavaScript development
 * @klnjs/browserslist-config
 * @klnjs/eslint-config
 * @klnjs/prettier-config
+* @klnjs/typescript-config
