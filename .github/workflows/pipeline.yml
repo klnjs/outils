@@ -35,12 +35,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup
-        uses: oven-sh/setup-bun@v1
-
       - name: Publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --workspaces --access=public ${{ !contains(github.ref, 'master') && '--dry-run' }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --workspaces --access=public ${{ !contains(github.ref, 'master') && '--dry-run' || '' }}
 
 
