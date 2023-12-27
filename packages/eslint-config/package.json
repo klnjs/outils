@@ -6,7 +6,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:klnjs/frigg.git",
+		"url": "git+ssh://git@github.com/klnjs/frigg.git",
 		"directory": "packages/eslint-config"
 	},
 	"exports": {
