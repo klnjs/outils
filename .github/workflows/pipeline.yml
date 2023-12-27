@@ -26,9 +26,6 @@ jobs:
 
       - name: Execute ${{ matrix.script }}
         run: bun run ${{ matrix.script }}
-
-      - name: Publish
-        run: npm publish --dry-run --workspaces --access=public
         
   publish: 
     runs-on: ubuntu-latest
