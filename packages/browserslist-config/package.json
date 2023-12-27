@@ -9,9 +9,6 @@
 		"url": "git@github.com:klnjs/frigg.git",
 		"directory": "packages/browserslist-config"
 	},
-	"engines": {
-		"node": ">=16"
-	},
 	"exports": {
 		".": "./index.js",
 		"./package.json": "./package.json"
