@@ -6,13 +6,13 @@
 	"version": "2.0.0-rc.2",
 	"license": "MIT",
 	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/klnjs/frigg.git"
+	},
 	"workspaces": [
 		"packages/*"
 	],
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:klnjs/frigg.git"
-	},
 	"scripts": {
 		"publish": "pnpm -r publish",
 		"test": "bun test",

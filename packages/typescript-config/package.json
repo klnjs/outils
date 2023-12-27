@@ -1,0 +1,16 @@
+{
+	"name": "@klnjs/typescript-config",
+	"type": "module",
+	"author": "Rune Klein (@rnkln)",
+	"version": "2.0.0-rc.2",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/klnjs/frigg.git",
+		"directory": "packages/typescript-config"
+	},
+	"files": [
+		"*.json"
+	],
+	"scripts": {}
+}
