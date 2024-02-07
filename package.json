@@ -1,28 +1,28 @@
 {
-  "name": "frigg",
-  "type": "module",
-  "author": "Rune Klein (@rnkln)",
-  "description": "Project containing different configs",
-  "version": "2.0.0-rc.2",
-  "license": "MIT",
-  "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/klnjs/frigg.git"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "publish": "pnpm -r publish",
-    "test": "bun test",
-    "eslint": "eslint ./packages --max-warnings 0 --cache --cache-location=./.eslintcache",
-    "prettier": "prettier ./packages --check --cache --cache-location=./.prettiercache"
-  },
-  "devDependencies": {
-    "@types/bun": "1.0.5",
-    "eslint": "8.56.0",
-    "prettier": "3.2.5",
-    "typescript": "5.3.3"
-  }
+	"name": "frigg",
+	"type": "module",
+	"author": "Rune Klein (@rnkln)",
+	"description": "Project containing different configs",
+	"version": "2.0.0-rc.3",
+	"license": "MIT",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/klnjs/frigg.git"
+	},
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"publish": "pnpm -r publish",
+		"test": "bun test",
+		"eslint": "eslint ./packages --max-warnings 0 --cache --cache-location=./.eslintcache",
+		"prettier": "prettier ./packages --check --cache --cache-location=./.prettiercache"
+	},
+	"devDependencies": {
+		"@types/bun": "1.0.5",
+		"eslint": "8.56.0",
+		"prettier": "3.2.5",
+		"typescript": "5.3.3"
+	}
 }
