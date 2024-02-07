@@ -3,7 +3,7 @@
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
 	"description": "Project containing different configs",
-	"version": "2.0.0-rc.2",
+	"version": "2.0.0-rc.3",
 	"license": "MIT",
 	"private": true,
 	"repository": {
@@ -20,9 +20,9 @@
 		"prettier": "prettier ./packages --check --cache --cache-location=./.prettiercache"
 	},
 	"devDependencies": {
-		"@types/bun": "1.0.0",
-		"eslint": "8.55.0",
-		"prettier": "3.1.1",
+		"@types/bun": "1.0.5",
+		"eslint": "8.56.0",
+		"prettier": "3.2.5",
 		"typescript": "5.3.3"
 	}
 }
