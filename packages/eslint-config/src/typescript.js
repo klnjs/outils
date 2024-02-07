@@ -59,6 +59,7 @@ export const typescript = {
 		'no-use-before-define': 'off',
 		'no-useless-constructor': 'off',
 		'prefer-destructuring': 'off',
+		'prefer-promise-reject-errors': 'off',
 		'require-await': 'off',
 
 		// The following configures all typescript-eslint rules.
@@ -99,6 +100,7 @@ export const typescript = {
 			{ selector: 'typeLike', format: ['PascalCase'] }
 		],
 		'@typescript-eslint/no-array-constructor': 'error',
+		'@typescript-eslint/no-array-delete': 'error',
 		'@typescript-eslint/no-base-to-string': 'error',
 		'@typescript-eslint/no-confusing-non-null-assertion': 'error',
 		'@typescript-eslint/no-confusing-void-expression': 'off',
@@ -110,7 +112,6 @@ export const typescript = {
 		'@typescript-eslint/no-empty-interface': 'error',
 		'@typescript-eslint/no-explicit-any': 'error',
 		'@typescript-eslint/no-extra-non-null-assertion': 'error',
-		'@typescript-eslint/no-extra-semi': 'off',
 		'@typescript-eslint/no-extraneous-class': 'error',
 		'@typescript-eslint/no-floating-promises': 'error',
 		'@typescript-eslint/no-for-in-array': 'error',
@@ -159,6 +160,7 @@ export const typescript = {
 		'@typescript-eslint/no-use-before-define': 'off',
 		'@typescript-eslint/no-useless-constructor': 'error',
 		'@typescript-eslint/no-useless-empty-export': 'error',
+		'@typescript-eslint/no-useless-template-literals': 'error',
 		'@typescript-eslint/no-var-requires': 'error',
 		'@typescript-eslint/non-nullable-type-assertion-style': 'error',
 		'@typescript-eslint/parameter-properties': 'error',
@@ -172,6 +174,7 @@ export const typescript = {
 		'@typescript-eslint/prefer-namespace-keyword': 'error',
 		'@typescript-eslint/prefer-nullish-coalescing': 'error',
 		'@typescript-eslint/prefer-optional-chain': 'error',
+		'@typescript-eslint/prefer-promise-reject-errors': 'error',
 		'@typescript-eslint/prefer-readonly-parameter-types': 'off',
 		'@typescript-eslint/prefer-readonly': 'error',
 		'@typescript-eslint/prefer-reduce-type-parameter': 'error',
