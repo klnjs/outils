@@ -9,11 +9,11 @@
 		"url": "git+ssh://git@github.com/klnjs/outils.git",
 		"directory": "packages/configs/prettier-config"
 	},
-  "files": [
-    "src",
+	"files": [
+		"src",
 		"index.js",
-    "README.md"
-  ],
+		"README.md"
+	],
 	"exports": {
 		".": {
 			"import": "./index.js"

@@ -7,7 +7,9 @@
 !packages/
 !packages/**/*
 
-# Except these files!.gitignore
+# Except these files
+!.editorconfig
+!.gitignore
 !.node-version
 !.npmrc
 !bun.lockb

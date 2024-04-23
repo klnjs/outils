@@ -1,3 +1,1 @@
-export { core } from '../prettier-config'
-
-export default core
+export { core as default } from '../prettier-config/index.js'

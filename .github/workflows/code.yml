@@ -15,6 +15,10 @@ jobs:
     strategy:
       matrix: 
         script: ["test", "eslint", "prettier"]
+    env:
+      BUN_ENV: production
+      FORCE_COLOR: 1
+      TURBO_TELEMETRY_DISABLED: 1
     steps:
       - name: Checkout
         uses: actions/checkout@v3

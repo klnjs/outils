@@ -16,4 +16,3 @@ test('Config should load without errors', () => {
 
 	expect(configErrors).toBeEmpty()
 })
-

@@ -9,11 +9,11 @@
 		"url": "git+ssh://git@github.com/klnjs/frigg.git",
 		"directory": "packages/eslint-config"
 	},
-  "files": [
-    "src",
+	"files": [
+		"src",
 		"index.js",
-    "README.md"
-  ],
+		"README.md"
+	],
 	"exports": {
 		".": {
 			"import": "./index.js"

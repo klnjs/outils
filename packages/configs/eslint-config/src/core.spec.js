@@ -6,9 +6,7 @@ import core from './core'
 const rules = new Linter().getRules()
 
 test('Config should load', () => {
-	expect(() =>
-		getESLintFromConfig(core).lintFiles(core.files)
-	).not.toThrow()
+	expect(() => getESLintFromConfig(core).lintFiles(core.files)).not.toThrow()
 })
 
 test('Config should include code rules', () =>
