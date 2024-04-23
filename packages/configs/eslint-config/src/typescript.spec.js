@@ -1,7 +1,7 @@
 import { test, expect } from 'bun:test'
 import typescriptPlugin from '@typescript-eslint/eslint-plugin'
 import { builtinRules } from 'eslint/use-at-your-own-risk'
-import { getESLintFromConfig } from './internals/getESLintFromConfig'
+import { createESLintFromConfig } from '../test/create-eslint-from-config'
 import typescript from './typescript'
 
 const rules = new Map(
@@ -19,7 +19,7 @@ const rules = new Map(
 
 test('Config should load', () => {
 	expect(() =>
-		getESLintFromConfig(typescript).lintFiles(typescript.files)
+		createESLintFromConfig(typescript).lintFiles(typescript.files)
 	).not.toThrow()
 })
 

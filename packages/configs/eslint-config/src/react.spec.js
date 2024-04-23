@@ -1,5 +1,5 @@
 import { test, expect } from 'bun:test'
-import { getESLintFromConfig } from './internals/getESLintFromConfig'
+import { createESLintFromConfig } from '../test/create-eslint-from-config'
 import react from './react'
 
 const rules = new Map(
@@ -17,7 +17,7 @@ const rules = new Map(
 
 test('Config should load', () => {
 	expect(() =>
-		getESLintFromConfig(react).lintFiles(react.files)
+		createESLintFromConfig(react).lintFiles(react.files)
 	).not.toThrow()
 })
 

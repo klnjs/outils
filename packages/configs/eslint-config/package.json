@@ -10,15 +10,11 @@
 		"directory": "packages/eslint-config"
 	},
 	"files": [
-		"src",
+		"src/**/!(*.spec).js",
 		"index.js",
 		"README.md"
 	],
-	"exports": {
-		".": {
-			"import": "./index.js"
-		}
-	},
+	"exports": "./index.js",
 	"scripts": {
 		"publish": "npm publish",
 		"test": "bun test",

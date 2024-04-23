@@ -1,6 +1,6 @@
 import { ESLint } from 'eslint'
 
-export const getESLintFromConfig = (config) =>
+export const createESLintFromConfig = (config) =>
 	new ESLint({
 		plugins: config.plugins,
 		errorOnUnmatchedPattern: false,

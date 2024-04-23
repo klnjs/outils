@@ -10,14 +10,14 @@
 		"directory": "packages/configs/typescript-config"
 	},
 	"files": [
-		"src",
+		"src/**/!(*.spec).json",
 		"index.js",
 		"README.md"
 	],
 	"exports": {
-		".": {
-			"import": "./index.js"
-		}
+		".": "./index.js",
+		"./core.json": "./src/core.json",
+		"./esnext.json": "./src/esnext.json"
 	},
 	"scripts": {
 		"publish": "npm publish",
