@@ -1,0 +1,31 @@
+name: Code
+
+on:
+  pull_request:
+    branches:
+      - master
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: 
+        script: ["test", "eslint", "prettier"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup
+        uses: oven-sh/setup-bun@v1
+
+      - name: Install
+        run: bun install
+
+      - name: Run ${{ matrix.script }}
+        run: bun run ${{ matrix.script }}
+
+

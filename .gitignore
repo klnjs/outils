@@ -7,18 +7,13 @@
 !packages/
 !packages/**/*
 
-# Except these files
-!.editorconfig
-!.eslintignore
-!.gitignore
+# Except these files!.gitignore
 !.node-version
 !.npmrc
-!.prettierignore
 !bun.lockb
-!bunfig.toml
-!eslint.config.js
 !LICENSE
+!CHANGELOG.md
 !package.json
-!prettier.config.js
 !README.md
 !renovate.json
+!turbo.json

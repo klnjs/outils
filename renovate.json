@@ -1,25 +1,4 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": [
-		":dependencyDashboard",
-		":semanticPrefixFixDepsChoreOthers",
-		":ignoreModulesAndTests",
-		":autodetectPinVersions",
-		":prHourlyLimit2",
-		":prConcurrentLimit10",
-		":pinAllExceptPeerDependencies",
-		"npm:unpublishSafe",
-		"group:all",
-		"schedule:monthly",
-		"workarounds:all"
-	],
-	"description": "Renovate config base",
-	"binarySource": "docker",
-	"commitMessagePrefix": "⬆️ Renovate - ",
-	"packageRules": [
-		{
-			"matchUpdateTypes": ["major"],
-			"enabled": false
-		}
-	]
+	"extends": ["local>klnjs/frigg:renovate"]
 }

@@ -1,0 +1,27 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"compilerOptions": {
+		"allowArbitraryExtensions": false,
+		"allowImportingTsExtensions": false,
+		"allowSyntheticDefaultImports": false,
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"composite": true,
+		"downlevelIteration": false,
+		"forceConsistentCasingInFileNames": true,
+		"jsx": "react-jsx",
+		"noEmit": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noUncheckedIndexedAccess": false,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"outDir": "dist",
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"stripInternal": true,
+		"verbatimModuleSyntax": true
+	}
+}

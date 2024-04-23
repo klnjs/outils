@@ -1,28 +1,25 @@
 {
-	"name": "frigg",
-	"type": "module",
-	"author": "Rune Klein (@rnkln)",
-	"description": "Project containing different configs",
-	"version": "2.0.0",
-	"license": "MIT",
+  "name": "@klnjs/outils",
+  "type": "module",
+  "author": "Rune Klein (@rnkln)",
+  "version": "0.0.1",
 	"private": true,
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@github.com/klnjs/frigg.git"
+		"url": "git+ssh://git@github.com/klnjs/outils.git"
 	},
-	"workspaces": [
-		"packages/*"
-	],
-	"scripts": {
-		"publish": "pnpm -r publish",
-		"test": "bun test",
-		"eslint": "eslint ./packages --max-warnings 0 --cache --cache-location=./.eslintcache",
-		"prettier": "prettier ./packages --check --cache --cache-location=./.prettiercache"
-	},
-	"devDependencies": {
-		"@types/bun": "1.0.12",
-		"eslint": "8.57.0",
-		"prettier": "3.2.5",
-		"typescript": "5.4.3"
-	}
+	"packageManager": "bun@1.1.2",
+  "workspaces": [
+    "packages/configs/*"
+  ],
+  "scripts": {
+		"publish": "turbo publish",
+		"test": "turbo test",
+    "eslint": "turbo eslint",
+    "prettier": "turbo prettier"
+  },
+  "devDependencies": {
+		"@types/bun": "1.1.0",
+    "turbo": "1.13.2"
+  }
 }

@@ -1,0 +1,33 @@
+{
+	"name": "@klnjs/browserslist-config",
+	"type": "module",
+	"author": "Rune Klein (@rnkln)",
+	"version": "2.0.0",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/klnjs/outils.git",
+		"directory": "packages/configs/browserslist-config"
+	},
+  "files": [
+    "src",
+		"index.js",
+    "README.md"
+  ],
+	"exports": {
+		".": {
+			"import": "./index.js"
+		}
+	},
+	"scripts": {
+		"publish": "npm publish",
+		"test": "bun test",
+		"eslint": "eslint . --max-warnings 0",
+		"prettier": "prettier . --check"
+	},
+	"devDependencies": {
+		"browserslist": "4.23.0",
+		"eslint": "8.57.0",
+		"prettier": "3.2.5"
+	}
+}
