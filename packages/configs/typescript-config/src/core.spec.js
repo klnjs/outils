@@ -1,17 +1,13 @@
 import { test, expect } from 'bun:test'
 import ts from 'typescript'
+import core from './core.json'
 
 test('Config should load without errors', () => {
-	const configRoot = process.cwd()
-	const configPath = Bun.resolveSync('./src/core.json', configRoot)
-	const configRaw = ts.readConfigFile(configPath, ts.sys.readFile)
 	const config = ts.parseJsonConfigFileContent(
-		configRaw.config,
+		core,
 		ts.sys,
-		ts.getDirectoryPath(configPath)
+		ts.getDirectoryPath(import.meta.path)
 	)
-
-	// This error occurs when no files match the include / exclude
 	const configErrors = config.errors.filter((error) => error.code !== 18003)
 
 	expect(configErrors).toBeEmpty()
