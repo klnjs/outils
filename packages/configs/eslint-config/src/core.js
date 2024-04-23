@@ -4,11 +4,6 @@ export default {
 		noInlineConfig: true,
 		reportUnusedDisableDirectives: true
 	},
-	languageOptions: {
-		parserOptions: {
-			ecmaVersion: 'latest'
-		}
-	},
 	rules: {
 		'accessor-pairs': 'off',
 		'array-callback-return': [
@@ -130,7 +125,6 @@ export default {
 		'no-nested-ternary': 'off',
 		'no-new-func': 'error',
 		'no-new-native-nonconstructor': 'error',
-		'no-new-symbol': 'error',
 		'no-new-wrappers': 'error',
 		'no-new': 'error',
 		'no-nonoctal-decimal-escape': 'error',
@@ -252,6 +246,7 @@ export default {
 			}
 		],
 		'no-use-before-define': 'off',
+		'no-useless-assignment': 'error',
 		'no-useless-backreference': 'error',
 		'no-useless-call': 'error',
 		'no-useless-catch': 'error',

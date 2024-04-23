@@ -16,9 +16,7 @@ const rules = new Map(
 )
 
 test('Config should load', () => {
-	expect(() =>
-		createESLintFromConfig(react).lintFiles(react.files)
-	).not.toThrow()
+	expect(() => createESLintFromConfig(react).lintText('')).not.toThrow()
 })
 
 test('Config should include code rules', () =>

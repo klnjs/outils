@@ -1,14 +1,12 @@
 import { test, expect } from 'bun:test'
-import { Linter } from 'eslint'
+import { builtinRules } from 'eslint/use-at-your-own-risk'
 import { createESLintFromConfig } from '../test/create-eslint-from-config'
 import core from './core'
 
-const rules = new Linter().getRules()
+const rules = builtinRules
 
 test('Config should load', () => {
-	expect(() =>
-		createESLintFromConfig(core).lintFiles(core.files)
-	).not.toThrow()
+	expect(() => createESLintFromConfig(core).lintText('')).not.toThrow()
 })
 
 test('Config should include code rules', () =>

@@ -18,9 +18,7 @@ const rules = new Map(
 )
 
 test('Config should load', () => {
-	expect(() =>
-		createESLintFromConfig(typescript).lintFiles(typescript.files)
-	).not.toThrow()
+	expect(() => createESLintFromConfig(typescript).lintText('')).not.toThrow()
 })
 
 test('Config should include code rules', () =>

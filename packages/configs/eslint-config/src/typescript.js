@@ -13,8 +13,7 @@ export default {
 	languageOptions: {
 		parser: typescriptParser,
 		parserOptions: {
-			project: true,
-			ecmaVersion: 'latest'
+			project: true
 		}
 	},
 	rules: {

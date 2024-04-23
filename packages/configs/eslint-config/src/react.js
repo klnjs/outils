@@ -9,7 +9,7 @@ export default {
 	},
 	settings: {
 		react: {
-			version: 'detect'
+			version: '18.2.0'
 		}
 	},
 	linterOptions: {
@@ -18,7 +18,9 @@ export default {
 	},
 	languageOptions: {
 		parserOptions: {
-			ecmaVersion: 'latest'
+			ecmaFeatures: {
+				jsx: true
+			}
 		}
 	},
 	rules: {
