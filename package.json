@@ -12,7 +12,6 @@
     "packages/configs/*"
   ],
   "scripts": {
-		"publish": "turbo publish",
 		"test": "turbo test",
     "eslint": "turbo eslint",
     "prettier": "turbo prettier"
