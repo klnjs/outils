@@ -1,7 +1,7 @@
 import { test, expect } from 'bun:test'
 import { builtinRules } from 'eslint/use-at-your-own-risk'
 import { createESLintFromConfig } from '../test/create-eslint-from-config'
-import core from './core'
+import core from './core.js'
 
 const rules = builtinRules
 

@@ -1,6 +1,6 @@
 import { test, expect } from 'bun:test'
 import prettier from 'prettier'
-import core from './core'
+import core from './core.js'
 
 const { options } = await prettier.getSupportInfo({ showDeprecated: true })
 const excludeByName = ['parser', 'plugins', 'pluginSearchDirs']

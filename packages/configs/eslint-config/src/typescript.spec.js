@@ -2,7 +2,7 @@ import { test, expect } from 'bun:test'
 import typescriptPlugin from '@typescript-eslint/eslint-plugin'
 import { builtinRules } from 'eslint/use-at-your-own-risk'
 import { createESLintFromConfig } from '../test/create-eslint-from-config'
-import typescript from './typescript'
+import typescript from './typescript.js'
 
 const rules = new Map(
 	Object.entries(typescript.plugins).reduce(
