@@ -1,0 +1,38 @@
+{
+	"name": "@klnjs/eslint-config",
+	"type": "module",
+	"author": "Rune Klein (@rnkln)",
+	"version": "3.0.0-rc.1",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/klnjs/frigg.git",
+		"directory": "packages/eslint-config"
+	},
+	"files": [
+		"src/**/!(*.spec).js",
+		"index.js",
+		"README.md"
+	],
+	"exports": "./index.js",
+	"scripts": {
+		"publish": "npm publish",
+		"test": "bun test",
+		"eslint": "eslint . --max-warnings 0",
+		"prettier": "prettier . --check"
+	},
+	"dependencies": {
+		"@typescript-eslint/eslint-plugin": "6.20.0",
+		"@typescript-eslint/parser": "6.20.0",
+		"eslint-import-resolver-typescript": "3.6.1",
+		"eslint-plugin-react-hooks": "4.6.0",
+		"eslint-plugin-react": "7.34.1"
+	},
+	"devDependencies": {
+		"eslint": "9.1.1",
+		"prettier": "3.2.5"
+	},
+	"peerDependencies": {
+		"eslint": "^9.0.0"
+	}
+}

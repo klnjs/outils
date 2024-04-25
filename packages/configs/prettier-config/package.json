@@ -1,0 +1,32 @@
+{
+	"name": "@klnjs/prettier-config",
+	"type": "module",
+	"author": "Rune Klein (@rnkln)",
+	"version": "3.0.0-rc.1",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/klnjs/outils.git",
+		"directory": "packages/configs/prettier-config"
+	},
+	"files": [
+		"src/**/!(*.spec).js",
+		"index.js",
+		"README.md"
+	],
+	"exports": "./index.js",
+	"scripts": {
+		"publish": "npm publish",
+		"test": "bun test",
+		"eslint": "eslint . --max-warnings 0",
+		"prettier": "prettier . --check"
+	},
+	"devDependencies": {
+		"eslint": "9.1.1",
+		"prettier": "3.2.5",
+		"typescript": "5.4.5"
+	},
+	"peerDependencies": {
+		"prettier": "^3.0.0"
+	}
+}
