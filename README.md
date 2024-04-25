@@ -1,2 +1,2 @@
-# Basique
-React component library
+# Outils
+JavaScript config library
