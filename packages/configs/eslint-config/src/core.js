@@ -1,8 +1,6 @@
 export default {
+	name: '@klnjs/core',
 	files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
-	linterOptions: {
-		reportUnusedDisableDirectives: true
-	},
 	rules: {
 		'accessor-pairs': 'off',
 		'array-callback-return': [
