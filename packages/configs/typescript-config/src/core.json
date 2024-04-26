@@ -3,7 +3,6 @@
 	"compilerOptions": {
 		"allowArbitraryExtensions": false,
 		"allowImportingTsExtensions": false,
-		"allowSyntheticDefaultImports": false,
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
 		"composite": true,

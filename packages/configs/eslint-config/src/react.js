@@ -13,7 +13,6 @@ export default {
 		}
 	},
 	linterOptions: {
-		noInlineConfig: true,
 		reportUnusedDisableDirectives: true
 	},
 	languageOptions: {

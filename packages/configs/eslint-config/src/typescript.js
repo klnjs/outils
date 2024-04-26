@@ -7,7 +7,6 @@ export default {
 		'@typescript-eslint': typescriptPlugin
 	},
 	linterOptions: {
-		noInlineConfig: true,
 		reportUnusedDisableDirectives: true
 	},
 	languageOptions: {

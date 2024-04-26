@@ -1,7 +1,6 @@
 export default {
 	files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
 	linterOptions: {
-		noInlineConfig: true,
 		reportUnusedDisableDirectives: true
 	},
 	rules: {
