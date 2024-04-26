@@ -22,6 +22,7 @@
 		"skipLibCheck": true,
 		"strict": true,
 		"stripInternal": true,
+		"useUnknownInCatchVariables": true,
 		"verbatimModuleSyntax": true
 	}
 }

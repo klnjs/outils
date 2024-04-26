@@ -38,6 +38,7 @@ export default {
 		// The following builtin rules have a TypeScript extension rule.
 		// See: https://typescript-eslint.io/rules/#extension-rules
 		'class-methods-use-this': 'off',
+		'consistent-return': 'off',
 		'default-param-last': 'off',
 		'dot-notation': 'off',
 		'init-declarations': 'off',
@@ -74,6 +75,7 @@ export default {
 		'@typescript-eslint/class-methods-use-this': 'error',
 		'@typescript-eslint/consistent-generic-constructors': 'error',
 		'@typescript-eslint/consistent-indexed-object-style': 'error',
+		'@typescript-eslint/consistent-return': 'off',
 		'@typescript-eslint/consistent-type-assertions': 'error',
 		'@typescript-eslint/consistent-type-definitions': ['error', 'type'],
 		'@typescript-eslint/consistent-type-exports': 'error',
@@ -137,7 +139,6 @@ export default {
 		'@typescript-eslint/no-restricted-imports': 'off',
 		'@typescript-eslint/no-shadow': 'error',
 		'@typescript-eslint/no-this-alias': 'error',
-		'@typescript-eslint/no-throw-literal': 'error',
 		'@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
 		'@typescript-eslint/no-unnecessary-condition': 'error',
 		'@typescript-eslint/no-unnecessary-qualifier': 'error',
@@ -163,10 +164,12 @@ export default {
 		'@typescript-eslint/no-useless-template-literals': 'error',
 		'@typescript-eslint/no-var-requires': 'error',
 		'@typescript-eslint/non-nullable-type-assertion-style': 'error',
+		'@typescript-eslint/only-throw-error': 'error',
 		'@typescript-eslint/parameter-properties': 'error',
 		'@typescript-eslint/prefer-as-const': 'error',
 		'@typescript-eslint/prefer-destructuring': 'error',
 		'@typescript-eslint/prefer-enum-initializers': 'error',
+		'@typescript-eslint/prefer-find': 'error',
 		'@typescript-eslint/prefer-for-of': 'off',
 		'@typescript-eslint/prefer-function-type': 'error',
 		'@typescript-eslint/prefer-includes': 'error',
@@ -194,6 +197,7 @@ export default {
 		'@typescript-eslint/triple-slash-reference': 'error',
 		'@typescript-eslint/typedef': 'off',
 		'@typescript-eslint/unbound-method': 'off',
-		'@typescript-eslint/unified-signatures': 'error'
+		'@typescript-eslint/unified-signatures': 'error',
+		'@typescript-eslint/use-unknown-in-catch-callback-variable': 'error'
 	}
 }
