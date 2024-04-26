@@ -9,7 +9,7 @@ export default {
 	},
 	settings: {
 		react: {
-			version: 'detect'
+			version: 'latest'
 		}
 	},
 	linterOptions: {
