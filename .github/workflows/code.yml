@@ -10,6 +10,28 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  publish: 
+    runs-on: ubuntu-latest
+    env:
+      FORCE_COLOR: 1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Create .npmrc
+        run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+
+      - name: List
+        run: ls -lah
+
+      - name: Cat
+        run: cat .npmrc
+
+      - name: Publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --workspaces --access=public --dry-run
+
   code:
     runs-on: ubuntu-latest
     strategy:
