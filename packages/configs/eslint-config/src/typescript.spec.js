@@ -1,7 +1,7 @@
 import { test, expect } from 'bun:test'
-import typescriptPlugin from '@typescript-eslint/eslint-plugin'
+import { ESLint } from 'eslint'
 import { builtinRules } from 'eslint/use-at-your-own-risk'
-import { createESLintFromConfig } from '../test/create-eslint-from-config'
+import typescriptPlugin from '@typescript-eslint/eslint-plugin'
 import typescript from './typescript.js'
 
 const rules = new Map(
@@ -18,7 +18,9 @@ const rules = new Map(
 )
 
 test('Config should load', () => {
-	expect(() => createESLintFromConfig(typescript).lintText('')).not.toThrow()
+	expect(() =>
+		new ESLint({ baseConfig: typescript }).lintText('')
+	).not.toThrow()
 })
 
 test('Config should include code rules', () =>

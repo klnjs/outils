@@ -2,13 +2,10 @@ import typescriptPlugin from '@typescript-eslint/eslint-plugin'
 import typescriptParser from '@typescript-eslint/parser'
 
 export default {
+	name: '@klnjs/typescript',
 	files: ['**/*.ts', '**/*.tsx'],
 	plugins: {
 		'@typescript-eslint': typescriptPlugin
-	},
-	linterOptions: {
-		noInlineConfig: true,
-		reportUnusedDisableDirectives: true
 	},
 	languageOptions: {
 		parser: typescriptParser,

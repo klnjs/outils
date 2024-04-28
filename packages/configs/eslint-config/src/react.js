@@ -2,6 +2,7 @@ import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
 
 export default {
+	name: '@klnjs/react',
 	files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
 	plugins: {
 		react: reactPlugin,
@@ -11,10 +12,6 @@ export default {
 		react: {
 			version: 'detect'
 		}
-	},
-	linterOptions: {
-		noInlineConfig: true,
-		reportUnusedDisableDirectives: true
 	},
 	languageOptions: {
 		parserOptions: {
