@@ -10,11 +10,8 @@
 # Except these files
 !.editorconfig
 !.gitignore
-!.node-version
-!.npmrc
 !bun.lockb
 !LICENSE
-!CHANGELOG.md
 !package.json
 !README.md
 !renovate.json
