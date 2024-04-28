@@ -2,12 +2,12 @@
 	"name": "@klnjs/eslint-config",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "3.0.0-rc.7",
+	"version": "3.0.0-rc.8",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@github.com/klnjs/frigg.git",
-		"directory": "packages/eslint-config"
+		"url": "git+ssh://git@github.com/klnjs/outils.git",
+		"directory": "packages/configs/eslint-config"
 	},
 	"files": [
 		"src/**/!(*.spec).js",
