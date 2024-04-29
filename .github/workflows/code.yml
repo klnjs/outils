@@ -23,8 +23,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       
-      - name: Setup
+      - name: Bun
         uses: oven-sh/setup-bun@v1
+
+      - name: Cache      
+        uses: dtinth/setup-github-actions-caching-for-turbo@v1.2.0
 
       - name: Install
         run: bun install
