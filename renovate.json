@@ -2,7 +2,6 @@
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": [
 		":dependencyDashboard",
-		":semanticPrefixFixDepsChoreOthers",
 		":ignoreModulesAndTests",
 		":autodetectPinVersions",
 		":prHourlyLimit2",
@@ -10,12 +9,19 @@
 		":pinAllExceptPeerDependencies",
 		"npm:unpublishSafe",
 		"group:all",
+		"helpers:pinGitHubActionDigestsToSemver",
 		"schedule:monthly",
 		"workarounds:all"
 	],
 	"description": "Renovate config base",
 	"binarySource": "docker",
 	"commitMessagePrefix": "⬆️ Renovate - ",
+	"lockFileMaintenance": {
+    "commitMessageAction": "Update",
+    "extends": [
+      "group:all"
+    ]
+  },
 	"packageRules": [
 		{
 			"matchUpdateTypes": ["major"],
