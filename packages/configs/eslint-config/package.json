@@ -14,7 +14,12 @@
 		"index.js",
 		"README.md"
 	],
-	"exports": "./index.js",
+	"exports": {
+		".": "./index.js",
+		"./core": "./src/core.js",
+		"./react": "./src/react.js",
+		"./typescript": "./src/typescript.js"
+	},
 	"scripts": {
 		"test": "bun test",
 		"eslint": "eslint . --max-warnings 0",
