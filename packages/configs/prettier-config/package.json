@@ -12,9 +12,13 @@
 	"files": [
 		"src/**/!(*.spec).js",
 		"index.js",
+		"LICENSE",
 		"README.md"
 	],
-	"exports": "./index.js",
+	"exports": {
+		".": "./index.js",
+		"./core": "./src/core.js"
+	},
 	"scripts": {
 		"test": "bun test",
 		"eslint": "eslint . --max-warnings 0",
