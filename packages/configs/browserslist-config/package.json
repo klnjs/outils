@@ -12,6 +12,7 @@
 	"files": [
 		"src/**/!(*.spec).js",
 		"index.js",
+		"LICENSE",
 		"README.md"
 	],
 	"exports": {
