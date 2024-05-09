@@ -4,23 +4,22 @@
 		":dependencyDashboard",
 		":ignoreModulesAndTests",
 		":autodetectPinVersions",
-		":prHourlyLimit2",
-		":prConcurrentLimit10",
 		":pinAllExceptPeerDependencies",
 		"npm:unpublishSafe",
-		"group:all",
 		"helpers:pinGitHubActionDigestsToSemver",
+		"group:all",
 		"schedule:monthly",
+		"replacements:all",
 		"workarounds:all"
 	],
 	"description": "Renovate config base",
 	"commitMessagePrefix": "⬆️ Renovate - ",
 	"lockFileMaintenance": {
-    "commitMessageAction": "Update",
-    "extends": [
-      "group:all"
-    ]
-  },
+		"commitMessageAction": "Update",
+		"extends": [
+			"group:all"
+		]
+	},
 	"packageRules": [
 		{
 			"matchUpdateTypes": ["major"],
