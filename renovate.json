@@ -2,28 +2,20 @@
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": [
 		":dependencyDashboard",
+		":disableMajorUpdates",
 		":ignoreModulesAndTests",
-		":autodetectPinVersions",
-		":pinAllExceptPeerDependencies",
-		"npm:unpublishSafe",
+		":pinDevDependencies",
+		"group:all",
 		"helpers:pinGitHubActionDigestsToSemver",
 		"group:all",
 		"schedule:monthly",
-		"replacements:all",
-		"workarounds:all"
+		"workarounds:all",
+		"replacements:all"
 	],
-	"description": "Renovate config base",
+	"description": "@klnjs base renovate config",
 	"commitMessagePrefix": "⬆️ Renovate - ",
 	"lockFileMaintenance": {
 		"commitMessageAction": "Update",
-		"extends": [
-			"group:all"
-		]
-	},
-	"packageRules": [
-		{
-			"matchUpdateTypes": ["major"],
-			"enabled": false
-		}
-	]
+		"extends": ["group:all"]
+	}
 }
