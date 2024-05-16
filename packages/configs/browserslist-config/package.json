@@ -2,7 +2,7 @@
 	"name": "@klnjs/browserslist-config",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "3.0.0-rc.8",
+	"version": "3.0.0-rc.9",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -27,7 +27,7 @@
 	},
 	"devDependencies": {
 		"browserslist": "4.23.0",
-		"eslint": "9.1.1",
+		"eslint": "9.2.0",
 		"prettier": "3.2.5"
 	}
 }
