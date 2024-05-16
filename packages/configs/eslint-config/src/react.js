@@ -1,4 +1,4 @@
-import reactPlugin from 'eslint-plugin-react'
+// import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import reactCompilerPlugin from 'eslint-plugin-react-compiler'
 
