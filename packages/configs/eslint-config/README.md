@@ -1,6 +1,6 @@
 # @klnjs/eslint-config
 
-The `@klnjs/eslint-config` package provides a collection of shareable [ESLint] configurations for JavaScript / TypeScript projects that can easily be reused across multiple projects.
+Provides a collection of shareable [ESLint] configurations for JavaScript / TypeScript projects that can easily be reused across projects.
 
 These configurations aim to provide consistency, code quality, and ensure coding standards are enforced throughout the development process, resulting in cleaner, more maintainable code.
 
