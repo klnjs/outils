@@ -1,6 +1,6 @@
 # @klnjs/browserslist-config
 
-The `@klnjs/browserslist-config` packages provides multiple shareable [Browserslist] configurations that can easily be reused across multiple projects.
+Provides multiple shareable [Browserslist] configurations that can easily be reused across projects.
 
 These configurations are tailored for the most common project setups using modern JavaScript, ensuring compatibility and optimizing build processes accordingly.
 
