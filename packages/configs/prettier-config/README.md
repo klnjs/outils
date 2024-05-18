@@ -1,6 +1,6 @@
 # @klnjs/prettier-config
 
-The `@klnjs/prettier-config` package provides a collection of shareable [Prettier] configurations for JavaScript / TypeScript projects that can easily be reused across multiple projects.
+Provides a collection of shareable [Prettier] configurations for JavaScript / TypeScript projects that can easily be reused across projects.
 
 These configurations aim to enforce consistent code formatting, improve code readability, and streamline the development process by eliminating the need for manual configuration.
 
