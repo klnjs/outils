@@ -22,7 +22,7 @@
 		"./typescript": "./src/typescript.js"
 	},
 	"scripts": {
-		"test": "bun test",
+		"test": "bun test --preload ./test/setup.js",
 		"eslint": "eslint . --max-warnings 0",
 		"prettier": "prettier . --check"
 	},
