@@ -3,22 +3,22 @@ import { ESLint } from 'eslint'
 import { builtinRules } from 'eslint/use-at-your-own-risk'
 import core from './core.js'
 
-const rules = builtinRules
+const rulesFromESLint = builtinRules
+const rulesFromConfig = new Map(Object.entries(core.rules))
 
 test('Config should load', () => {
 	expect(() => new ESLint({ baseConfig: core }).lintText('')).not.toThrow()
 })
 
 test('Config should include code rules', () =>
-	rules.forEach((rule, name) => {
+	rulesFromESLint.forEach((rule, name) => {
 		if (!rule.meta.deprecated && rule.meta.type !== 'layout') {
-			expect(core.rules).toHaveProperty(name)
+			expect(rulesFromConfig).toHaveEntry(name)
 		}
 	}))
 
 test('Config should exclude layout, unknown and deprecated rules', () =>
-	Object.keys(core.rules).forEach((name) => {
-		expect(rules.get(name)).toBeDefined()
-		expect(rules.get(name)).not.toHaveProperty(`meta.type`, 'layout')
-		expect(rules.get(name)).not.toHaveProperty(`meta.deprecated`, true)
+	rulesFromConfig.forEach((value, name) => {
+		expect(rulesFromESLint).toHaveEntry(name)
+		expect(rulesFromESLint.get(name)).not.toBeDeprecatedRule(name)
 	}))
