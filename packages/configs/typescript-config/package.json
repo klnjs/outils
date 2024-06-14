@@ -9,6 +9,10 @@
 		"url": "git+ssh://git@github.com/klnjs/outils.git",
 		"directory": "packages/configs/typescript-config"
 	},
+	"keywords": [
+		"typescript",
+		"typescript-config"
+	],
 	"files": [
 		"src/**/!(*.spec).json",
 		"index.js",
