@@ -26,6 +26,6 @@ export function toHaveEntry(map, key, value) {
 
 	return {
 		pass,
-		message: `${one}${two}${three}`
+		message: () => `${one}${two}${three}`
 	}
 }
