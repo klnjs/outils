@@ -9,6 +9,10 @@
 		"url": "git+ssh://git@github.com/klnjs/outils.git",
 		"directory": "packages/configs/eslint-config"
 	},
+	"keywords": [
+		"eslint",
+		"eslint-config"
+	],
 	"files": [
 		"src/**/!(*.spec).js",
 		"index.js",

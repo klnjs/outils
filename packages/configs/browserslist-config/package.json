@@ -9,6 +9,10 @@
 		"url": "git+ssh://git@github.com/klnjs/outils.git",
 		"directory": "packages/configs/browserslist-config"
 	},
+	"keywords": [
+		"browserslist",
+		"browserslist-config"
+	],
 	"files": [
 		"src/**/!(*.spec).js",
 		"index.js",
