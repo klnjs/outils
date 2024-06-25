@@ -10,6 +10,7 @@
 # Except these files
 !.editorconfig
 !.gitignore
+!.tool-versions
 !bun.lockb
 !LICENSE
 !package.json
