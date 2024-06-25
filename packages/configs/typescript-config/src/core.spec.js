@@ -8,7 +8,11 @@ test('Config should load without errors', () => {
 		ts.sys,
 		ts.getDirectoryPath(import.meta.path)
 	)
-	const configErrors = config.errors.filter((error) => error.code !== 18003)
 
-	expect(configErrors).toBeEmpty()
+	const diagnostics = ts.getConfigFileParsingDiagnostics(config)
+	const problems = diagnostics.filter(
+		(diagnostic) => diagnostic.code !== 18003
+	)
+
+	expect(problems).toBeEmpty()
 })
