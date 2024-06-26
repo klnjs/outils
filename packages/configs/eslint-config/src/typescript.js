@@ -187,7 +187,6 @@ export default {
 		'@typescript-eslint/restrict-plus-operands': 'error',
 		'@typescript-eslint/restrict-template-expressions': 'error',
 		'@typescript-eslint/return-await': 'error',
-		'@typescript-eslint/sort-type-constituents': 'off',
 		'@typescript-eslint/strict-boolean-expressions': 'off',
 		'@typescript-eslint/switch-exhaustiveness-check': 'error',
 		'@typescript-eslint/triple-slash-reference': 'error',
