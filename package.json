@@ -8,8 +8,9 @@
 		"type": "git",
 		"url": "git+ssh://git@github.com/klnjs/outils.git"
 	},
+	"packageManager": "bun@1.1.16",
 	"workspaces": [
-		"packages/configs/*"
+		"packages/**/*"
 	],
 	"scripts": {
 		"test": "turbo test",
@@ -17,7 +18,7 @@
 		"prettier": "turbo prettier"
 	},
 	"devDependencies": {
-		"@types/bun": "1.1.0",
-		"turbo": "1.13.3"
+		"@types/bun": "1.1.6",
+		"turbo": "2.0.6"
 	}
 }

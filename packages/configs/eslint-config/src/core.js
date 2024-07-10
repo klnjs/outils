@@ -54,7 +54,6 @@ export default {
 		'max-nested-callbacks': 'off',
 		'max-params': 'off',
 		'max-statements': 'off',
-		'multiline-comment-style': 'off',
 		'new-cap': 'error',
 		'no-alert': 'error',
 		'no-array-constructor': 'error',

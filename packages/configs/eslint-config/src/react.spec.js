@@ -2,7 +2,8 @@ import { test, expect } from 'bun:test'
 import { ESLint } from 'eslint'
 import react from './react.js'
 
-const rules = new Map(
+const rulesFromConfig = new Map(Object.entries(react.rules))
+const rulesFromPlugin = new Map(
 	Object.entries(react.plugins).reduce(
 		(acc, [prefix, plugin]) => [
 			...acc,
@@ -20,15 +21,14 @@ test('Config should load', () => {
 })
 
 test('Config should include code rules', () =>
-	rules.forEach((rule, name) => {
+	rulesFromPlugin.forEach((rule, name) => {
 		if (!rule.meta.deprecated && rule.meta.type !== 'layout') {
-			expect(react.rules).toHaveProperty(name)
+			expect(rulesFromConfig).toHaveEntry(name)
 		}
 	}))
 
 test('Config should exclude layout, unknown and deprecated rules', () =>
-	Object.keys(react.rules).forEach((name) => {
-		expect(rules.get(name)).toBeDefined()
-		expect(rules.get(name)).not.toHaveProperty(`meta.type`, 'layout')
-		expect(rules.get(name)).not.toHaveProperty(`meta.deprecated`, true)
+	rulesFromConfig.forEach((value, name) => {
+		expect(rulesFromPlugin).toHaveEntry(name)
+		expect(rulesFromPlugin.get(name)).not.toBeDeprecatedRule(name)
 	}))

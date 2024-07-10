@@ -2,13 +2,17 @@
 	"name": "@klnjs/eslint-config",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "3.0.0-rc.8",
+	"version": "3.0.0-rc.11",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "git+ssh://git@github.com/klnjs/outils.git",
 		"directory": "packages/configs/eslint-config"
 	},
+	"keywords": [
+		"eslint",
+		"eslint-config"
+	],
 	"files": [
 		"src/**/!(*.spec).js",
 		"index.js",
@@ -22,7 +26,7 @@
 		"./typescript": "./src/typescript.js"
 	},
 	"scripts": {
-		"test": "bun test",
+		"test": "bun test --preload ./test/setup.js",
 		"eslint": "eslint . --max-warnings 0",
 		"prettier": "prettier . --check"
 	},
@@ -34,7 +38,7 @@
 	},
 	"devDependencies": {
 		"eslint": "9.6.0",
-		"prettier": "3.2.5",
+		"prettier": "3.3.2",
 		"react": "18.3.1"
 	},
 	"peerDependencies": {

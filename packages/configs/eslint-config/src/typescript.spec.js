@@ -4,7 +4,9 @@ import { builtinRules } from 'eslint/use-at-your-own-risk'
 import typescriptPlugin from '@typescript-eslint/eslint-plugin'
 import typescript from './typescript.js'
 
-const rules = new Map(
+const rulesFromESLint = builtinRules
+const rulesFromConfig = new Map(Object.entries(typescript.rules))
+const rulesFromPlugin = new Map(
 	Object.entries(typescript.plugins).reduce(
 		(acc, [prefix, plugin]) => [
 			...acc,
@@ -24,9 +26,9 @@ test('Config should load', () => {
 })
 
 test('Config should include code rules', () =>
-	rules.forEach((rule, name) => {
+	rulesFromPlugin.forEach((rule, name) => {
 		if (!rule.meta.deprecated && rule.meta.type !== 'layout') {
-			expect(typescript.rules).toHaveProperty(name)
+			expect(rulesFromConfig).toHaveEntry(name)
 		}
 	}))
 
@@ -61,7 +63,7 @@ test('Config should include obsolete core rules and turn them off', () =>
 
 				const base = rule.meta.docs.extendsBaseRule
 				const baseName = base === true ? name : base
-				const baseRule = builtinRules.get(baseName)
+				const baseRule = rulesFromESLint.get(baseName)
 
 				if (baseRule.meta.deprecated) {
 					return acc
@@ -72,14 +74,13 @@ test('Config should include obsolete core rules and turn them off', () =>
 			[]
 		)
 	].forEach((name) => {
-		expect(typescript.rules).toHaveProperty(name, 'off')
+		expect(rulesFromConfig).toHaveEntry(name, 'off')
 	}))
 
 test('Config should exclude layout, unknown and deprecated rules', () =>
-	Object.keys(typescript.rules).forEach((name) => {
+	rulesFromConfig.forEach((value, name) => {
 		if (name.startsWith('@typescript-eslint/')) {
-			expect(rules.get(name)).toBeDefined()
-			expect(rules.get(name)).not.toHaveProperty(`meta.type`, 'layout')
-			expect(rules.get(name)).not.toHaveProperty(`meta.deprecated`, true)
+			expect(rulesFromPlugin).toHaveEntry(name)
+			expect(rulesFromPlugin.get(name)).not.toBeDeprecatedRule(name)
 		}
 	}))
