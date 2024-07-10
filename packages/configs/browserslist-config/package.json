@@ -30,7 +30,7 @@
 		"prettier": "prettier . --check"
 	},
 	"devDependencies": {
-		"browserslist": "4.23.1",
+		"browserslist": "4.23.2",
 		"eslint": "9.6.0",
 		"prettier": "3.3.2"
 	}
