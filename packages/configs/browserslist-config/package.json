@@ -27,7 +27,7 @@
 	},
 	"devDependencies": {
 		"browserslist": "4.23.0",
-		"eslint": "9.2.0",
+		"eslint": "9.6.0",
 		"prettier": "3.2.5"
 	}
 }
