@@ -1,5 +1,3 @@
-name: Code
-
 on:
   pull_request:
     branches:
@@ -10,7 +8,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  code:
+  check:
     runs-on: ubuntu-latest
     strategy:
       matrix:
