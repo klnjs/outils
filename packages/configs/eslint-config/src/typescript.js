@@ -1,16 +1,16 @@
-import typescriptPlugin from '@typescript-eslint/eslint-plugin'
-import typescriptParser from '@typescript-eslint/parser'
+import tseslint from 'typescript-eslint'
 
 export default {
 	name: '@klnjs/typescript',
 	files: ['**/*.ts', '**/*.tsx'],
 	plugins: {
-		'@typescript-eslint': typescriptPlugin
+		'@typescript-eslint': tseslint.plugin
 	},
 	languageOptions: {
-		parser: typescriptParser,
+		parser: tseslint.parser,
 		parserOptions: {
-			project: true
+			projectService: true,
+			tsconfigRootDir: import.meta.dirname
 		}
 	},
 	rules: {
@@ -46,7 +46,6 @@ export default {
 		'no-implied-eval': 'off',
 		'no-invalid-this': 'off',
 		'no-loop-func': 'off',
-		'no-loss-of-precision': 'off',
 		'no-magic-numbers': 'off',
 		'no-redeclare': 'off',
 		'no-restricted-imports': 'off',
@@ -67,7 +66,6 @@ export default {
 		'@typescript-eslint/await-thenable': 'error',
 		'@typescript-eslint/ban-ts-comment': 'error',
 		'@typescript-eslint/ban-tslint-comment': 'error',
-		'@typescript-eslint/ban-types': 'error',
 		'@typescript-eslint/class-literal-property-style': 'error',
 		'@typescript-eslint/class-methods-use-this': 'error',
 		'@typescript-eslint/consistent-generic-constructors': 'error',
@@ -108,7 +106,6 @@ export default {
 		'@typescript-eslint/no-duplicate-type-constituents': 'error',
 		'@typescript-eslint/no-dynamic-delete': 'error',
 		'@typescript-eslint/no-empty-function': 'off',
-		'@typescript-eslint/no-empty-interface': 'error',
 		'@typescript-eslint/no-empty-object-type': 'error',
 		'@typescript-eslint/no-explicit-any': 'error',
 		'@typescript-eslint/no-extra-non-null-assertion': 'error',
@@ -121,7 +118,6 @@ export default {
 		'@typescript-eslint/no-invalid-this': 'off',
 		'@typescript-eslint/no-invalid-void-type': 'error',
 		'@typescript-eslint/no-loop-func': 'error',
-		'@typescript-eslint/no-loss-of-precision': 'error',
 		'@typescript-eslint/no-magic-numbers': 'off',
 		'@typescript-eslint/no-meaningless-void-operator': 'error',
 		'@typescript-eslint/no-misused-new': 'error',
@@ -135,20 +131,25 @@ export default {
 		'@typescript-eslint/no-redundant-type-constituents': 'error',
 		'@typescript-eslint/no-require-imports': 'error',
 		'@typescript-eslint/no-restricted-imports': 'off',
+		'@typescript-eslint/no-restricted-types': 'off',
 		'@typescript-eslint/no-shadow': 'error',
 		'@typescript-eslint/no-this-alias': 'error',
 		'@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
 		'@typescript-eslint/no-unnecessary-condition': 'error',
+		'@typescript-eslint/no-unnecessary-parameter-property-assignment':
+			'error',
 		'@typescript-eslint/no-unnecessary-qualifier': 'error',
 		'@typescript-eslint/no-unnecessary-template-expression': 'error',
 		'@typescript-eslint/no-unnecessary-type-arguments': 'error',
 		'@typescript-eslint/no-unnecessary-type-assertion': 'error',
 		'@typescript-eslint/no-unnecessary-type-constraint': 'error',
+		'@typescript-eslint/no-unnecessary-type-parameters': 'error',
 		'@typescript-eslint/no-unsafe-argument': 'error',
 		'@typescript-eslint/no-unsafe-assignment': 'error',
 		'@typescript-eslint/no-unsafe-call': 'error',
 		'@typescript-eslint/no-unsafe-declaration-merging': 'error',
 		'@typescript-eslint/no-unsafe-enum-comparison': 'error',
+		'@typescript-eslint/no-unsafe-function-type': 'error',
 		'@typescript-eslint/no-unsafe-member-access': 'error',
 		'@typescript-eslint/no-unsafe-return': 'error',
 		'@typescript-eslint/no-unsafe-unary-minus': 'off',
@@ -160,7 +161,7 @@ export default {
 		'@typescript-eslint/no-use-before-define': 'off',
 		'@typescript-eslint/no-useless-constructor': 'error',
 		'@typescript-eslint/no-useless-empty-export': 'error',
-		'@typescript-eslint/no-var-requires': 'error',
+		'@typescript-eslint/no-wrapper-object-types': 'error',
 		'@typescript-eslint/non-nullable-type-assertion-style': 'error',
 		'@typescript-eslint/only-throw-error': 'error',
 		'@typescript-eslint/parameter-properties': 'error',
