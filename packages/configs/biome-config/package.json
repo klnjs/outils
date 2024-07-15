@@ -1,0 +1,38 @@
+{
+	"name": "@klnjs/biome-config",
+	"type": "module",
+	"author": "Rune Klein (@rnkln)",
+	"version": "3.0.0-rc.12",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/klnjs/outils.git",
+		"directory": "packages/configs/biome-config"
+	},
+	"keywords": [
+		"biome",
+		"biome-config"
+	],
+	"files": [
+		"src/**/!(*.spec).js",
+		"index.js",
+		"LICENSE",
+		"README.md"
+	],
+	"exports": {
+		".": "./index.js",
+		"./core": "./src/core.js"
+	},
+	"scripts": {
+		"test": "bun test",
+		"eslint": "eslint . --max-warnings 0",
+		"prettier": "prettier . --check"
+	},
+	"devDependencies": {
+		"eslint": "9.7.0",
+		"prettier": "3.3.3"
+	},
+	"peerDependencies": {
+		"@biomejs/biome": "^1.8.0"
+	}
+}
