@@ -7,8 +7,7 @@
 
 # Except these files
 !.gitignore
-!eslint.config.js
+!biome.json
 !index.js
 !package.json
-!prettier.config.js
 !README.md

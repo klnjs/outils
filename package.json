@@ -14,8 +14,8 @@
 	],
 	"scripts": {
 		"test": "turbo test",
-		"eslint": "turbo eslint",
-		"prettier": "turbo prettier"
+		"lint": "turbo lint",
+		"form": "turbo form"
 	},
 	"devDependencies": {
 		"@types/bun": "1.1.6",
