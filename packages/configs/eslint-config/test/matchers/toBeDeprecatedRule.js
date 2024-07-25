@@ -1,6 +1,10 @@
-import { printExpected, printReceived, printMatcherError } from '../helpers'
+import {
+	printExpected,
+	printReceived,
+	printMatcherError
+} from '../helpers/print'
 
-export function toBeDeprecatedRule(rule, name) {
+export default function toBeDeprecatedRule(rule, name) {
 	if (!rule) {
 		return {
 			pass: false,

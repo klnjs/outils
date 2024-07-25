@@ -9,9 +9,7 @@
 		"url": "git+ssh://git@github.com/klnjs/outils.git"
 	},
 	"packageManager": "bun@1.1.17",
-	"workspaces": [
-		"packages/**/*"
-	],
+	"workspaces": ["packages/**/*"],
 	"scripts": {
 		"test": "turbo test",
 		"lint": "turbo lint",

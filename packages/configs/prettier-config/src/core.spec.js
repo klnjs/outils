@@ -32,5 +32,5 @@ test('Config should include code options', () =>
 test('Config should exclude unknown and deprecated options', () =>
 	Object.keys(core).forEach((name) => {
 		expect(optionsToCheck.get(name)).toBeDefined()
-		expect(optionsToCheck.get(name)).not.toHaveProperty(`deprecated`)
+		expect(optionsToCheck.get(name)).not.toHaveProperty('deprecated')
 	}))

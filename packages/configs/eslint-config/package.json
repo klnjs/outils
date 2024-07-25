@@ -9,18 +9,9 @@
 		"url": "git+ssh://git@github.com/klnjs/outils.git",
 		"directory": "packages/configs/eslint-config"
 	},
-	"keywords": [
-		"eslint",
-		"eslint-config"
-	],
-	"files": [
-		"src/**/!(*.spec).js",
-		"index.js",
-		"LICENSE",
-		"README.md"
-	],
+	"keywords": ["eslint", "eslint-config"],
+	"files": ["src/**/!(*.spec).js", "index.js", "LICENSE", "README.md"],
 	"exports": {
-		".": "./index.js",
 		"./core": "./src/core.js",
 		"./react": "./src/react.js",
 		"./typescript": "./src/typescript.js"

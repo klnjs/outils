@@ -18,7 +18,7 @@ test('Config should include code rules', () =>
 	}))
 
 test('Config should exclude layout, unknown and deprecated rules', () =>
-	rulesFromConfig.forEach((value, name) => {
+	rulesFromConfig.forEach((_value, name) => {
 		expect(rulesFromESLint).toHaveEntry(name)
 		expect(rulesFromESLint.get(name)).not.toBeDeprecatedRule(name)
 	}))

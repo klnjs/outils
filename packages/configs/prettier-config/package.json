@@ -9,18 +9,9 @@
 		"url": "git+ssh://git@github.com/klnjs/outils.git",
 		"directory": "packages/configs/prettier-config"
 	},
-	"keywords": [
-		"prettier",
-		"prettier-config"
-	],
-	"files": [
-		"src/**/!(*.spec).js",
-		"index.js",
-		"LICENSE",
-		"README.md"
-	],
+	"keywords": ["prettier", "prettier-config"],
+	"files": ["src/**/!(*.spec).js", "index.js", "LICENSE", "README.md"],
 	"exports": {
-		".": "./index.js",
 		"./core": "./src/core.js"
 	},
 	"scripts": {

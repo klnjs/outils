@@ -9,18 +9,9 @@
 		"url": "git+ssh://git@github.com/klnjs/outils.git",
 		"directory": "packages/configs/typescript-config"
 	},
-	"keywords": [
-		"typescript",
-		"typescript-config"
-	],
-	"files": [
-		"src/**/!(*.spec).json",
-		"index.js",
-		"LICENSE",
-		"README.md"
-	],
+	"keywords": ["typescript", "typescript-config"],
+	"files": ["src/**/!(*.spec).json", "index.js", "LICENSE", "README.md"],
 	"exports": {
-		".": "./index.js",
 		"./core.json": "./src/core.json",
 		"./esnext.json": "./src/esnext.json"
 	},

@@ -1,4 +1,5 @@
 import { expect } from 'bun:test'
-import * as matchers from './matchers'
+import toBeDeprecatedRule from './matchers/toBeDeprecatedRule'
+import toHaveEntry from './matchers/toHaveEntry'
 
-expect.extend(matchers)
+expect.extend({ toBeDeprecatedRule, toHaveEntry })

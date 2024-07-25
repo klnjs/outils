@@ -62,7 +62,7 @@
 				"noExcessiveCognitiveComplexity": "off",
 				"noExcessiveNestedTestSuites": "error",
 				"noExtraBooleanCast": "error",
-				"noForEach": "error",
+				"noForEach": "off",
 				"noMultipleSpacesInRegularExpressionLiterals": "error",
 				"noStaticOnlyClass": "error",
 				"noThisInStatic": "error",
@@ -179,11 +179,7 @@
 							},
 							{
 								"selector": { "kind": "variable" },
-								"formats": [
-									"camelCase",
-									"PascalCase",
-									"CONSTANT_CASE"
-								]
+								"formats": ["camelCase", "PascalCase", "CONSTANT_CASE"]
 							},
 							{
 								"selector": { "kind": "typeLike" },
