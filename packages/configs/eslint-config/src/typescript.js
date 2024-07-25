@@ -185,7 +185,7 @@ export default {
 		'@typescript-eslint/prefer-string-starts-ends-with': 'error',
 		'@typescript-eslint/promise-function-async': 'error',
 		'@typescript-eslint/require-array-sort-compare': 'error',
-		'@typescript-eslint/require-await': 'off',
+		'@typescript-eslint/require-await': 'error',
 		'@typescript-eslint/restrict-plus-operands': 'error',
 		'@typescript-eslint/restrict-template-expressions': 'error',
 		'@typescript-eslint/return-await': 'error',
