@@ -25,7 +25,6 @@
 	"linter": {
 		"rules": {
 			"a11y": {
-				"noAccessKey": "error",
 				"noAriaHiddenOnFocusable": "error",
 				"noAriaUnsupportedElements": "error",
 				"noAutofocus": "error",
@@ -126,7 +125,7 @@
 				"useExhaustiveDependencies": "error",
 				"useHookAtTopLevel": "error",
 				"useIsNan": "error",
-				"useJsxKeyInIterable": "off",
+				"useJsxKeyInIterable": "error",
 				"useValidForDirection": "error",
 				"useYield": "error"
 			},
@@ -179,7 +178,11 @@
 							},
 							{
 								"selector": { "kind": "variable" },
-								"formats": ["camelCase", "PascalCase", "CONSTANT_CASE"]
+								"formats": [
+									"camelCase",
+									"PascalCase",
+									"CONSTANT_CASE"
+								]
 							},
 							{
 								"selector": { "kind": "typeLike" },
@@ -199,7 +202,6 @@
 				"useTemplate": "error",
 				"useWhile": "error"
 			},
-
 			"suspicious": {
 				"noApproximativeNumericConstant": "error",
 				"noArrayIndexKey": "error",
