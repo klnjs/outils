@@ -9,26 +9,17 @@
 		"url": "git+ssh://git@github.com/klnjs/outils.git",
 		"directory": "packages/configs/eslint-config"
 	},
-	"keywords": [
-		"eslint",
-		"eslint-config"
-	],
-	"files": [
-		"src/**/!(*.spec).js",
-		"index.js",
-		"LICENSE",
-		"README.md"
-	],
+	"keywords": ["eslint", "eslint-config"],
+	"files": ["src/**/!(*.spec).js", "index.js", "LICENSE", "README.md"],
 	"exports": {
-		".": "./index.js",
 		"./core": "./src/core.js",
 		"./react": "./src/react.js",
 		"./typescript": "./src/typescript.js"
 	},
 	"scripts": {
 		"test": "bun test --preload ./test/setup.js",
-		"eslint": "eslint . --max-warnings 0",
-		"prettier": "prettier . --check"
+		"lint": "biome lint --error-on-warnings .",
+		"format": "biome format --error-on-warnings ."
 	},
 	"dependencies": {
 		"eslint-plugin-react-compiler": "0.0.0-experimental-0998c1e-20240625",
@@ -37,8 +28,8 @@
 		"typescript-eslint": "rc-v8"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
 		"eslint": "9.7.0",
-		"prettier": "3.3.3",
 		"react": "18.3.1"
 	},
 	"peerDependencies": {

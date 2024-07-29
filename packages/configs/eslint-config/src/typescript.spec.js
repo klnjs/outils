@@ -8,21 +8,22 @@ const rulesFromESLint = builtinRules
 const rulesFromConfig = new Map(Object.entries(typescript.rules))
 const rulesFromPlugin = new Map(
 	Object.entries(typescript.plugins).reduce(
-		(acc, [prefix, plugin]) => [
-			...acc,
-			...Object.entries(plugin.rules).map(([name, rule]) => [
-				`${prefix}/${name}`,
-				rule
-			])
-		],
+		(acc, [prefix, plugin]) =>
+			acc.concat(
+				Object.entries(plugin.rules).map(([name, rule]) => [
+					`${prefix}/${name}`,
+					rule
+				])
+			),
 		[]
 	)
 )
 
 test('Config should load', () => {
-	expect(() =>
-		new ESLint({ baseConfig: typescript }).lintText('')
-	).not.toThrow()
+	new ESLint({
+		overrideConfigFile: true,
+		overrideConfig: typescript
+	}).lintText('')
 })
 
 test('Config should include code rules', () =>
@@ -69,7 +70,9 @@ test('Config should include obsolete core rules and turn them off', () =>
 					return acc
 				}
 
-				return [...acc, baseName]
+				acc.push(baseName)
+
+				return acc
 			},
 			[]
 		)
@@ -78,7 +81,7 @@ test('Config should include obsolete core rules and turn them off', () =>
 	}))
 
 test('Config should exclude layout, unknown and deprecated rules', () =>
-	rulesFromConfig.forEach((value, name) => {
+	rulesFromConfig.forEach((_value, name) => {
 		if (name.startsWith('@typescript-eslint/')) {
 			expect(rulesFromPlugin).toHaveEntry(name)
 			expect(rulesFromPlugin.get(name)).not.toBeDeprecatedRule(name)

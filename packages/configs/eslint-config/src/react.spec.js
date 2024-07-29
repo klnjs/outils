@@ -5,19 +5,22 @@ import react from './react.js'
 const rulesFromConfig = new Map(Object.entries(react.rules))
 const rulesFromPlugin = new Map(
 	Object.entries(react.plugins).reduce(
-		(acc, [prefix, plugin]) => [
-			...acc,
-			...Object.entries(plugin.rules).map(([name, rule]) => [
-				`${prefix}/${name}`,
-				rule
-			])
-		],
+		(acc, [prefix, plugin]) =>
+			acc.concat(
+				Object.entries(plugin.rules).map(([name, rule]) => [
+					`${prefix}/${name}`,
+					rule
+				])
+			),
 		[]
 	)
 )
 
 test('Config should load', () => {
-	expect(() => new ESLint({ baseConfig: react }).lintText('')).not.toThrow()
+	new ESLint({
+		overrideConfigFile: true,
+		overrideConfig: react
+	}).lintText('')
 })
 
 test('Config should include code rules', () =>
@@ -28,7 +31,7 @@ test('Config should include code rules', () =>
 	}))
 
 test('Config should exclude layout, unknown and deprecated rules', () =>
-	rulesFromConfig.forEach((value, name) => {
+	rulesFromConfig.forEach((_value, name) => {
 		expect(rulesFromPlugin).toHaveEntry(name)
 		expect(rulesFromPlugin.get(name)).not.toBeDeprecatedRule(name)
 	}))

@@ -4,7 +4,7 @@
 # Except these folders
 !src/
 !src/**/*
-!test
+!test/
 !test/**/*
 
 # Except these files

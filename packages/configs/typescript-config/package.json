@@ -9,29 +9,19 @@
 		"url": "git+ssh://git@github.com/klnjs/outils.git",
 		"directory": "packages/configs/typescript-config"
 	},
-	"keywords": [
-		"typescript",
-		"typescript-config"
-	],
-	"files": [
-		"src/**/!(*.spec).json",
-		"index.js",
-		"LICENSE",
-		"README.md"
-	],
+	"keywords": ["typescript", "typescript-config"],
+	"files": ["src/**/!(*.spec).json", "index.js", "LICENSE", "README.md"],
 	"exports": {
-		".": "./index.js",
 		"./core.json": "./src/core.json",
 		"./esnext.json": "./src/esnext.json"
 	},
 	"scripts": {
 		"test": "bun test",
-		"eslint": "eslint . --max-warnings 0",
-		"prettier": "prettier . --check"
+		"lint": "biome lint --error-on-warnings .",
+		"format": "biome format --error-on-warnings ."
 	},
 	"devDependencies": {
-		"eslint": "9.7.0",
-		"prettier": "3.3.3",
+		"@biomejs/biome": "1.8.3",
 		"typescript": "5.5.3"
 	}
 }

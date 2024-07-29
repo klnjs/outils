@@ -1,27 +1,31 @@
 {
-	"name": "@klnjs/browserslist-config",
+	"name": "@klnjs/biome-config",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "3.0.0-rc.13",
+	"version": "3.0.0-rc.12",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "git+ssh://git@github.com/klnjs/outils.git",
-		"directory": "packages/configs/browserslist-config"
+		"directory": "packages/configs/biome-config"
 	},
-	"keywords": ["browserslist", "browserslist-config"],
+	"keywords": ["biome", "biome-config"],
 	"files": ["src/**/!(*.spec).js", "index.js", "LICENSE", "README.md"],
 	"exports": {
-		"./last-1-versions": "./src/last-1-versions.js",
-		"./last-2-versions": "./src/last-2-versions.js"
+		"./core": "./src/core.js"
 	},
 	"scripts": {
-		"test": "bun test",
+		"test": "bun test --preload ./test/setup.js",
 		"lint": "biome lint --error-on-warnings .",
 		"format": "biome format --error-on-warnings ."
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
-		"browserslist": "4.23.2"
+		"@biomejs/js-api": "0.6.2",
+		"@biomejs/wasm-nodejs": "1.8.3",
+		"ajv": "8.17.1"
+	},
+	"peerDependencies": {
+		"@biomejs/biome": "^1.8.0"
 	}
 }

@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        script: ["test", "eslint", "prettier"]
+        script: ["test", "lint", "format"]
     env:
       BUN_ENV: production
       FORCE_COLOR: 1
