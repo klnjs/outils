@@ -1,13 +1,11 @@
 import { test, expect } from 'bun:test'
+import p from 'node:path'
 import ts from 'typescript'
-import esnext from './esnext.json'
+import core from '../../src/core.json'
 
 test('Config should load without errors', () => {
-	const config = ts.parseJsonConfigFileContent(
-		esnext,
-		ts.sys,
-		ts.getDirectoryPath(import.meta.path)
-	)
+	const base = p.join(import.meta.path, '..', '..', '..', 'src')
+	const config = ts.parseJsonConfigFileContent(core, ts.sys, base)
 
 	const diagnostics = ts.getConfigFileParsingDiagnostics(config)
 	const problems = diagnostics.filter(

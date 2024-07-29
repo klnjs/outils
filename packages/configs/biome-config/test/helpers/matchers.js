@@ -1,7 +1,7 @@
 import Ajv from 'ajv'
-import { printReceived, printMatcherError } from '../helpers/print'
+import { printReceived, printMatcherError } from './print'
 
-export default function toMatchSchema(subject, schema, options) {
+export const toMatchSchema = (subject, schema, options) => {
 	if (!schema) {
 		return {
 			pass: false,

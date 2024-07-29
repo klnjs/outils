@@ -1,29 +1,19 @@
 import { test, expect } from 'bun:test'
-import { ESLint } from 'eslint'
-import { builtinRules } from 'eslint/use-at-your-own-risk'
 import typescriptPlugin from '@typescript-eslint/eslint-plugin'
-import typescript from './typescript.js'
+import {
+	createESLint,
+	getRulesFromESLint,
+	getRulesFromConfig,
+	getRulesFromPlugins
+} from '../helpers/eslint.js'
+import typescript from '../../src/typescript.js'
 
-const rulesFromESLint = builtinRules
-const rulesFromConfig = new Map(Object.entries(typescript.rules))
-const rulesFromPlugin = new Map(
-	Object.entries(typescript.plugins).reduce(
-		(acc, [prefix, plugin]) =>
-			acc.concat(
-				Object.entries(plugin.rules).map(([name, rule]) => [
-					`${prefix}/${name}`,
-					rule
-				])
-			),
-		[]
-	)
-)
+const rulesFromESLint = getRulesFromESLint()
+const rulesFromConfig = getRulesFromConfig(typescript)
+const rulesFromPlugin = getRulesFromPlugins(typescript.plugins)
 
 test('Config should load', () => {
-	new ESLint({
-		overrideConfigFile: true,
-		overrideConfig: typescript
-	}).lintText('')
+	expect(() => createESLint(typescript).lintText('')).not.toThrow()
 })
 
 test('Config should include code rules', () =>

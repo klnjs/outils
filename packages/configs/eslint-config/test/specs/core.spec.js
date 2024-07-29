@@ -1,18 +1,16 @@
 import { test, expect } from 'bun:test'
-import { ESLint } from 'eslint'
-import { builtinRules } from 'eslint/use-at-your-own-risk'
-import core from './core.js'
+import {
+	createESLint,
+	getRulesFromESLint,
+	getRulesFromConfig
+} from '../helpers/eslint.js'
+import core from '../../src/core.js'
 
-const rulesFromESLint = builtinRules
-const rulesFromConfig = new Map(Object.entries(core.rules))
+const rulesFromESLint = getRulesFromESLint()
+const rulesFromConfig = getRulesFromConfig(core)
 
 test('Config should load', () => {
-	expect(() =>
-		new ESLint({
-			overrideConfigFile: true,
-			overrideConfig: core
-		}).lintText('')
-	).not.toThrow()
+	expect(() => createESLint(core).lintText('')).not.toThrow()
 })
 
 test('Config should include code rules', () =>

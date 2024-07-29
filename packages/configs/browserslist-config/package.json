@@ -10,7 +10,7 @@
 		"directory": "packages/configs/browserslist-config"
 	},
 	"keywords": ["browserslist", "browserslist-config"],
-	"files": ["src/**/!(*.spec).js", "index.js", "LICENSE", "README.md"],
+	"files": ["src/**/*", "index.js", "LICENSE", "README.md"],
 	"exports": {
 		"./last-1-versions": "./src/last-1-versions.js",
 		"./last-2-versions": "./src/last-2-versions.js"
