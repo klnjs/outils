@@ -1,7 +1,8 @@
 import { test, expect } from 'bun:test'
 import { Biome, Distribution } from '@biomejs/js-api'
-import core from './core.json'
+import schema from '@biomejs/biome/configuration_schema.json'
 import { createStrictBiomeSchema } from '../test/helpers/schema'
+import core from './core.json'
 
 test('Config should load', async () => {
 	const biome = await Biome.create({
@@ -12,7 +13,6 @@ test('Config should load', async () => {
 })
 
 test('Config should include all linter rules', async () => {
-	const schema = await import(core.$schema)
 	const strict = createStrictBiomeSchema(schema)
 	const formats = ['uint8', 'uint16', 'uint64']
 
