@@ -13,7 +13,7 @@
 	"scripts": {
 		"test": "turbo test",
 		"lint": "turbo lint",
-		"format": "turbo form"
+		"format": "turbo format"
 	},
 	"devDependencies": {
 		"@types/bun": "1.1.6",
