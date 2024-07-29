@@ -101,7 +101,7 @@
 				"noInvalidNewBuiltin": "error",
 				"noInvalidUseBeforeDeclaration": "off",
 				"noNewSymbol": "error",
-				"noNodejsModules": "error",
+				"noNodejsModules": "off",
 				"noNonoctalDecimalEscape": "error",
 				"noPrecisionLoss": "error",
 				"noRenderReturnValue": "error",

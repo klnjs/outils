@@ -10,7 +10,7 @@
 		"directory": "packages/configs/typescript-config"
 	},
 	"keywords": ["typescript", "typescript-config"],
-	"files": ["src/**/!(*.spec).json", "index.js", "LICENSE", "README.md"],
+	"files": ["src/**/*", "LICENSE", "README.md"],
 	"exports": {
 		"./core.json": "./src/core.json",
 		"./esnext.json": "./src/esnext.json"

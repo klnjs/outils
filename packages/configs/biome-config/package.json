@@ -10,12 +10,12 @@
 		"directory": "packages/configs/biome-config"
 	},
 	"keywords": ["biome", "biome-config"],
-	"files": ["src/**/!(*.spec).js", "index.js", "LICENSE", "README.md"],
+	"files": ["src/**/*", "index.js", "LICENSE", "README.md"],
 	"exports": {
 		"./core": "./src/core.js"
 	},
 	"scripts": {
-		"test": "bun test --preload ./test/setup.js",
+		"test": "bun test --preload ./test/helpers/setup.js",
 		"lint": "biome lint --error-on-warnings .",
 		"format": "biome format --error-on-warnings ."
 	},

@@ -1,8 +1,8 @@
 import { test, expect } from 'bun:test'
 import { Biome, Distribution } from '@biomejs/js-api'
 import schema from '@biomejs/biome/configuration_schema.json'
-import { createStrictBiomeSchema } from '../test/helpers/schema'
-import core from './core.json'
+import { createStrictBiomeSchema } from '../helpers/schema'
+import core from '../../src/core.json'
 
 test('Config should load', async () => {
 	const biome = await Biome.create({

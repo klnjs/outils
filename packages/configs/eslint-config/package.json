@@ -10,14 +10,14 @@
 		"directory": "packages/configs/eslint-config"
 	},
 	"keywords": ["eslint", "eslint-config"],
-	"files": ["src/**/!(*.spec).js", "index.js", "LICENSE", "README.md"],
+	"files": ["src/**/*", "index.js", "LICENSE", "README.md"],
 	"exports": {
 		"./core": "./src/core.js",
 		"./react": "./src/react.js",
 		"./typescript": "./src/typescript.js"
 	},
 	"scripts": {
-		"test": "bun test --preload ./test/setup.js",
+		"test": "bun test --preload ./test/helpers/setup.js",
 		"lint": "biome lint --error-on-warnings .",
 		"format": "biome format --error-on-warnings ."
 	},

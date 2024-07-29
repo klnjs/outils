@@ -1,26 +1,16 @@
 import { test, expect } from 'bun:test'
-import { ESLint } from 'eslint'
-import react from './react.js'
+import {
+	createESLint,
+	getRulesFromConfig,
+	getRulesFromPlugins
+} from '../helpers/eslint.js'
+import react from '../../src/react.js'
 
-const rulesFromConfig = new Map(Object.entries(react.rules))
-const rulesFromPlugin = new Map(
-	Object.entries(react.plugins).reduce(
-		(acc, [prefix, plugin]) =>
-			acc.concat(
-				Object.entries(plugin.rules).map(([name, rule]) => [
-					`${prefix}/${name}`,
-					rule
-				])
-			),
-		[]
-	)
-)
+const rulesFromConfig = getRulesFromConfig(react)
+const rulesFromPlugin = getRulesFromPlugins(react.plugins)
 
 test('Config should load', () => {
-	new ESLint({
-		overrideConfigFile: true,
-		overrideConfig: react
-	}).lintText('')
+	expect(() => createESLint(react).lintText('')).not.toThrow()
 })
 
 test('Config should include code rules', () =>
