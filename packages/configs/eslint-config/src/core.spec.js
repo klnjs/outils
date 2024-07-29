@@ -7,7 +7,12 @@ const rulesFromESLint = builtinRules
 const rulesFromConfig = new Map(Object.entries(core.rules))
 
 test('Config should load', () => {
-	expect(() => new ESLint({ baseConfig: core }).lintText('')).not.toThrow()
+	expect(() =>
+		new ESLint({
+			overrideConfigFile: true,
+			overrideConfig: core
+		}).lintText('')
+	).not.toThrow()
 })
 
 test('Config should include code rules', () =>

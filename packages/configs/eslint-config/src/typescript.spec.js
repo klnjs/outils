@@ -7,22 +7,23 @@ import typescript from './typescript.js'
 const rulesFromESLint = builtinRules
 const rulesFromConfig = new Map(Object.entries(typescript.rules))
 const rulesFromPlugin = new Map(
-	Object.entries(typescript.plugins).reduce((acc, [prefix, plugin]) => {
-		acc.concat(
-			Object.entries(plugin.rules).map(([name, rule]) => [
-				`${prefix}/${name}`,
-				rule
-			])
-		)
-
-		return acc
-	}, [])
+	Object.entries(typescript.plugins).reduce(
+		(acc, [prefix, plugin]) =>
+			acc.concat(
+				Object.entries(plugin.rules).map(([name, rule]) => [
+					`${prefix}/${name}`,
+					rule
+				])
+			),
+		[]
+	)
 )
 
 test('Config should load', () => {
-	expect(() =>
-		new ESLint({ baseConfig: typescript }).lintText('')
-	).not.toThrow()
+	new ESLint({
+		overrideConfigFile: true,
+		overrideConfig: typescript
+	}).lintText('')
 })
 
 test('Config should include code rules', () =>
