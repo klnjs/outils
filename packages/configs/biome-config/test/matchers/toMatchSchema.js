@@ -19,9 +19,7 @@ export default function toMatchSchema(subject, schema, options) {
 		? undefined
 		: () => {
 				const error = validate.errors[0]
-				const expected = printReceived(
-					`${error.instancePath.replaceAll('/')}`
-				)
+				const expected = printReceived(`${error.instancePath}`)
 
 				return `${expected}: ${error.message}`
 			}

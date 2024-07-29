@@ -25,6 +25,7 @@
 	"linter": {
 		"rules": {
 			"a11y": {
+				"noAccessKey": "error",
 				"noAriaHiddenOnFocusable": "error",
 				"noAriaUnsupportedElements": "error",
 				"noAutofocus": "error",
@@ -178,11 +179,7 @@
 							},
 							{
 								"selector": { "kind": "variable" },
-								"formats": [
-									"camelCase",
-									"PascalCase",
-									"CONSTANT_CASE"
-								]
+								"formats": ["camelCase", "PascalCase", "CONSTANT_CASE"]
 							},
 							{
 								"selector": { "kind": "typeLike" },
