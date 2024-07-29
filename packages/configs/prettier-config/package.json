@@ -17,7 +17,7 @@
 	"scripts": {
 		"test": "bun test",
 		"lint": "biome lint --error-on-warnings .",
-		"form": "biome format --error-on-warnings ."
+		"format": "biome format --error-on-warnings ."
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",

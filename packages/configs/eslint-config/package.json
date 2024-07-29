@@ -19,7 +19,7 @@
 	"scripts": {
 		"test": "bun test --preload ./test/setup.js",
 		"lint": "biome lint --error-on-warnings .",
-		"form": "biome format --error-on-warnings ."
+		"format": "biome format --error-on-warnings ."
 	},
 	"dependencies": {
 		"eslint-plugin-react-compiler": "0.0.0-experimental-0998c1e-20240625",
