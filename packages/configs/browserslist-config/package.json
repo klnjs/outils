@@ -6,7 +6,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@github.com/klnjs/outils.git",
+		"url": "git+ssh://git@github.com/klnjs/configs.git",
 		"directory": "packages/configs/browserslist-config"
 	},
 	"keywords": ["browserslist", "browserslist-config"],
