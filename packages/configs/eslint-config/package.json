@@ -10,7 +10,7 @@
 		"directory": "packages/configs/eslint-config"
 	},
 	"keywords": ["eslint", "eslint-config"],
-	"files": ["src/**/*", "index.js", "LICENSE", "README.md"],
+	"files": ["src/**/*", "LICENSE", "README.md"],
 	"exports": {
 		"./core": "./src/core.js",
 		"./react": "./src/react.js",
