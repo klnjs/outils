@@ -2,7 +2,7 @@
 	"name": "@klnjs/biome-config",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "3.0.0-rc.14",
+	"version": "3.0.0",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -10,7 +10,7 @@
 		"directory": "packages/configs/biome-config"
 	},
 	"keywords": ["biome", "biome-config"],
-	"files": ["src/**/*", "index.js", "LICENSE", "README.md"],
+	"files": ["src/**/*", "LICENSE", "README.md"],
 	"exports": {
 		"./core": "./src/core.js"
 	},
