@@ -2,11 +2,11 @@
 	"name": "@klnjs/prettier-config",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "3.0.0-rc.13",
+	"version": "3.0.0-rc.14",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@github.com/klnjs/outils.git",
+		"url": "git+ssh://git@github.com/klnjs/configs.git",
 		"directory": "packages/configs/prettier-config"
 	},
 	"keywords": ["prettier", "prettier-config"],

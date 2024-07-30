@@ -1,2 +1,2 @@
-# Outils
-JavaScript config library
+# Configs
+JavaScript configurations library
