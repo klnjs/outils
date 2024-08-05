@@ -1,14 +1,14 @@
 export default {
-	name: "@klnjs/ignores",
+	name: '@klnjs/ignore',
 	ignores: [
-		"node",
-		"dist",
-		"build",
-		"coverage",
-		"node_modules",
-		".next",
-		".turbo",
-		".github",
-		".svelte-kit",
-	],
-};
+		'node',
+		'dist',
+		'build',
+		'coverage',
+		'node_modules',
+		'.next',
+		'.turbo',
+		'.github',
+		'.svelte-kit'
+	]
+}
