@@ -2,7 +2,7 @@
 	"name": "@klnjs/eslint-config",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "3.0.2",
+	"version": "3.0.3",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -13,6 +13,7 @@
 	"files": ["src/**/*", "LICENSE", "README.md"],
 	"exports": {
 		"./core": "./src/core.js",
+		"./ignores": "./src/ignores.js",
 		"./react": "./src/react.js",
 		"./typescript": "./src/typescript.js"
 	},
