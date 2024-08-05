@@ -5,9 +5,11 @@
 			"dist",
 			"build",
 			"coverage",
+			"node_modules",
 			".next",
 			".turbo",
-			".github"
+			".github",
+			".svelte-kit"
 		]
 	},
 	"organizeImports": {
