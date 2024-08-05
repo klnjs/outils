@@ -2,7 +2,7 @@
 	"name": "@klnjs/biome-config",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -12,7 +12,7 @@
 	"keywords": ["biome", "biome-config"],
 	"files": ["src/**/*", "LICENSE", "README.md"],
 	"exports": {
-		"./core": "./src/core.js"
+		"./core": "./src/core.json"
 	},
 	"scripts": {
 		"test": "bun test --preload ./test/helpers/setup.js",
