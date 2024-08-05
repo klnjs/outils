@@ -2,7 +2,7 @@
 	"name": "@klnjs/typescript-config",
 	"type": "module",
 	"author": "Rune Klein (@rnkln)",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -12,8 +12,8 @@
 	"keywords": ["typescript", "typescript-config"],
 	"files": ["src/**/*", "LICENSE", "README.md"],
 	"exports": {
-		"./core.json": "./src/core.json",
-		"./esnext.json": "./src/esnext.json"
+		"./core": "./src/core.json",
+		"./esnext": "./src/esnext.json"
 	},
 	"scripts": {
 		"test": "bun test",
