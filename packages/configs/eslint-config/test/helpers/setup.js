@@ -1,4 +1,4 @@
-import { expect } from 'bun:test'
-import { toBeDeprecatedRule, toHaveEntry } from './matchers'
+import { expect } from "bun:test";
+import { toBeDeprecatedRule, toBeLayoutRule, toHaveEntry } from "./matchers";
 
-expect.extend({ toBeDeprecatedRule, toHaveEntry })
+expect.extend({ toBeLayoutRule, toBeDeprecatedRule, toHaveEntry });
