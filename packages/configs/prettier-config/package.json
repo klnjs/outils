@@ -28,7 +28,7 @@
 	"devDependencies": {
 		"@klnjs/configs-internals-test": "workspace:*",
 		"@biomejs/biome": "1.9.4",
-		"prettier": "3.4.2"
+		"prettier": "3.9.6"
 	},
 	"peerDependencies": {
 		"prettier": "^3.0.0"
